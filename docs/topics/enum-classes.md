@@ -120,24 +120,9 @@ fun main() {
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3" id="rgb-enums-properties-kotlin"}
 
 可以使用 [`enumValues<T>()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/enum-values.html) 与 [`enumValueOf<T>()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/enum-value-of.html) 函数<!--
--->以泛型的方式访问枚举类中的常量：
-
-```kotlin
-enum class RGB { RED, GREEN, BLUE }
-
-inline fun <reified T : Enum<T>> printAllValues() {
-    println(enumValues<T>().joinToString { it.name })
-}
-
-printAllValues<RGB>() // 输出 RED, GREEN, BLUE
-```
-
-> For more information about inline functions and reified type parameters, see [Inline functions](inline-functions.md).
->
-> {type="tip"}
- 
-In Kotlin 1.9.20, the `enumEntries<T>()` function is introduced as a future replacement for the [`enumValues<T>()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/enum-values.html)
-function.
+-->以泛型的方式访问枚举类中的常量。
+In Kotlin 2.0.0, the [`enumEntries<T>()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.enums/enum-entries.html) function is introduced as a replacement for the [`enumValues<T>()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/enum-values.html)
+function. The `enumEntries<T>()` function returns a list of all enum entries for the given enum type `T`.
 
 The `enumValues<T>()` function is still supported, but we recommend that you use the `enumEntries<T>()` function instead
 because it has less performance impact. Every time you call `enumValues<T>()` a new array is created, whereas whenever
@@ -148,7 +133,6 @@ For example:
 ```kotlin
 enum class RGB { RED, GREEN, BLUE }
 
-@OptIn(ExperimentalStdlibApi::class)
 inline fun <reified T : Enum<T>> printAllValues() {
     println(enumEntries<T>().joinToString { it.name })
 }
@@ -156,8 +140,6 @@ inline fun <reified T : Enum<T>> printAllValues() {
 printAllValues<RGB>() 
 // RED, GREEN, BLUE
 ```
-
-> The `enumEntries<T>()` function is Experimental. To use it, opt in with `@OptIn(ExperimentalStdlibApi)`, and
-> [set the language version to at least 1.9](gradle-compiler-options.md#jvm-与-js-的公共属性).
+> For more information about inline functions and reified type parameters, see [Inline functions](inline-functions.md).
 >
-{type="warning"}
+> {style="tip"}

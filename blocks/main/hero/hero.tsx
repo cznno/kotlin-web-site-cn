@@ -4,6 +4,7 @@ import cn from 'classnames';
 
 import { useTextStyles, createTextCn } from '@rescui/typography';
 import { ThemeProvider } from '@rescui/ui-contexts';
+import  heroBannerDataRaw from '../../../data/hero-banner.yml';
 
 import Image from 'next/image';
 
@@ -20,14 +21,24 @@ interface Props {
     children: ReactNode;
 }
 
+type HeroBannerData = {
+    isActive: boolean;
+    title: string;
+    caption: string;
+    buttonLabel: string;
+    buttonUrl: string;
+}
+
+const heroBannerData = heroBannerDataRaw as HeroBannerData;
+
 export const HeroSection: FC<Props> = ({ children, title }) => {
     const textCn = useTextStyles();
     const darkTextCn = createTextCn('dark');
 
     return (
         <ThemeProvider theme={'dark'}>
-            <section className={styles.heroSection}>
-                <div className={cn('ktl-layout', 'ktl-layout--center')}>
+            <section className={cn(styles.heroSection)}>
+                <div className={cn('ktl-layout', 'ktl-layout--center', 'hero-b')}>
                     <div className={styles.grid}>
                         <div className={styles.content}>
                             <h1 className={cn(darkTextCn('rs-hero'), styles.heroText)}>{title}</h1>
@@ -40,19 +51,25 @@ export const HeroSection: FC<Props> = ({ children, title }) => {
                                     Get started
                                 </Button>
                                 <div className={styles.developer}>
-                                    <img src={JBLogo.src} alt="jetbrains logo" className={styles.developerLogo} />{' '}
-                                    <div className={darkTextCn('rs-text-3', { hardness: 'hard' })}>
-                                        Developed by&nbsp;
+                                    <div className={styles.developerContent}>
+                                        <div className={cn(darkTextCn('rs-text-2', { hardness: 'hard' }), styles.developerCaption)}>Developed by</div>
                                         <a
                                             href="https://www.jetbrains.com/"
-                                            className={darkTextCn('rs-link', { hardness: 'hard' })}
                                             target={'_blank'}
                                             rel={'noreferrer noopener'}
                                         >
-                                            JetBrains
-                                        </a>.
+                                            <img src={JBLogo.src} alt="jetbrains logo" className={styles.developerLogo} />{' '}
+                                        </a>
                                     </div>
                                 </div>
+                                {heroBannerData.isActive && <div className={styles.banner}>
+                                    <div className={styles.bannerContent}>
+                                        <h5 className={cn(darkTextCn('rs-h2'), styles.bannerTitle)}>{heroBannerData.title}</h5>
+                                        <p className={cn(darkTextCn('rs-text-2'), styles.bannerCaption)}>{heroBannerData.caption}</p>
+                                    </div>
+                                    <Button mode="outline" size="m" href={heroBannerData.buttonUrl}
+                                            className={styles.bannerButton}>{heroBannerData.buttonLabel}</Button>
+                                </div>}
                             </div>
                         </div>
 

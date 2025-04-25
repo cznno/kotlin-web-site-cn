@@ -26,7 +26,7 @@ loop@ for (i in 1..100) {
 }
 ```
 
-现在，我们可以用标签限定 `break` 或者 `continue`：
+现在，可以用标签限定 `break` 或者 `continue`：
 
 ```kotlin
 loop@ for (i in 1..100) {
@@ -39,32 +39,18 @@ loop@ for (i in 1..100) {
 标签限定的 `break` 跳转到刚好位于该标签指定的循环后面的执行点。
 `continue` 继续标签指定的循环的下一次迭代。
 
+> In some cases, you can apply `break` and `continue` *non-locally* without explicitly defining labels.
+> Such non-local usages are valid in lambda expressions used in enclosing [inline functions](inline-functions.md#break-and-continue).
+>
+{style="note"}
+
 ## 返回到标签
 
 Kotlin 中函数可以使用函数字面量、局部函数与对象表达式实现嵌套。
-标签限定的 `return` 允许我们从外层函数返回。
-最重要的一个用途就是从 lambda 表达式中返回。回想一下我们这么写的时候，
-这个 `return` 表达式从最直接包围它的函数——`foo` 中返回：
+标签限定的 `return` 让你可能从外层函数返回。
 
-```kotlin
-//sampleStart
-fun foo() {
-    listOf(1, 2, 3, 4, 5).forEach {
-        if (it == 3) return // 非局部直接返回到 foo() 的调用者
-        print(it)
-    }
-    println("this point is unreachable")
-}
-//sampleEnd
-
-fun main() {
-    foo()
-}
-```
-{kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
-
-注意，这种非局部的返回只支持传给[内联函数](inline-functions.md)的 lambda 表达式。
-如需从 lambda 表达式中返回，可给它加标签并用以限定 `return`。
+最重要的一个用途就是从 lambda 表达式中返回。 To return from a lambda expression,
+label it and qualify the `return`:
 
 ```kotlin
 //sampleStart
@@ -153,3 +139,8 @@ return@a 1
 ```
 
 这意味着“返回 `1` 到 `@a`”，而不是“返回一个标签标注的表达式 `(@a 1)`”。
+
+> In some cases, you can return from a lambda expression without using labels. Such *non-local* returns are located in a
+> lambda but exit the enclosing [inline function](inline-functions.md#returns).
+>
+{style="note"}

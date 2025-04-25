@@ -8,7 +8,7 @@ For each target, default compilations include:
 * `main` and `test` compilations for JVM, JS, and Native targets.
 * A [compilation](#android-编译项) per [Android build variant](https://developer.android.com/studio/build/build-variants), for Android targets.
 
-![Compilations](compilations.png)
+![Compilations](compilations.svg)
 
 If you need to compile something other than production code and unit tests, for example, integration or performance tests, 
 you can [create a custom compilation](#创建自定义编译项).
@@ -24,17 +24,32 @@ available for all or specific targets.
 
 ## 配置所有编译项
 
+This example configures a compiler option that is common across all targets:
+
+<tabs group="build-script">
+<tab title="Kotlin" group-key="kotlin">
+
 ```kotlin
 kotlin {
-    targets.all {
-        compilations.all {
-            compilerOptions.configure {
-                allWarningsAsErrors.set(true)
-            }
-        }
+    compilerOptions {
+        allWarningsAsErrors.set(true)
     }
 }
 ```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+kotlin {
+    compilerOptions {
+        allWarningsAsErrors = true
+    }
+}
+```
+
+</tab>
+</tabs>
 
 ## 为一个目标配置编译项
 
@@ -43,8 +58,8 @@ kotlin {
 
 ```kotlin
 kotlin {
-    jvm().compilations.all {
-        compilerOptions.configure {
+    jvm {
+        compilerOptions {
             jvmTarget.set(JvmTarget.JVM_1_8)
         }
     }
@@ -56,9 +71,9 @@ kotlin {
 
 ```groovy
 kotlin {
-    jvm().compilations.all {
-        compilerOptions.configure {
-            jvmTarget.set(JvmTarget.JVM_1_8)
+    jvm {
+        compilerOptions {
+            jvmTarget = JvmTarget.JVM_1_8
         }
     }
 }
@@ -76,8 +91,10 @@ kotlin {
 kotlin {
     jvm {
         val main by compilations.getting {
-            compilerOptions.configure {
-                jvmTarget.set(JvmTarget.JVM_1_8)
+            compileTaskProvider.configure {
+                compilerOptions {
+                    jvmTarget.set(JvmTarget.JVM_1_8)
+                }
             }
         }
     }
@@ -91,8 +108,10 @@ kotlin {
 kotlin {
     jvm {
         compilations.main {
-            compilerOptions.configure {
-                jvmTarget.set(JvmTarget.JVM_1_8)
+            compileTaskProvider.configure {
+                compilerOptions {
+                    jvmTarget = JvmTarget.JVM_1_8
+                }
             }
         }
     }
@@ -113,7 +132,7 @@ collection.
 > For custom compilations, you need to set up all dependencies manually. The default source set of a custom compilation 
 > does not depend on the `commonMain` and the `commonTest` source sets.
 >
-{type="note"}
+{style="note"}
 
 <tabs group="build-script">
 <tab title="Kotlin" group-key="kotlin">
@@ -186,48 +205,102 @@ kotlin {
 You also need to create a custom compilation in other cases, for example, if you want to combine compilations for different 
 JVM versions in your final artifact, or you have already set up source sets in Gradle and want to migrate to a multiplatform project.
 
-## Use Java sources in JVM compilations
+## Compilation for JVM
 
-When creating a project with the [project wizard](https://kmp.jetbrains.com/), Java sources are included in the compilations of
-the JVM target.
+When you declare the `jvm` target in your multiplatform project, the Kotlin Multiplatform plugin automatically
+creates Java sources sets and includes them in the compilations of the JVM target.
 
-In the build script, the following section applies the Gradle `java` plugin and configures the target to cooperate with it:
+The common source sets can't include Java resources, so you should place them in the corresponding child directories
+of your multiplatform project. For example:
+
+![Java source files](java-source-paths.png){width=200}
+
+Currently, the Kotlin Multiplatform plugin replaces some tasks configured by the Java plugin:
+
+* JAR task: instead of a standard `jar`, it uses a target-specific task based on the artifact's name, for example,
+  `jvmJar` for the `jvm()` target declaration and `desktopJar` for `jvm("desktop")`.
+* Test task: instead of a standard `test`, it uses a target-specific task based on the artifact's name, for example, `jvmTest`.
+* Resource processing: instead of `*ProcessResources` tasks, resources are handled by the corresponding compilation tasks.
+
+These tasks are created automatically when the target is declared. However, you can manually define the JAR task
+and configure it if necessary:
+
+<tabs group="build-script">
+<tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
+// Shared module's `build.gradle.kts` file
+plugins {
+    kotlin("multiplatform") version "%kotlinVersion%"
+}
+
 kotlin {
+    // Specify the JVM target
     jvm {
-        withJava()
+        // Add the task for JAR generation
+        tasks.named<Jar>(artifactsTaskName).configure {
+            // Configure the task
+        }
+    }
+
+    sourceSets {
+        jvmMain {
+            dependencies {
+                // Add JVM-specific dependencies
+            }
+        }
     }
 }
 ```
 
-The Java source files are placed in the child directories of the Kotlin source roots. For example, the paths are:
+</tab>
+<tab title="Groovy" group-key="groovy">
 
-![Java source files](java-source-paths.png){width=200}
+```groovy
+// Shared module's `build.gradle` file
+plugins {
+    id 'org.jetbrains.kotlin.multiplatform' version '%kotlinVersion%'
+}
 
-The common source sets cannot include Java sources.
+kotlin {
+    // Specify the JVM target
+    jvm {
+        // Add the task for JAR generation
+        tasks.named<Jar>(artifactsTaskName).configure {
+            // Configure the task
+        }
+    }
 
-Due to current limitations, the Kotlin plugin replaces some tasks configured by the Java plugin:
+    sourceSets {
+        jvmMain {
+            dependencies {
+                // Add JVM-specific dependencies
+            }
+        }
+    }
+}
+```
 
-* The target's JAR task instead of `jar` (for example, `jvmJar`).
-* The target's test task instead of `test` (for example, `jvmTest`).
-* The resources are processed by the equivalent tasks of the compilations instead of `*ProcessResources` tasks.
+</tab>
+</tabs>
 
-The publication of this target is handled by the Kotlin plugin and doesn't require steps that are specific for the Java plugin.
+This target is published by the Kotlin Multiplatform plugin and doesn't require steps that are specific
+to the Java plugin.
 
 ## 配置与原生语言的互操作
 
 Kotlin provides [interoperability with native languages](native-c-interop.md) and DSL to configure this for a specific 
 compilation.
 
-| Native language | Supported platforms | Comments |
-|-----------------|---------------------|----------|
-| C | All platforms, except for WebAssembly | |
-| Objective-C | Apple platforms (macOS, iOS, watchOS, tvOS) | |
+| Native language       | Supported platforms                         | Comments                                                                  |
+|-----------------------|---------------------------------------------|---------------------------------------------------------------------------|
+| C                     | All platforms, except for WebAssembly       |                                                                           |
+| Objective-C           | Apple platforms (macOS, iOS, watchOS, tvOS) |                                                                           |
 | Swift via Objective-C | Apple platforms (macOS, iOS, watchOS, tvOS) | Kotlin can use only Swift declarations marked with the `@objc` attribute. |
 
-A compilation can interact with several native libraries. Configure interoperability in the `cinterops` block of the 
-compilation with [available parameters](multiplatform-dsl-reference.md#cinterops).
+A compilation can interact with several native libraries. Configure interoperability with available properties in the
+[definition file](native-definition-file.md) or in the [`cinterops` block](multiplatform-dsl-reference.md#cinterops) of
+your build file:
 
 <tabs group="build-script">
 <tab title="Kotlin" group-key="kotlin">
@@ -239,7 +312,7 @@ kotlin {
             val myInterop by cinterops.creating {
                 // Def-file describing the native API.
                 // The default path is src/nativeInterop/cinterop/<interop-name>.def
-                defFile(project.file("def-file.def"))
+                definitionFile.set(project.file("def-file.def"))
                 
                 // Package to place the Kotlin API generated.
                 packageName("org.sample")
@@ -277,7 +350,7 @@ kotlin {
                 myInterop {
                     // Def-file describing the native API.
                     // The default path is src/nativeInterop/cinterop/<interop-name>.def
-                    defFile project.file("def-file.def")
+                    definitionFile = project.file("def-file.def")
                     
                     // Package to place the Kotlin API generated.
                     packageName 'org.sample'
@@ -313,19 +386,19 @@ for each build variant, a Kotlin compilation is created under the same name.
 
 Then, for each [Android source set](https://developer.android.com/studio/build/build-variants#sourcesets) compiled for 
 each of the variants, a Kotlin source set is created under that source set name prepended by the target name, like the 
-Kotlin source set `androidDebug` for an Android source set `debug` and the Kotlin target named `android`. These Kotlin 
-source sets are added to the variants' compilations accordingly.
+Kotlin source set `androidDebug` for an Android source set `debug` and the Kotlin target named `androidTarget`.
+These Kotlin source sets are added to the variants' compilations accordingly.
 
 The default source set `commonMain` is added to each production (application or library) variant's compilation. 
 The `commonTest` source set is similarly added to the compilations of unit test and instrumented test variants.
 
 Annotation processing with [`kapt`](kapt.md) is also supported, but due to current limitations it requires that the Android target 
-is created before the `kapt` dependencies are configured, which needs to be done in a top-level `dependencies` block rather 
+is created before the `kapt` dependencies are configured, which needs to be done in a top-level `dependencies {}` block rather 
 than within Kotlin source set dependencies.
 
 ```kotlin
 kotlin {
-    android { /* ... */ }
+    androidTarget { /* ... */ }
 }
 
 dependencies {
@@ -337,7 +410,7 @@ dependencies {
 
 Kotlin can build a [source set hierarchy](multiplatform-share-on-platforms.md#对相似平台共享代码) with the `dependsOn` relation.
 
-![Source set hierarchy](jvm-js-main.png){width=400}
+![Source set hierarchy](jvm-js-main.svg)
 
 If the source set `jvmMain` depends on a source set `commonMain` then:
 
@@ -356,3 +429,20 @@ Language settings are checked for consistency in the following ways:
 bugfix features).
 * `jvmMain` should use all experimental annotations that `commonMain` uses.
 * `apiVersion`, bugfix language features, and `progressiveMode` can be set arbitrarily.
+
+## Configure Isolated Projects feature in Gradle
+
+> This feature is [Experimental](components-stability.md#stability-levels-explained) and is currently in a pre-alpha state with Gradle. 
+> Use it only with Gradle versions 8.10 or higher, and solely for evaluation purposes. The feature may be dropped or changed at any time.
+> We would appreciate your feedback on it in [YouTrack](https://youtrack.jetbrains.com/issue/KT-57279/Support-Gradle-Project-Isolation-Feature-for-Kotlin-Multiplatform). 
+> Opt-in is required (see details below).
+> 
+{style="warning"}
+
+Gradle provides the [Isolated Projects](https://docs.gradle.org/current/userguide/isolated_projects.html) feature,
+which improves build performance by "isolating" individual projects from each other. The feature separates the build scripts
+and plugins between projects, allowing them to run safely in parallel.
+
+To enable this feature, follow Gradle's instructions to [set the system property](https://docs.gradle.org/current/userguide/isolated_projects.html#how_do_i_use_it).
+
+For more information about the Isolated Projects feature, see [Gradle's documentation](https://docs.gradle.org/current/userguide/isolated_projects.html).

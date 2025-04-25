@@ -4,7 +4,7 @@ Every program requires a set of libraries to operate successfully. A Kotlin Mult
 multiplatform libraries that work for all target platforms, platform-specific libraries, and other multiplatform projects.
 
 To add a dependency on a library, update your `build.gradle(.kts)` file in the directory of your project containing shared code. Set a
-dependency of the required [type](gradle-configure-project.md#dependency-types) (for example, `implementation`) in the [`dependencies`](multiplatform-dsl-reference.md#依赖项)
+dependency of the required [type](gradle-configure-project.md#dependency-types) (for example, `implementation`) in the [`dependencies {}`](multiplatform-dsl-reference.md#依赖项)
 block: 
 
 <tabs group="build-script">
@@ -92,7 +92,7 @@ kotlin {
 ### kotlinx libraries
 
 If you use a multiplatform library and need to [depend on the shared code](#library-shared-for-all-source-sets), set the
-dependency only once in the shared source set. Use the library base artifact name, such as `kotlinx-coroutines-core`.
+dependency only once in the shared source set. Use the library base artifact name, such as `kotlinx-coroutines-core`:
 
 <tabs group="build-script">
 <tab title="Kotlin" group-key="kotlin">
@@ -125,9 +125,8 @@ kotlin {
 </tab>
 </tabs>
 
-If you use a kotlinx library and need a [platform-specific dependency](#library-used-in-specific-source-sets), you can
-use platform-specific variants of libraries with suffixes such as `-jvm` or `-js`, for
-example, `kotlinx-coroutines-core-jvm`.
+If you need a kotlinx library for a [platform-specific dependency](#library-used-in-specific-source-sets), you can
+still use library's base artifact name in the corresponding platform source set:
 
 <tabs group="build-script">
 <tab title="Kotlin" group-key="kotlin">
@@ -136,7 +135,7 @@ example, `kotlinx-coroutines-core-jvm`.
 kotlin {
     sourceSets {
         jvmMain.dependencies {
-            implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:%coroutinesVersion%")
+            implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:%coroutinesVersion%")
         }
     }
 }
@@ -150,7 +149,7 @@ kotlin {
     sourceSets {
         jvmMain {
             dependencies {
-                implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:%coroutinesVersion%'
+                implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:%coroutinesVersion%'
             }
         }
     }
@@ -166,7 +165,9 @@ You can add dependencies on libraries that have adopted Kotlin Multiplatform tec
 as [SQLDelight](https://github.com/cashapp/sqldelight). The authors of these libraries usually provide guides for adding
 their dependencies to your project.
 
-Check out this [community-maintained list of Kotlin Multiplatform libraries](https://libs.kmp.icerock.dev/).
+> Look for Kotlin Multiplatform libraries on the [JetBrains' search platform](https://klibs.io/).
+>
+{style="tip"}
 
 ### Library shared for all source sets
 
@@ -175,7 +176,7 @@ Multiplatform Mobile plugin will automatically add the corresponding parts to an
 
 > You cannot set dependencies on platform-specific libraries in the common source set.
 >
-{type="warning"}
+{style="warning"}
 
 <tabs group="build-script">
 <tab title="Kotlin" group-key="kotlin">
@@ -223,7 +224,7 @@ specified library declarations will then be available only in those source sets.
 
 > Use a common library name in such cases, not a platform-specific one. Like with SQLDelight in the example below, use `native-driver`, not `native-driver-iosx64`. Find the exact name in the library's documentation.
 >
-{type="note"}
+{style="note"}
 
 <tabs group="build-script">
 <tab title="Kotlin" group-key="kotlin">

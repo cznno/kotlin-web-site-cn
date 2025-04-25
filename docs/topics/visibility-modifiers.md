@@ -28,7 +28,7 @@ class Bar { …… }
 
 >要使用另一包中可见的顶层声明，需要将其[导入](packages.md#导入)进来。
 >
-{type="note"}
+{style="note"}
 
 例如:
 
@@ -55,7 +55,7 @@ internal val baz = 6    // 相同模块内可见
 
 > 在 Kotlin 中，外部类不能访问内部类的 private 成员。
 >
-{type="note"}
+{style="note"}
 
 如果你覆盖一个 `protected` 或 `internal` 成员并且没有显式指定其可见性，该成员<!--
 -->还会具有与原始成员相同的可见性。
@@ -96,7 +96,7 @@ class Unrelated(o: Outer) {
 
 > You need to add an explicit `constructor` keyword.
 >
-{type="note"}
+{style="note"}
 
 ```kotlin
 class C private constructor(a: Int) { …… }

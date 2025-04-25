@@ -315,10 +315,10 @@ var readWriteResource: Resource by resourceDelegate()
 
 在底层，Kotlin 编译器会为某些类型的委托属性生成辅助属性并委托给它们。
 
-> For the optimization purposes, the compiler [_does not_ generate auxiliary properties in several cases](#optimized-cases-for-delegated-properties).
+> For optimization purposes, the compiler [_does not_ generate auxiliary properties in several cases](#optimized-cases-for-delegated-properties). 
 > Learn about the optimization on the example of [delegating to another property](#translation-rules-when-delegating-to-another-property).
 >
-{type="note"}
+{style="note"}
 
 例如，对于属性 `prop`，生成隐藏属性 `prop$delegate`，而访问器的代码只是<!--
 -->简单地委托给这个附加属性：

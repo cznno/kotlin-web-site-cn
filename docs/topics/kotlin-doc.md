@@ -7,7 +7,7 @@
 > Kotlin 的文档引擎：Dokka，理解 KDoc 并可以用于生成各种格式的文档。
 > 更多信息请参阅 [Dokka 文档](dokka-introduction.md)。
 >
-{type="note"}
+{style="note"}
 
 ## KDoc 语法
 
@@ -101,9 +101,9 @@ KDoc 目前支持以下块标签（block tags）：
 从生成的文档中排除元素。可用于不是模块的官方 API 的一部分<!--
 -->但还是必须在对外可见的元素。
 
-> KDoc 不支持 `@deprecated` 这个标签。作为替代，请使用 `@Deprecated` 注解。
+> KDoc 不支持 `@deprecated` 这个标签。作为替代，请使用 [`@Deprecated`](https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-deprecated/) 注解。
 >
-{type="note"}
+{style="note"}
 
 ## 内联标记
 

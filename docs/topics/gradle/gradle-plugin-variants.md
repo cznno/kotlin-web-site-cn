@@ -15,13 +15,11 @@ Currently, there are the following variants of the Kotlin Gradle plugin:
 
 | Variant's name | Corresponding Gradle versions |
 |----------------|-------------------------------|
-| `main`         | 6.8.3–6.9.3                   |
-| `gradle70`     | 7.0                           |
-| `gradle71`     | 7.1-7.4                       |
-| `gradle75`     | 7.5                           |
-| `gradle76`     | 7.6                           |
-| `gradle80`     | 8.0                           |
-| `gradle81`     | 8.1.1 and higher              |
+| `main`         | 7.6.0–7.6.3                   |
+| `gradle80`     | 8.0–8.0.2                     |
+| `gradle81`     | 8.1.1                         |
+| `gradle82`     | 8.2.1–8.4                     |
+| `gradle85`     | 8.5 and higher                |
 
 In future Kotlin releases, more variants will be added.
 
@@ -35,7 +33,7 @@ string in the output starting with `Using Kotlin Gradle plugin`, for example, `U
 > * [ResolutionStrategy in pluginManagement is not working for plugins with multivariants](https://github.com/gradle/gradle/issues/20545)
 > * [Plugin variants are ignored when a plugin is added as the `buildSrc` common dependency](https://github.com/gradle/gradle/issues/20847)
 >
-{type="note"}
+{style="note"}
 
 ### Gradle 无法在自定义配置中选择 KGP 变体
 

@@ -144,7 +144,7 @@ public val table: Map<String, Int>
 
 > 对于 JVM 平台：通过默认 getter 和 setter 访问私有属性会被优化以避免函数调用开销。
 >
-{type="note"}
+{style="note"}
 
 ## 编译期常量
 
@@ -195,7 +195,7 @@ public class MyTest {
 在初始化前访问一个 `lateinit` 属性会抛出一个特定异常，该异常明确标识该属性<!--
 -->被访问及它没有初始化的事实。
 
-### 检测一个 `lateinit var` 是否已初始化
+### 检测一个 lateinit var 是否已初始化
 
 要检测一个 `lateinit var` 是否已经初始化过，请在[该属性的引用](reflection.md#属性引用)上使用 `.isInitialized`：
 

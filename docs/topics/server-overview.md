@@ -12,8 +12,11 @@ Kotlin 非常适合开发服务器端应用程序。它可以让你编写简明�
 * **迁移**：Kotlin 支持大型代码库从 Java 到 Kotlin 逐步迁移。你可以开始<!--
    -->用 Kotlin 编写新代码，同时系统中较旧部分继续用 Java。
 * **工具**：除了很棒的 IDE 支持之外，Kotlin 还为 IntelliJ IDEA Ultimate 的插件提供了框架特定的工具（例如
-  Spring）。
-* **学习曲线**：对于 Java 开发人员，Kotlin 入门很容易。包含在 Kotlin 插件中的自动 Java-to-Kotlin 的转换器有助于迈出第一步。[Kotlin 心印](koans.md) 通过一系列互动练习提供了语言主要功能的指南。
+  Spring 与 Ktor）。
+* **学习曲线**：对于 Java 开发人员，Kotlin 入门很容易。包含在 Kotlin 插件中的自动 Java-to-Kotlin 的转换器<!--
+  -->有助于迈出第一步。[Kotlin 心印](koans.md)
+  通过一系列互动练习提供了语言主要功能的指南。 Kotlin-specific frameworks like [Ktor](https://ktor.io/) offer
+  a simple, straightforward approach without the hidden complexities of larger frameworks.
 
 ## 使用 Kotlin 进行服务器端开发的框架
 
@@ -44,7 +47,7 @@ Kotlin 非常适合开发服务器端应用程序。它可以让你编写简明�
   
 > 可以在 [https://kotlin.link/](https://kotlin.link/resources) 找到更多框架。
 >
-{type="note"}
+{style="note"}
 
 ## 部署 Kotlin 服务器端应用程序
 
@@ -67,9 +70,17 @@ AWS Labs 提供了一个[示例项目](https://github.com/awslabs/serverless-pho
 [JetBrains 账户](https://account.jetbrains.com/)，负责 JetBrains 整个许可证销售和验证<!--
 -->过程的系统 100％ 由 Kotlin 编写，自 2015 年生产运行以来，一直没有重大问题。
 
+[Chess.com](https://www.chess.com/) is a website dedicated to chess and the millions of players around the world 
+who love the game. Chess.com uses Ktor for the seamless configuration of multiple HTTP clients.
+
+Engineers at [Adobe](https://blog.developer.adobe.com/streamlining-server-side-app-development-with-kotlin-be8cf9d8b61a) use Kotlin for server-side app development and Ktor for prototyping in the Adobe Experience 
+Platform, which enables organizations to centralize and standardize customer data before applying data science and machine learning.
+
+
 ## 下一步
 
 * 关于更深入的介绍，请查看本站的 Kotlin 文档及 [Kotlin 心印](koans.md)。
+* Explore how to [build asynchronous server applications with Ktor](https://ktor.io/docs/server-create-a-new-project.html), a framework that uses Kotlin coroutines.
 * 观看网络研讨会[“Micronaut for microservices with Kotlin”](https://micronaut.io/2020/12/03/webinar-micronaut-for-microservices-with-kotlin/)
   并浏览详细[指南](https://guides.micronaut.io/latest/micronaut-kotlin-extension-fns.html)，
   了解如何在 Micronaut 框架中使用 [Kotlin 扩展函数](extensions.md#扩展函数)。

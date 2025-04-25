@@ -2,4 +2,4 @@ User-agent: *
 Host: www.kotlincn.net
 
 # Sitemaps
-sitemap: https://www.kotlincn.net/sitemap.xml
+sitemap: https://www.kotlincn.net/sitemap_index.xml

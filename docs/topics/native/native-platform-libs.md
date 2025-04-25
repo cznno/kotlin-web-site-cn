@@ -1,46 +1,88 @@
 [//]: # (title: 平台库)
 
-为了提供对用户原生操作系统服务的访问，
-Kotlin/Native 发行版包含了一组为每个目标平台预构建的库<!--
--->。我们称之为**平台库**。
+为了提供对操作系统原生服务的访问，Kotlin/Native 发行版包含了一组为<!--
+-->每个目标平台预构建的库。 这些被称为*平台库*。
 
-### POSIX 绑定
+The packages from platform libraries are available by default. You don't need to specify additional link options to use
+them. The Kotlin/Native compiler automatically detects which platform libraries are accessed and links the necessary ones.
 
-对于所有基于 Unix 或 Windows 的目标平台（包括 Android 与
-iOS 目标平台），我们提供了 POSIX 平台库。它包含对
-[POSIX 标准](https://en.wikipedia.org/wiki/POSIX)的平台实现的绑定。
+However, platform libraries in the compiler distribution are merely wrappers and bindings to the native libraries. That
+means you need to install native libraries themselves (`.so`, `.a`, `.dylib`, `.dll`, and so on) on your local machine.
 
-使用该库只需导入之： 
+## POSIX 绑定
+
+Kotlin provides the POSIX platform library for all UNIX- and Windows-based targets, including Android and iOS.
+These platform libraries contain bindings to the platform's implementation, which follows the [POSIX standard](https://en.wikipedia.org/wiki/POSIX).
+
+To use the library, import it into your project:
 
 ```kotlin
 import platform.posix.*
 ```
 
-唯一不可用的目标平台是 [WebAssembly](https://zh.wikipedia.org/wiki/WebAssembly)。
+> The `platform.posix` contents differ across platforms because of variations in POSIX implementations.
+>
+{style="note"}
 
-请注意，`platform.posix` 的内容在<!--
--->不同平台上并不相同，就像不同的 POSIX 实现<!--
--->一样略有不同。
+You can explore the contents of the `posix.def` file for each supported platform here:
 
-### 热门原生库
+* [iOS](https://github.com/JetBrains/kotlin/tree/master/kotlin-native/platformLibs/src/platform/ios/posix.def)
+* [macOS](https://github.com/JetBrains/kotlin/tree/master/kotlin-native/platformLibs/src/platform/osx/posix.def)
+* [tvOS](https://github.com/JetBrains/kotlin/tree/master/kotlin-native/platformLibs/src/platform/tvos/posix.def)
+* [watchOS](https://github.com/JetBrains/kotlin/tree/master/kotlin-native/platformLibs/src/platform/watchos/posix.def)
+* [Linux](https://github.com/JetBrains/kotlin/tree/master/kotlin-native/platformLibs/src/platform/linux/posix.def)
+* [Windows (MinGW)](https://github.com/JetBrains/kotlin/tree/master/kotlin-native/platformLibs/src/platform/mingw/posix.def)
+* [Android](https://github.com/JetBrains/kotlin/tree/master/kotlin-native/platformLibs/src/platform/android/posix.def)
 
-还有很多平台库可用于所在主机以及<!--
--->交叉编译目标。Kotlin/Native 发行版可以在适用的平台上访问
-OpenGL、 zlib 以及其他热门原生库<!--
--->。
+The POSIX platform library is not available for the [WebAssembly](wasm-overview.md) target.
 
-在苹果平台上提供了 `objc` 库，用来与 [Objective-C](https://zh.wikipedia.org/wiki/Objective-C) 进行互操作。
+## Popular native libraries
 
-详细信息请核查发行版的 `dist/klib/platform/$target` 的内容。
+Kotlin/Native provides bindings for various popular native libraries that are commonly used on different platforms,
+such as OpenGL, zlib, and Foundation.
 
-## 默认可用
+On Apple platforms, the `objc` library is included to enable [interoperability with Objective-C](native-objc-interop.md)
+APIs.
 
-来自平台库的包都默认可用。使用时无需<!--
--->指定特殊的链接标志。Kotlin/Native
-编译器会自动检测访问了哪些平台库，
-并自动链接所需的库。
+You can explore the native libraries available for Kotlin/Native targets in your compiler distribution,
+depending on your setup:
 
-另一方面，发行版中的平台库仅仅是<!--
--->对原生库的包装与绑定。这意味着<!--
--->计算机上需要已经安装了<!--
--->原生库自身（`.so`、 `.a`、 `.dylib`、 `.dll` 等）。
+* If you [installed a standalone Kotlin/Native compiler](native-get-started.md#download-and-install-the-compiler):
+
+  1. Go to the unpacked archive with the compiler distribution, for example, `kotlin-native-prebuilt-macos-aarch64-2.1.0`.
+  2. Navigate to the `klib/platform` directory.
+  3. Choose the folder with the corresponding target.
+
+* If you use the Kotlin plugin in your IDE (bundled with IntelliJ IDEA and Android Studio):
+
+  1. In your command line tool, run the following to navigate to the `.konan` folder:
+
+     <tabs>
+     <tab title="macOS and Linux">
+
+     ```none
+     ~/.konan/
+     ```
+
+     </tab>
+     <tab title="Windows">
+
+     ```none
+     %\USERPROFILE%\.konan
+     ```
+
+     </tab>
+     </tabs>
+
+  2. Open the Kotlin/Native compiler distribution, for example, `kotlin-native-prebuilt-macos-aarch64-2.1.0`.
+  3. Navigate to the `klib/platform` directory.
+  4. Choose the folder with the corresponding target.
+
+> If you'd like to explore the definition file for each supported platform library: in the compiler distribution folder,
+> navigate to the `konan/platformDef` directory and choose the necessary target.
+> 
+{style="tip"}
+
+## What's next
+
+[Learn more about interoperability with Swift/Objective-C](native-objc-interop.md)

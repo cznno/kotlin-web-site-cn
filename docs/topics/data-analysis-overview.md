@@ -21,7 +21,7 @@ This feature helps you fetch data from web APIs, to then clean and transform the
 
 Would you like to try our Kotlin tools for data analysis?
 
-<a href="get-started-with-kotlin-notebooks.md"><img src="kotlin-notebooks-button.svg" width="600" alt="Get started with Kotlin Notebook"/></a>
+<a href="get-started-with-kotlin-notebooks.md"><img src="kotlin-notebooks-button.svg" width="600" alt="Get started with Kotlin Notebook" style="block"/></a>
 
 Our Kotlin data analysis tools let you smoothly handle your data from start to finish. Effortlessly 
 retrieve your data with simple drag-and-drop functionality in our Kotlin Notebook. Clean, transform, and visualize it with just a few lines of code. 
@@ -89,7 +89,7 @@ Kotlin DataFrame libraries to complete different data-related tasks.
 
 ## What's next
 
-* [Get started with Kotlin Notebook.](get-started-with-kotlin-notebooks.md)
-* [Retrieve and transform data using the Kotlin DataFrame library.](data-analysis-work-with-data-sources.md)
-* [Visualize data using the Kandy library.](data-analysis-visualization.md)
-* [Learn more about Kotlin and Java libraries for data analysis.](data-analysis-libraries.md)
+* [Get started with Kotlin Notebook](get-started-with-kotlin-notebooks.md)
+* [Retrieve and transform data using the Kotlin DataFrame library](data-analysis-work-with-data-sources.md)
+* [Visualize data using the Kandy library](data-analysis-visualization.md)
+* [Learn more about Kotlin and Java libraries for data analysis](data-analysis-libraries.md)

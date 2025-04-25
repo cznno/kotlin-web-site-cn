@@ -1,10 +1,10 @@
-[//]: # (title: 在 IntelliJ IDEA 中入门 Kotlin/Wasm)
+[//]: # (title: Get started with Kotlin/Wasm and Compose Multiplatform)
 
-> Kotlin/Wasm is [Alpha](components-stability.md). It may be changed at any time.
+> Kotlin/Wasm is in [Alpha](components-stability.md). It may be changed at any time.
 > 
 > [Join the Kotlin/Wasm community.](https://slack-chats.kotlinlang.org/c/webassembly)
 >
-{type="note"}
+{style="note"}
 
 This tutorial demonstrates how to run a [Compose Multiplatform](https://www.jetbrains.com/lp/compose-multiplatform/) 
 app with [Kotlin/Wasm](wasm-overview.md) in IntelliJ IDEA, and generate artifacts to publish as a site on [GitHub pages](https://pages.github.com/).
@@ -18,12 +18,12 @@ Create a project using the Kotlin Multiplatform wizard:
 
    > These are the name and ID of the project directory. You can also leave them as they are.
    >
-   {type="tip"}
+   {style="tip"}
 
 3. Select the **Web** option. Make sure that no other options are selected.
 4. Click the **Download** button and unpack the resulting archive.
 
-![Kotlin Multiplatform wizard](wasm-compose-wizard.png){width=600}
+![Kotlin Multiplatform wizard](wasm-compose-web-wizard.png){width=400}
 
 ## Open the project in IntelliJ IDEA
 
@@ -34,19 +34,21 @@ Create a project using the Kotlin Multiplatform wizard:
 ## Run the application
 
 1. In IntelliJ IDEA, open the **Gradle** tool window by selecting **View** | **Tool Windows** | **Gradle**.
+   
+   You can find the Gradle tasks in the Gradle tool window once the project loads.
 
    > You need at least Java 11 as your Gradle JVM for the tasks to load successfully.
    >
-   {type="note"}
+   {style="note"}
 
-2. In **composeApp** | **Tasks** | **kotlin browser**, select and run the **wasmJsBrowserRun** task.
+2. In **composeApp** | **Tasks** | **kotlin browser**, select and run the **wasmJsBrowserDevelopmentRun** task.
 
    ![Run the Gradle task](wasm-gradle-task-window.png){width=600}
 
    Alternatively, you can run the following command in the terminal from the `WasmDemo` root directory:
 
    ```bash
-   ./gradlew wasmJsBrowserRun -t
+   ./gradlew wasmJsBrowserDevelopmentRun -t
    ```
 
 3. Once the application starts, open the following URL in your browser:
@@ -58,7 +60,7 @@ Create a project using the Kotlin Multiplatform wizard:
    > The port number can vary because the 8080 port may be unavailable. You can find the actual port number printed
    > in the Gradle build console.
    >
-   {type="tip"}
+   {style="tip"}
 
    You see a "Click me!" button. Click it:
 
@@ -92,7 +94,7 @@ directory:
 
    > It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub.
    >
-   {type="note"}
+   {style="note"}
 
 3. In a browser, navigate to your GitHub pages domain.
 
@@ -104,9 +106,9 @@ directory:
 
 Join the Kotlin/Wasm community in Kotlin Slack:
 
-<a href="https://slack-chats.kotlinlang.org/c/webassembly"><img src="join-slack-channel.svg" width="700" alt="Join the Kotlin/Wasm community"/></a>
+<a href="https://slack-chats.kotlinlang.org/c/webassembly"><img src="join-slack-channel.svg" width="500" alt="Join the Kotlin/Wasm community" style="block"/></a>
 
-Try the Kotlin/Wasm examples from the `kotlin-wasm-examples` repository:
+Try more Kotlin/Wasm examples:
 
 * [Compose image viewer](https://github.com/Kotlin/kotlin-wasm-examples/tree/main/compose-imageviewer)
 * [Jetsnack application](https://github.com/Kotlin/kotlin-wasm-examples/tree/main/compose-jetsnack)

@@ -5,11 +5,13 @@
 {type="note"}
 
 本教程的每一章都包含：
+
 * **理论**：通过示例介绍语言的关键概念。
 * **实践**：通过练习来检验对所学内容的理解。
 * **答案**：参考答案。
 
 在本教程中可学到：
+
 * [变量](kotlin-tour-hello-world.md)
 * [基本类型](kotlin-tour-basic-types.md)
 * [集合](kotlin-tour-collections.md)
@@ -23,4 +25,4 @@
 
 准备出发？
 
-<a href="kotlin-tour-hello-world.md"><img src="start-kotlin-tour.svg" width="700" alt="开始 Kotlin 之旅"/></a>
+<a href="kotlin-tour-hello-world.md"><img src="start-kotlin-tour.svg" width="700" alt="开始 Kotlin 之旅" style="block"/></a>

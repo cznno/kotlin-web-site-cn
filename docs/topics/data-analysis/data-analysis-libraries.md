@@ -5,7 +5,7 @@ different tasks in the data pipeline.
 
 In addition to its own libraries, Kotlin is 100% interoperable with Java. This interoperability helps to leverage 
 the entire ecosystem of tried-and-true Java libraries with excellent performance. With this perk, you can easily use either Kotlin 
-or Java libraries when working on Kotlin data projects. 
+or Java libraries when working on [Kotlin data projects](data-analysis-overview.md). 
 
 ## Kotlin libraries
 
@@ -111,7 +111,7 @@ or Java libraries when working on Kotlin data projects.
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/JetBrains/lets-plot"><strong>Lets-Plot</strong></a>
+      <a href="https://lets-plot.org/kotlin/get-started.html"><strong>Lets-Plot</strong></a>
     </td>
     <td>
       <list>
@@ -354,7 +354,7 @@ Here are some examples of such libraries:
   </tr>
   <tr>
     <td>
-      <a href="https://www.optaplanner.org/"><strong>OptaPlanner</strong></a>
+      <a href="https://github.com/TimefoldAI/"><strong>Timefold</strong></a>
     </td>
     <td>
       <list>

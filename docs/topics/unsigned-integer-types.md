@@ -16,14 +16,14 @@
 > 该属性类型为与其宽度相同的对应有符号类型。 If you want to convert between unsigned and signed integer types,
 > make sure you update your code so that any function calls and operations support the new type.
 >
-{type="note"}
+{style="note"}
 
 ## 无符号数组与区间
 
 > 无符号数组及其对应操作处于 [Beta](components-stability.md) 状态。 它们可能随时进行不兼容变更。
 > 需要选择加入（详见下文）。
 >
-{type="warning"}
+{style="warning"}
 
 与原生类型相同，每个无符号类型都有表示相应类型数组的类型：
 
@@ -45,26 +45,26 @@ arrays are not a stable feature, so an API that uses them can be broken by chang
 
 ## 无符号整数字面值
 
-为使无符号整型更易于使用，Kotlin 提供了用后缀标记整型字面值来<!--
--->表示指定无符号类型（类似于 `Float` 或 `Long`）：
+为使无符号整型更易用，可以在整型字面值后附加一个后缀<!--
+-->来表示指定无符号类型（类似于 `Float` 用 `F` 或 `Long` 用 `L`）：
 
-* `u` and `U` tag is for unsigned literals. The exact type is determined based on the expected type.
-  If no expected type is provided, compiler will use `UInt` or `ULong` depending on the size of literal:
+* `u` and `U` letters signify unsigned literals without specifying the exact type.
+    If no expected type is provided, the compiler uses `UInt` or `ULong` depending on the size of the literal:
 
-  ```kotlin
+    ```kotlin
   val b: UByte = 1u  // UByte，已提供预期类型
   val s: UShort = 1u // UShort，已提供预期类型
   val l: ULong = 1u  // ULong，已提供预期类型
   
   val a1 = 42u // UInt：未提供预期类型，常量适于 UInt
   val a2 = 0xFFFF_FFFF_FFFFu // ULong：未提供预期类型，常量不适于 UInt
-  ```
+    ```
 
-* `uL` 与 `UL` 显式将字面值标记为无符号长整型：
+* `uL` 与 `UL` 显式指定字面值应为无符号长整型：
 
-  ```kotlin
+    ```kotlin
   val a = 1UL // ULong，即使未提供预期类型并且常量适于 UInt
-  ```
+    ```
 
 ## 使用场景
 

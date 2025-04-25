@@ -144,7 +144,7 @@ fun main() {
 
 列表处理如下图：
 
-![List processing](list-processing.png)
+![List processing](list-processing.svg)
 
 ### Sequence
 
@@ -177,6 +177,7 @@ fun main() {
 
 序列处理如下图：
 
-![Sequences processing](sequence-processing.png) {width="700"}
+![Sequences processing](sequence-processing.svg) {width="700"}
 
-在此示例中，序列处理需要 18 个步骤，而不是 23 个步骤来执行列表操作。
+In this example, the lazy processing of elements and stopping after finding four items reduces the number of operations
+compared to using a list approach.

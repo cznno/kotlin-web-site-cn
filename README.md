@@ -22,7 +22,7 @@ This repository is the source for [https://kotlinlang.org](https://kotlinlang.or
 | [Community](https://kotlinlang.org/community/) | [pages/community](pages/community) | 
 | [Education](https://kotlinlang.org/education/) | [templates/pages/education](templates/pages/education)| 
 
-Note that source files for the [server-side landing page](https://kotlinlang.org/lp/server-side/) and [Kotlin Multiplatform Mobile landing page](https://kotlinlang.org/lp/multiplatform/) are not publicly available.
+Note that source files for the [server-side landing page](https://kotlinlang.org/lp/server-side/) and [Kotlin Multiplatform landing page](https://kotlinlang.org/lp/multiplatform/) are not publicly available.
 
 #### Sources in different repositories
 
@@ -158,7 +158,7 @@ yarn start
 pip  install --no-build-isolation -r requirements.txt
 
 # run python server
-python3 kotlin_website.py
+python3 kotlin-website.py
 ```
 Now you can open the website at [http://localhost:9000](http://localhost:9000).
 

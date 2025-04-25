@@ -10,10 +10,10 @@ data class User(val name: String, val age: Int)
 
 编译器自动从主构造函数中声明的所有属性导出以下成员：
 
-* `.equals()`/`.hashCode()` 对。
-* `.toString()` 格式是 `"User(name=John, age=42)"`。
-* [`.componentN()` 函数](destructuring-declarations.md) 按声明顺序对应于所有属性。
-* `.copy()` 函数（见下文）
+* `equals()`/`hashCode()` 对。
+* `toString()` 格式是 `"User(name=John, age=42)"`。
+* [`componentN()` 函数](destructuring-declarations.md) 按声明顺序对应于所有属性。
+* `copy()` 函数（见下文）
 
 为了确保生成的代码的一致性以及有意义的行为，数据类必须满足以下要求：
 
@@ -23,13 +23,13 @@ data class User(val name: String, val age: Int)
 
 此外，数据类成员的生成遵循关于成员继承的这些规则：
 
-* 如果在数据类体中有显式实现 `.equals()`、 `.hashCode()` 或者 `.toString()`，或者这些函数在父类中有
+* 如果在数据类体中有显式实现 `equals()`、 `hashCode()` 或者 `toString()`，或者这些函数在父类中有
   `final` 实现，那么不会生成这些函数，而会使用现有<!--
   -->函数。
-* 如果超类型具有 `open` 的 `.componentN()` 函数并且返回兼容的类型，
+* 如果超类型具有 `open` 的 `componentN()` 函数并且返回兼容的类型，
   那么会为数据类生成相应的函数，并覆盖超类的实现。如果超类型的这些函数<!--
   -->由于签名不兼容或者是 final 而导致无法覆盖，那么会报错。
-* 不允许为 `.componentN()` 以及 `.copy()` 函数提供显式实现。
+* 不允许为 `componentN()` 以及 `copy()` 函数提供显式实现。
 
 数据类可以扩展其他类（示例请参见[密封类](sealed-classes.md)）。
 
@@ -40,7 +40,7 @@ data class User(val name: String, val age: Int)
 > data class User(val name: String = "", val age: Int = 0)
 > ```
 >
-{type="note"}
+{style="note"}
 
 ## 在类体中声明的属性
 
@@ -53,10 +53,10 @@ data class Person(val name: String) {
 }
 ```
 
-In the example below, only the `name` property is used by default inside the `.toString()`, `.equals()`, `.hashCode()`, 
-and `.copy()` implementations, and there is only one component function, `.component1()`. 
+In the example below, only the `name` property is used by default inside the `toString()`, `equals()`, `hashCode()`, 
+and `copy()` implementations, and there is only one component function, `component1()`. 
 The `age` property is declared inside the class body and is excluded.
-Therefore, two `Person` objects with the same `name` but different `age` values are considered equal since `.equals()` 
+Therefore, two `Person` objects with the same `name` but different `age` values are considered equal since `equals()` 
 only evaluates properties from the primary constructor:
 
 ```kotlin
@@ -85,7 +85,7 @@ fun main() {
 
 ## 复制
 
-Use the `.copy()` function to copy an object, allowing you to alter _some_ of its properties while keeping the rest unchanged.
+Use the `copy()` function to copy an object, allowing you to alter _some_ of its properties while keeping the rest unchanged.
 The implementation of this function for the `User` class above would be as follows:
 
 ```kotlin

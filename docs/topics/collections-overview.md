@@ -32,7 +32,7 @@ Kotlin 让你可以独立于所存储对象的确切类型来操作集合。换�
 
 > Arrays are not a type of collection. For more information, see [Arrays](arrays.md).
 >
-{type="note"}
+{style="note"}
 
 ## 集合类型
 
@@ -80,7 +80,7 @@ fun main() {
 To learn about `List`, `Set`, and `Map`, you can either read the corresponding sections or watch a video 
 by Sebastian Aigner, Kotlin Developer Advocate:
 
-<video href="F8jj7e-_jFA" title="Kotlin Collections Overview"/>
+<video src="https://www.youtube.com/v/F8jj7e-_jFA" title="Kotlin Collections Overview"/>
 
 ### Collection
 

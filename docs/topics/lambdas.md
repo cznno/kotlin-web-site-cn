@@ -95,7 +95,7 @@ Kotlin 使用类似 `(Int) -> String` 的函数类型来处理函数的声明：
 
 > 箭头表示法是右结合的，`(Int) -> (Int) -> Unit` 与前述示例等价，但不等于 `((Int) -> (Int)) -> Unit`。
 >
-{type="note"}
+{style="note"}
 
 还可以通过使用[类型别名](type-aliases.md)给函数类型起一个别称：
 
@@ -160,7 +160,7 @@ fun main() {
 > -->扩展函数引用来初始化的。
 > 如需改变这点，请显式指定变量类型。
 >
-{type="note"}
+{style="note"}
 
 ### 函数类型实例调用
 
@@ -246,7 +246,7 @@ val product = items.fold(1) { acc, e -> acc * e }
 run { println("...") }
 ```
 
-### `it`：单个参数的隐式名称
+### it：单个参数的隐式名称
 
 一个 lambda 表达式只有一个参数很常见。
 
@@ -328,9 +328,9 @@ ints.filter(fun(item) = item > 0)
 > 当匿名函数作为参数传递时，需将其放在括号内。 允许将函数<!--
 > -->留在圆括号外的简写语法仅适用于 lambda 表达式。
 >
-{type="note"}
+{style="note"}
 
-Lambda表达式与匿名函数之间的另一个区别是[非局部返回](inline-functions.md#非局部返回)的行为。
+Lambda表达式与匿名函数之间的另一个区别是[非局部返回](inline-functions.md#returns)的行为。
 一个不带标签的 `return` 语句总是在用 `fun` 关键字声明的函数中返回。这意味着
 lambda 表达式中的 `return` 将从包含它的函数返回，而匿名函数中的 `return`
 将从匿名函数自身返回。

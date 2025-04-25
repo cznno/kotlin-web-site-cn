@@ -10,7 +10,7 @@ Gradle 是一个用于管理并自动化构建流程的构建工具。它会帮�
 
 > 你可以在[此处](gradle-configure-project.md#apply-the-plugin)获取到关于 Kotlin、Gradle 和 Android Gradle 插件版本之间的兼容性信息。
 > 
-{type="tip"}
+{style="tip"}
 
 在这个章节中，你同样可以学到：
 * [编译器选项的配置和传递](gradle-compiler-options.md)。

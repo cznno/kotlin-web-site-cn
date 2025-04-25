@@ -29,7 +29,7 @@ val age = person.component2()
 > `componentN()` 函数需要用 `operator` 关键字标记，以允许在解构声明中使用它们 
 > 。
 >
-{type="note"}
+{style="note"}
 
 解构声明也可以用在 `for`-循环中：
 
@@ -61,7 +61,7 @@ val (result, status) = function(……)
 > 我们也可以使用标准类 `Pair` 并且让 `function()` 返回 `Pair<Int, Status>`，
 > 但是让数据合理命名通常更好。
 >
-{type="note"}
+{style="note"}
 
 ## 例：解构声明与映射
 

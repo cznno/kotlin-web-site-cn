@@ -14,18 +14,11 @@ plugins {
 }
 
 kotlin {
-    jvm {
-        withJava()
-    }
-    linuxX64() {
+    jvm()
+    linuxX64 {
         binaries {
             executable()
         }
-    }
-    sourceSets {
-        val commonMain by getting
-        val linuxX64Main by getting
-        val linuxX64Test by getting
     }
 }
 
@@ -34,7 +27,7 @@ dependencies {
     add("kspJvm", project(":test-processor"))
     add("kspJvmTest", project(":test-processor")) // Not doing anything because there's no test source set for JVM
     // There is no processing for the Linux x64 main source set, because kspLinuxX64 isn't specified
-    add("kspLinuxX64Test", project(":test-processor"))
+    // add("kspLinuxX64Test", project(":test-processor"))
 }
 ```
 
@@ -47,7 +40,7 @@ corresponding `ksp<Target>` or `ksp<SourceSet>` configuration is specified.
 For example, in the above `build.gradle.kts`, there are 4 compilation tasks: common/metadata, JVM main, Linux x64 main, Linux x64 test,
 and 3 symbol processing tasks: common/metadata, JVM main, Linux x64 test.
 
-## Avoid the `ksp(...)` configuration on KSP 1.0.1+
+## Avoid the ksp(...) configuration on KSP 1.0.1+
 
 Before KSP 1.0.1, there is only one, unified `ksp(...)` configuration available. Therefore, processors either applies to all
 compilation targets, or nothing at all. Note that the `ksp(...)` configuration not only applies to the main source set, but also

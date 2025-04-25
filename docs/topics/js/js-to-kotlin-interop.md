@@ -100,9 +100,10 @@ external fun newC()
 
 ### @JsExport 注解
 
-> `@JsExport` 注解当前标记为实验性的。其设计可能会在将来的版本中更改。
+> This feature is [Experimental](components-stability.md#stability-levels-explained).
+> 其设计可能会在将来的版本中更改。
 >
-{type="note"}
+{style="warning"} 
 
 通过将 `@JsExport` 注解应用于顶级声明（如类或函数），可以从 JavaScript 使用 Kotlin
 声明。注解会导出所有嵌套声明，并使用 Kotlin 中给出的名称。
@@ -111,38 +112,78 @@ external fun newC()
 要解决导出中的歧义（例如，具有相同名称的函数的重载），可以将 `@JsExport`
 批注与 `@JsName` 一起使用，以指定生成与导出函数的名称。
 
-`@JsExport` 注解在当前的默认编译器后端与新的 [IR 编译器](js-ir-compiler.md)后端中可用。
-如果以 IR 编译器后端为目标，则 you **must** use the `@JsExport` annotation to make your functions visible
-from Kotlin in the first place.
+在当前的 [IR 编译器后端](js-ir-compiler.md)中， the `@JsExport` annotation is the only way to make your functions
+visible from Kotlin.
 
 对于多平台项目，`@JsExport` 也可以在公共代码中使用。它仅在针对
 JavaScript 目标进行编译时才有效，并且还允许导出非平台特有的 Kotlin 声明。
+
+### @JsStatic
+
+> This feature is [Experimental](components-stability.md#stability-levels-explained). It may be dropped or changed at any time.
+> Use it only for evaluation purposes. We would appreciate your feedback on it in [YouTrack](https://youtrack.jetbrains.com/issue/KT-18891/JS-provide-a-way-to-declare-static-members-JsStatic).
+>
+{style="warning"}
+
+The `@JsStatic` annotation instructs the compiler to generate additional static methods for the target declaration.
+This helps you use static members from your Kotlin code directly in JavaScript.
+
+You can apply the `@JsStatic` annotation to functions defined in named objects, as well as in companion objects declared
+inside classes and interfaces. If you use this annotation, the compiler will generate both a static method of the object
+and an instance method in the object itself. For example:
+
+```kotlin
+// Kotlin
+class C {
+    companion object {
+        @JsStatic
+        fun callStatic() {}
+        fun callNonStatic() {}
+    }
+}
+```
+
+Now, the `callStatic()` function is static in JavaScript while the `callNonStatic()` function is not:
+
+```javascript
+// JavaScript
+C.callStatic();              // Works, accessing the static function
+C.callNonStatic();           // Error, not a static function in the generated JavaScript
+C.Companion.callStatic();    // Instance method remains
+C.Companion.callNonStatic(); // The only way it works
+```
+
+It's also possible to apply the `@JsStatic` annotation to a property of an object or a companion object, making its getter
+and setter methods static members in that object or the class containing the companion object.
 
 ## JavaScript 中的 Kotlin 类型
 
 See how Kotlin types are mapped to JavaScript ones:
 
-| Kotlin                                                                      | JavaScript                  | Comments                                                                                   |
-|-----------------------------------------------------------------------------|-----------------------------|--------------------------------------------------------------------------------------------|
-| `Byte`, `Short`, `Int`, `Float`, `Double`                                   | `Number`                    |                                                                                            |
-| `Char`                                                                      | `Number`                    | The number represents the character's code.                                                |
-| `Long`                                                                      | Not supported               | There is no 64-bit integer number type in JavaScript, so it is emulated by a Kotlin class. |
-| `Boolean`                                                                   | `Boolean`                   |                                                                                            |
-| `String`                                                                    | `String`                    |                                                                                            |
-| `Array`                                                                     | `Array`                     |                                                                                            |
-| `ByteArray`                                                                 | `Int8Array`                 |                                                                                            |
-| `ShortArray`                                                                | `Int16Array`                |                                                                                            |
-| `IntArray`                                                                  | `Int32Array`                |                                                                                            |
-| `CharArray`                                                                 | `UInt16Array`               | Carries the property `$type$ == "CharArray"`.                                               |
-| `FloatArray`                                                                | `Float32Array`              |                                                                                            |
-| `DoubleArray`                                                               | `Float64Array`              |                                                                                            |
-| `LongArray`                                                                 | `Array<kotlin.Long>`        | Carries the property `$type$ == "LongArray"`. Also see Kotlin's Long type comment.         |
-| `BooleanArray`                                                              | `Int8Array`                 | Carries the property `$type$ == "BooleanArray"`.                                            |
-| `Unit`                                                                      | Undefined                   |                                                                                            |
-| `Any`                                                                       | `Object`                    |                                                                                            |
-| `Throwable`                                                                 | `Error`                     |                                                                                            |
-| Nullable `Type?`                                                            | `Type \| null \| undefined` |                                                                                            |
-| All other Kotlin types (except for those marked with `JsExport` annotation) | Not supported               | Includes Kotlin's collections (`List`, `Set`, `Map`, etc.), and unsigned variants.         |
+| Kotlin                                                                      | JavaScript                 | Comments                                                                                  |
+|-----------------------------------------------------------------------------|----------------------------|-------------------------------------------------------------------------------------------|
+| `Byte`, `Short`, `Int`, `Float`, `Double`                                   | `Number`                   |                                                                                           |
+| `Char`                                                                      | `Number`                   | The number represents the character's code.                                               |
+| `Long`                                                                      | Not supported              | There is no 64-bit integer number type in JavaScript, so it is emulated by a Kotlin class. |
+| `Boolean`                                                                   | `Boolean`                  |                                                                                           |
+| `String`                                                                    | `String`                   |                                                                                           |
+| `Array`                                                                     | `Array`                    |                                                                                           |
+| `ByteArray`                                                                 | `Int8Array`                |                                                                                           |
+| `ShortArray`                                                                | `Int16Array`               |                                                                                           |
+| `IntArray`                                                                  | `Int32Array`               |                                                                                           |
+| `CharArray`                                                                 | `UInt16Array`              | Carries the property `$type$ == "CharArray"`.                                             |
+| `FloatArray`                                                                | `Float32Array`             |                                                                                           |
+| `DoubleArray`                                                               | `Float64Array`             |                                                                                           |
+| `LongArray`                                                                 | `Array<kotlin.Long>`       | Carries the property `$type$ == "LongArray"`. Also see Kotlin's Long type comment.        |
+| `BooleanArray`                                                              | `Int8Array`                | Carries the property `$type$ == "BooleanArray"`.                                          |
+| `List`, `MutableList`                                                       | `KtList`, `KtMutableList`  | Exposes an `Array` via `KtList.asJsReadonlyArrayView` or `KtMutableList.asJsArrayView`.   |
+| `Map`, `MutableMap`                                                         | `KtMap`, `KtMutableMap`    | Exposes an ES2015 `Map` via `KtMap.asJsReadonlyMapView` or `KtMutableMap.asJsMapView`.    |
+| `Set`, `MutableSet`                                                         | `KtSet`, `KtMutableSet`    | Exposes an ES2015 `Set` via `KtSet.asJsReadonlySetView` or `KtMutableSet.asJsSetView`.    |
+| `Unit`                                                                      | Undefined                  | Exportable when used as return type, but not when used as parameter type.                 |
+| `Any`                                                                       | `Object`                   |                                                                                           |
+| `Throwable`                                                                 | `Error`                    |                                                                                           |
+| Nullable `Type?`                                                            | `Type | null | undefined`  |                                                                                            |
+| All other Kotlin types (except for those marked with `JsExport` annotation) | Not supported              | Includes Kotlin's [unsigned integer types](unsigned-integer-types.md).                    |
 
 Additionally, it is important to know that:
 

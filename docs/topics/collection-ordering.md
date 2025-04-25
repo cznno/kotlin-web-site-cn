@@ -73,6 +73,44 @@ fun main() {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 
+You can also define an order based on multiple criteria.
+For example, to sort strings by their length and alphabetically when the lengths are equal, you can write:
+
+```kotlin
+fun main() {
+//sampleStart
+    val sortedStrings = listOf("aaa", "bb", "c", "b", "a", "aa", "ccc")
+        .sortedWith { a, b -> 
+           when (val compareLengths = a.length.compareTo(b.length)) {
+             0 -> a.compareTo(b)
+             else -> compareLengths
+           }
+         }
+
+    println(sortedStrings)
+    // [a, b, c, aa, bb, aaa, ccc]
+//sampleEnd
+}
+```
+{kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
+
+Since sorting by multiple criteria is a common scenario, the Kotlin standard library provides the [`thenBy()`](https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.comparisons/then-by.html) function that you can use to add a secondary sorting rule.
+
+For example, you can combine `compareBy()` with `thenBy()` to sort strings by their length first and alphabetically second, just like in the previous example:
+
+```kotlin
+fun main() {
+//sampleStart
+    val sortedStrings = listOf("aaa", "bb", "c", "b", "a", "aa", "ccc")
+        .sortedWith(compareBy<String> { it.length }.thenBy { it })
+
+    println(sortedStrings)
+    // [a, b, c, aa, bb, aaa, ccc]
+//sampleEnd
+}
+```
+{kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
+
 Kotlin 集合包提供了用于按照自然顺序、自定义顺序甚至随机顺序对集合排序的函数。
 在此页面上，我们将介绍适用于[只读](collections-overview.md#集合类型)集合的排序函数。
 这些函数将它们的结果作为一个新集合返回，集合里包含了按照请求顺序排序的来自原始集合的元素。

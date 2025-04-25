@@ -41,7 +41,7 @@ class OrdersList: IndexedContainer {
 > 这些操作以及所有其他操作都针对[基本类型](basic-types.md)做了优化，不会为它们引入<!--
 > -->函数调用的开销。
 >
-{type="note"}
+{style="note"}
 
 以下是如何重载一元减运算符的示例：
 
@@ -166,7 +166,7 @@ data class Counter(val dayIndex: Int) {
 
 > 赋值在 Kotlin 中*不是*表达式。
 >
-{type="note"}
+{style="note"}
 
 ### 相等与不等操作符
 
@@ -180,7 +180,7 @@ data class Counter(val dayIndex: Int) {
 
 > `===` 和 `!==`（同一性检测）不可重载，因此不存在对他们的约定。
 >
-{type="note"}
+{style="note"}
 
 这个 `==` 操作符有些特殊：它被翻译成一个复杂的表达式，用于筛选 `null` 值。
 `null == null`  总是 true，对于非空的 `x`，`x == null` 总是 false 而不会调用 `x.equals()`。

@@ -6,7 +6,7 @@ Kotlin 中最常见的数组类型是对象类型数组，由 [`Array`](https://
 > 如果在对象类型数组中使用原生类型，那么会对性能产生影响，因为原生值都[装箱](https://docs.oracle.com/javase/tutorial/java/data/autoboxing.html)<!--
 > -->成了对象。 为了避免装箱开销，请改用[原生类型数组](#原生类型数组)。
 >
-{type="note"}
+{style="note"}
 
 ## 何时使用数组
 
@@ -93,7 +93,7 @@ create an empty array :
 > var exampleArray: Array<String> = emptyArray()
 >```
 >
-{type="note"}
+{style="note"}
 
 The `Array` constructor takes the array size and a function that returns values for array elements given its index:
 
@@ -116,7 +116,7 @@ fun main() {
 
 > Like in most programming languages, indices start from 0 in Kotlin.
 >
-{type="note"}
+{style="note"}
 
 ### 嵌套数组
 
@@ -141,7 +141,7 @@ fun main() {
 
 > Nested arrays don't have to be the same type or the same size.
 >
-{type="note"}
+{style="note"}
 
 ## 访问与修改元素
 
@@ -231,7 +231,7 @@ fun main() {
 > 
 > To learn more about why arrays in Kotlin behave this way, see our [blog post](https://blog.jetbrains.com/kotlin/2015/09/feedback-request-limitations-on-data-classes/#Appendix.Comparingarrays).
 > 
-{type="warning"}
+{style="warning"}
 
 ### 转换数组
 
@@ -258,7 +258,7 @@ fun main() {
 
 > The `.sum()` function can only be used with arrays of [numeric data types](numbers.md), such as `Int`.
 >
-{type="note"}
+{style="note"}
 
 #### Shuffle
 
@@ -375,7 +375,7 @@ fun main() {
 > [`.toByteArray()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/to-byte-array.html), [`.toCharArray()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/to-char-array.html),
 > and so on.
 > 
-{type="note"}
+{style="note"}
 
 ## 下一步做什么？
 

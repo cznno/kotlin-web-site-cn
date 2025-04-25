@@ -4,6 +4,7 @@
 every day from December 1 to December 25. With the permission of [Eric Wastl](http://was.tl/), creator of Advent of Code,
 we'll show how to solve these puzzles using the idiomatic Kotlin style:
 
+* [Advent of Code 2024](https://www.youtube.com/playlist?list=PLlFc5cFwUnmwHaD3-qeoLHnho_PY2g9JX)
 * [Advent of Code 2023](https://www.youtube.com/playlist?list=PLlFc5cFwUnmzk0wvYW4aTl57F2VNkFisU)
 * [](#advent-of-code-2022)
 * [](#advent-of-code-2021)
@@ -16,7 +17,7 @@ We'll take you through the basic tips on how to get up and running with solving 
 * Use [this GitHub template](https://github.com/kotlin-hands-on/advent-of-code-kotlin-template) to create projects
 * Check out the welcome video by Kotlin Developer Advocate, Sebastian Aigner:
 
-<video width="560" height="315" href="6-XSehwRgSY" title="Get Ready for Advent of Code 2021"/>
+<video width="560" height="315" src="https://www.youtube.com/v/6-XSehwRgSY" title="Get Ready for Advent of Code 2021"/>
 
 ## Advent of Code 2022
 
@@ -147,7 +148,7 @@ Use queues, `ArrayDeque`, function references, and the `tailrec` modifier to sol
 
 > Read our [blog post about Advent of Code 2021](https://blog.jetbrains.com/kotlin/2021/11/advent-of-code-2021-in-kotlin/)
 > 
-{type="tip"}
+{style="tip"}
 
 ### Day 1: Sonar sweep
 
@@ -193,7 +194,7 @@ Learn how to parse the input and introduce some domain classes for more convenie
 
 > You can find all the solutions for the Advent of Code 2020 puzzles in our [GitHub repository](https://github.com/kotlin-hands-on/advent-of-code-2020/).
 >
-{type="tip"}
+{style="tip"}
 
 ### Day 1: Report repair
 
@@ -230,7 +231,7 @@ or watch the video:
 
 ### Day 4: Passport processing
 
-Apply the [`when`](control-flow.md#when-表达式) expression and explore different ways of how to validate the input:
+Apply the [`when`](control-flow.md#when-expressions-and-statements) expression and explore different ways of how to validate the input:
 utility functions, working with ranges, checking set membership, and matching a particular regular expression.
 
 * Read the puzzle description on [Advent of Code](https://adventofcode.com/2020/day/4)

@@ -21,7 +21,7 @@ times by up to 25% when compared to kapt.
 KSP is itself implemented as a compiler plugin. There are prebuilt packages on Google's Maven repository that you can
 download and use without having to build the project yourself.
 
-## Comparison to `kotlinc` compiler plugins
+## Comparison to kotlinc compiler plugins
 
 `kotlinc` compiler plugins have access to almost everything from the compiler and therefore have maximum power and flexibility.
 On the other hand, because these plugins can potentially depend on anything in the compiler, they are sensitive to
@@ -74,7 +74,3 @@ The following are not goals of KSP:
 * Examining expression-level information of source code.
 * Modifying source code.
 * 100% compatibility with the Java Annotation Processing API.
-
-We are also exploring several additional features. These features are currently unavailable:
-
-* IDE integration: Currently IDEs know nothing about the generated code.

@@ -1,83 +1,45 @@
 package builds.apiReferences.kotlinx.metadataJvm
 
-import BuildParams.KOTLINX_METADATA_JVM_RELEASE_TAG
+import BuildParams.KOTLINX_METADATA_ID
+import BuildParams.KOTLINX_METADATA_RELEASE_TAG
+import BuildParams.KOTLIN_RELEASE_LABEL
+import builds.apiReferences.BuildApiPages
 import builds.apiReferences.dependsOnDokkaTemplate
-import builds.apiReferences.templates.*
-import jetbrains.buildServer.configs.kotlin.BuildType
-import jetbrains.buildServer.configs.kotlin.buildSteps.script
+import builds.apiReferences.scriptBuildHtml
+import builds.apiReferences.vcsRoots.Kotlin
+import jetbrains.buildServer.configs.kotlin.buildSteps.ScriptBuildStep
+import jetbrains.buildServer.configs.kotlin.copy
 
 private const val LIB_DIR = "libraries/kotlinx-metadata/jvm"
 
-object KotlinxMetadataJvmBuildApiReference : BuildType({
-    name = "kotlinx-metadata-jvm API reference"
-
-    templates(BuildApiReference)
-
-    artifactRules = "$LIB_DIR/build/dokka/** => pages.zip"
-
-    params {
-        param("release.tag", KOTLINX_METADATA_JVM_RELEASE_TAG)
-    }
-
-    triggers {
-        vcsDefaultTrigger {
-            enabled = false
+object KotlinxMetadataJvmBuildApiReference : BuildApiPages(
+    apiId = KOTLINX_METADATA_ID,
+    releaseTag = KOTLIN_RELEASE_LABEL,
+    pagesRoot = "$LIB_DIR/build/dokka",
+    vcsDefaultTrigger = { enabled = false },
+    stepDropSnapshot = { null },
+    stepBuildHtml = {
+        scriptBuildHtml().let {
+            val defaultStep = it
+            ScriptBuildStep {
+                id = defaultStep.id
+                name = defaultStep.name
+                //language=bash
+                scriptContent = """
+                    #!/bin/bash
+                     set -e -u
+                    ./gradlew :kotlin-metadata-jvm:dokkaHtml -PdeployVersion=${KOTLIN_RELEASE_LABEL} --no-daemon --no-configuration-cache
+                """.trimIndent()
+            }
         }
-    }
-
-    vcs {
-        root(builds.apiReferences.vcsRoots.KotlinMetadataJvm)
-    }
-
-    steps {
-        scriptDropSnapshot {
-            enabled = false
+    },
+    init = {
+        vcs {
+            root(Kotlin.copy {
+                branch = KOTLINX_METADATA_RELEASE_TAG
+            })
         }
-        buildDokkaHTML {
-            enabled = false
+        dependencies {
+            dependsOnDokkaTemplate(KotlinxMetadataJvmPrepareDokkaTemplates, "$LIB_DIR/dokka-templates")
         }
-        scriptDokkaVersionSync {
-            scriptContent = """
-                #!/bin/bash
-                set -e
-                set +x
-                set -o pipefail
-                set -u
-
-                # update Dokka version
-                sed -i -E "s/dokka ?= ?\"[0-9\.]+\"/dokka = \"1.9.0-dev-218\"/gi" ./gradle/libs.versions.toml
-                
-                # Define the replacement string
-                replacement="maven(url = \"$DOKKA_SPACE_REPO\")\nmavenCentral"
-                
-                # List of kts files to apply the command on
-                files=(
-                  "./build.gradle.kts"
-                  "./repo/gradle-settings-conventions/settings.gradle.kts"
-                  "./repo/gradle-build-conventions/buildsrc-compat/build.gradle.kts"
-                )
-                
-                # Loop through the files and apply the sed command
-                for file in "${'$'}{files[@]}"; do
-                    sed -i -E "s|mavenCentral|${'$'}replacement|" "${'$'}file"
-                done
-                
-                # modify Groovy file
-                sed -i -E "s|mavenCentral|maven \{ url \"$DOKKA_SPACE_REPO\" \}\nmavenCentral|" ./settings.gradle
-                
-                # add Dokka dev artifacts to the list of trusted ones
-                sed -i -E "s|<trusted-artifacts>|<trusted-artifacts>\n<trust group=\"org.jetbrains.dokka\" />\n|" ./gradle/verification-metadata.xml
-            """.trimIndent()
-        }
-        script {
-            name = "build api reference"
-            scriptContent = """
-                ./gradlew :kotlinx-metadata-jvm:dokkaHtml -PkotlinxMetadataDeployVersion=${KOTLINX_METADATA_JVM_RELEASE_TAG} --no-daemon
-            """.trimIndent()
-        }
-    }
-
-    dependencies {
-        dependsOnDokkaTemplate(KotlinxMetadataJvmPrepareDokkaTemplates, "$LIB_DIR/dokka-templates")
-    }
-})
+    })

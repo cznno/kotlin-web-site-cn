@@ -1,3 +1,110 @@
+- lang: fr
+  startDate: '2025-03-08'
+  endDate: '2025-03-08'
+  location: Douala, Cameroon
+  online: true
+  speaker: Ulrich Pouani, Jaures Beinjamin
+  title: 'Kotlin Cameroon'
+  subject: Compose & KMP :"Construire des Apps Modernes et Performantes !". 
+  url: https://www.linkedin.com/posts/kotlin-cameroon_kotlin-android-jetpackcompose-activity-7303471534222761986-04wp?utm_source=share&utm_medium=member_desktop&rcm=ACoAADWUdFMBLMAq-imsylXYsbZIFGY4KKJ2cc4
+- lang: fr
+  startDate: '2025-03-13'
+  endDate: '2025-03-13'
+  location: Bordeaux, France
+  speaker: Frédéric Dubuisson, Aurélien Richeton, Ivan Canet
+  title: 'Bordeaux Kotlin User Group'
+  subject: 'Ktor : notre pari gagnant, KtMongo : le futur de MongoDB en Kotlin'
+  url: https://www.eventbrite.fr/e/billets-ktor-notre-pari-gagnant-ktmongo-le-futur-de-mongodb-en-kotlin-1253771216459
+- lang: en
+  startDate: '2025-03-08'
+  endDate: '2025-03-08'
+  location: New Delhi, India
+  speaker: 'multiple'
+  title: 'Women in AI'
+  subject: 'Innovating with Android & AI'
+  url: https://www.commudle.com/communities/kug-new-delhi/events/women-in-ai-4f32b275-d7a5-4463-a1ce-9c3b82a96fc7
+- lang: en
+  startDate: '2025-02-22'
+  endDate: '2025-02-22'
+  location: Gurugram , India
+  speaker: 'To be announced'
+  title: 'UDAAN 2025'
+  subject: 'Empowering Innovation Through Technology'
+  url: https://www.commudle.com/communities/gurugram-kotlin-user-group/events/udaan-2025
+- lang: ko
+  startDate: '2025-02-15'
+  endDate: '2025-02-15'
+  location: Seoul, Korea
+  speaker: 'To be announced'
+  title: 'Kotlin Backend Meetup'
+  subject: 'Whole new event for Kotlin Backend Developers in Seoul, Korea'
+  url: https://event-us.kr/kugseoul/event/98337
+- lang: pt
+  startDate: '2024-10-03'
+  endDate: '2024-10-03'
+  location: Lisbon, Portugal
+  online: false
+  speaker: 'Paulo Pereira'
+  title: 'Ko-Hacks'
+  subject: 'Mutabilidade: Necessidade ou Hábito?'
+  url: https://www.meetup.com/pt-BR/kotlin-lisboa/events/301917980/
+- lang: fr
+  startDate: '2024-10-22'
+  endDate: '2024-10-22'
+  location: Bordeaux, France
+  speaker: Salomon Brys
+  title: 'Bordeaux Kotlin User Group'
+  subject: 'Compose Multiplatform: State of the art, use-cases and limits'
+  url: https://www.eventbrite.fr/e/billets-compose-multiplatform-etat-de-lart-cas-dusages-et-limites-1018664130837
+- lang: en
+  startDate: '2024-11-20'
+  endDate: '2024-11-30'
+  location: Sambhajinagar (Aurangabad), India
+  speaker: 'TBD'
+  title: 'Ko-Verse'
+  subject: 'A Kotlin Event Series by KUG Sambhajinagar (Aurangabad)'
+  url: https://lu.ma/9ogczphu
+- lang: en
+  startDate: '2024-09-21'
+  endDate: '2024-09-21'
+  location: Chennai, India
+  speaker: 'TBD'
+  title: 'Ko-Hacks'
+  subject: 'A diverse Kotlin Hackathon by KUG Chennai'
+  url: https://lu.ma/rbofnzaf
+- lang: en
+  startDate: '2024-11-19'
+  endDate: '2024-11-19'
+  location: Vienna, Austria
+  speaker: 'TBD'
+  title: 'Going Fully Platform Specific'
+  subject: 'Kotlin Vienna Meetup'
+  url: https://www.meetup.com/kotlin-vienna/events/295318907/
+- lang: en
+  startDate: '2024-10-01'
+  endDate: '2024-10-01'
+  location: Vienna, Austria
+  speaker: 'TBD'
+  title: 'When is Kotlin the Right Choice?; Kotlin 101; Multiplatform at Stable and Beyond'
+  subject: 'Kotlin Vienna Meetup'
+  url: https://www.meetup.com/kotlin-vienna/events/295318889/
+- lang: bn
+  startDate: '2024-06-08'
+  endDate: '2024-06-08'
+  location: Dhaka, Bangladesh
+  online: true
+  speaker: 'Mohi Us Sunnat'
+  title: 'KtAdda Kickoff: Connecting Kotlin Minds'
+  subject: 'Introducing new Kotlin Developers online and learning about their experiences'
+  url: https://www.linkedin.com/events/ktaddakickoff-connectingkotlinm7199538006976835586/
+- lang: en
+  startDate: '2024-06-11'
+  endDate: '2024-06-11'
+  location: Vienna, Austria
+  speaker: 'Markus Fischer & Raphael Tarita'
+  title: 'Arrow - upgrade your funcy Kotlin! & Image Processing Done Wrong'
+  subject: 'Kotlin Vienna Meetup'
+  url: https://www.meetup.com/kotlin-vienna/events/295318877/
 - lang: en
   startDate: '2024-06-08'
   endDate: '2024-06-08'
@@ -11257,3 +11364,24 @@
       implemented under the hood by customizing LiveData. While the talk
       discusses this specific framework, the ideas in it are universal and
       can be used independently in any project.</p>
+- lang: en
+  startDate: '2025-02-22'
+  endDate: '2025-02-22'
+  location: Gurugram, India
+  speaker: TBA
+  title: UDAAN 2025
+  subject: 'UDAAN 2025: Empowering Innovation in Kotlin and AI'
+  url: https://www.commudle.com/communities/gurugram-kotlin-user-group/events/udaan-2025
+  description:
+   __cdata: >
+    <p>UDAAN 2025 is the premier event for exploring cutting-edge technologies
+    and innovations in Kotlin, AI, Web3, Blockchain, Flutter, and Android Development.</p>
+
+    <p>This event brings together developers, tech enthusiasts, and professionals
+    to learn, collaborate, and shape the future of technology. With two parallel
+    tracks and 20 expert speakers, UDAAN 2025 promises to be a dynamic and
+    engaging experience.</p>
+
+    <p>Join us for insightful sessions, hands-on workshops, and networking opportunities,
+    and be part of a community driving meaningful technological progress.</p>
+

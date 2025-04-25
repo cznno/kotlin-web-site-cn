@@ -34,14 +34,14 @@
 > -->源文件根目录下， 并遵循相同的目录结构（每个文件应存储在与其
 > package 语句对应的目录中。
 >
-{type="note"}
+{style="note"}
 
 ### 源文件名称
 
 如果 Kotlin 文件包含单个类或接口（以及可能相关的顶层声明），那么文件名应该与<!--
 -->该类的名称相同，并追加 `.kt` 扩展名。 这适用于所有类型的类和接口。
 如果文件包含多个类或只包含顶层声明， 那么选择一个描述该文件所包含内容的名称，并以此命名该文件。
-使用首字母大写的[驼峰风格](https://zh.wikipedia.org/wiki/%E9%A7%9D%E5%B3%B0%E5%BC%8F%E5%A4%A7%E5%B0%8F%E5%AF%AB)（也称为 Pascal 风格），
+使用首字母大写的[驼峰风格](https://zh.wikipedia.org/wiki/%E9%A7%9D%E5%B3%B0%E5%BC%8F%E5%A4%A7%E5%B0%8F%E5%AF%AB)，其中每个单词的首字母都大写。
 例如 `ProcessDeclarations.kt`。
 
 文件的名称应该描述文件中代码的作用。因此，应避免在文件名中使用<!--
@@ -58,7 +58,7 @@
 
 对于公共源代码集，包含顶层声明的文件不应该有后缀。 例如，`commonMain/kotlin/Platform.kt`.
 
-##### 技术细节 {initial-collapse-state="collapsed"}
+##### 技术细节 {initial-collapse-state="collapsed" collapsible="true"}
 
 由于 JVM 的限制〔不允许顶层成员（函数、属性）〕，我们建议在多平台项目中<!--
 -->遵循这种文件命名方案。
@@ -81,7 +81,7 @@ FQN `myPackage.PlatformKt`。 这就会产生 "Duplicate JVM classes"（“重�
 避免这种情况的最简单的方式就是按照上述指南重命名其中一个文件。 这种命名方案<!--
 -->有助于避免冲突，同时保持代码的可读性。
 
-> 对于以下两种情，上述建议可能看起来多余，但我们仍然建议遵循之：
+> 对于以下两种场景，上述建议可能看起来多余，但我们仍然建议遵循之：
 >
 > * 非 JVM 平台不存在重复文件门面的问题。 但是，这种命名方案有助于保持<!--
 > -->文件命名的一致性。
@@ -91,7 +91,7 @@ FQN `myPackage.PlatformKt`。 这就会产生 "Duplicate JVM classes"（“重�
 >   但是，这种命名方案有助于避免简单的重构或<!--
 > -->添加可能包含顶层函数并同样导致 "Duplicate JVM classes"（“重复 JVM 类”错误）的情况。
 > 
-{type="tip"}
+{style="tip"}
 
 ### 源文件组织
 
@@ -137,7 +137,7 @@ FQN `myPackage.PlatformKt`。 这就会产生 "Duplicate JVM classes"（“重�
 通常不鼓励使用多个词的名称，但是如果确实需要使用多个词，可以将它们连接在一起<!--
 -->或使用驼峰风格（`org.example.myProject`）。
 
-* 类与对象的名称以大写字母开头并使用驼峰风格：
+* 类与对象的名称使用首字母大写的驼峰风格：
 
 ```kotlin
 open class DeclarationProcessor { /*……*/ }
@@ -181,8 +181,8 @@ class MyTestCase {
 ### 属性名
 
 常量名称（标有 `const` 的属性，或者保存不可变数据的没有自定义 `get` 函数<!--
--->的顶层/对象 `val` 属性）应该使用大写、下划线分隔的 ([screaming snake case](https://en.wikipedia.org/wiki/Snake_case))
-名称：
+-->的顶层/对象 `val` 属性）应该使用全大写、下划线分隔的名称，遵循 ([screaming snake case](https://en.wikipedia.org/wiki/Snake_case))
+约定：
 
 ```kotlin
 const val MAX_COUNT = 8
@@ -201,8 +201,8 @@ val mutableCollection: MutableSet<String> = HashSet()
 val PersonComparator: Comparator<Person> = /*……*/
 ```
 
-对于枚举常量，可以使用大写、下划线分隔的名称 ([screaming snake case](https://en.wikipedia.org/wiki/Snake_case))
-（`enum class Color { RED, GREEN }`）也可使用首字母大写的常规驼峰名称，具体取决于用途。
+对于枚举常量，可以使用全大写、下划线分隔的 ([screaming snake case](https://en.wikipedia.org/wiki/Snake_case)) 名称
+（`enum class Color { RED, GREEN }`）也可使用首字母大写的常规驼峰名称，具体取决于用途。 
    
 ### 幕后属性的名称
 
@@ -229,8 +229,10 @@ class C {
 名称应该表明实体的目的是什么，所以最好避免在名称中使用无意义的单词
 （`Manager`、 `Wrapper`）。
 
-当使用首字母缩写作为名称的一部分时，如果缩写由两个字母组成，就将其大写（`IOStream`）；
-而如果缩写更长一些，就只大写其首字母（`XmlFormatter`、 `HttpInputStream`）。
+当使用首字母缩写作为声明名称的一部分时，请遵循以下规则：
+
+* 对于两个字母的缩写，两字母都大写。例如，`IOStream`。
+* 对于超过两个字母的缩写，只大写第一个字母。例如，`XmlFormatter` 或 `HttpInputStream`。
 
 ## 格式化
 
@@ -252,16 +254,13 @@ if (elements != null) {
 >在 Kotlin 中，分号是可选的，因此换行很重要。语言设计采用
 > Java 风格的花括号格式，如果尝试使用不同的格式化风格，那么可能会遇到意外的行为。
 >
-{type="note"}
+{style="note"}
 
 ### 横向空白
 
 * 在二元操作符左右留空格（`a + b`）。例外：不要在“range to”操作符（`0..i`）左右留空格。
-
 * 不要在一元运算符左右留空格（`a++`）。
-
 * 在控制流关键字（`if`、 `when`、 `for` 以及 `while`）与相应的左括号之间留空格。
-
 * 不要在主构造函数声明、方法声明或者方法调用的左括号之前留空格。
 
 ```kotlin
@@ -274,17 +273,12 @@ fun bar() {
 }
 ```
 
-* 绝不在 `(`、 `[` 之后或者 `]`、 `)` 之前留空格
-
-* 绝不在`.` 或者 `?.` 左右留空格：`foo.bar().filter { it > 2 }.joinToString()`, `foo?.bar()`
-
-* 在 `//` 之后留一个空格：`// 这是一条注释`
-
-* 不要在用于指定类型参数的尖括号前后留空格：`class Map<K, V> { …… }`
-
-* 不要在 `::` 前后留空格：`Foo::class`、 `String::length`
-
-* 不要在用于标记可空类型的 `?` 前留空格：`String?`
+* 绝不在 `(`、 `[` 之后或者 `]`、 `)` 之前留空格。
+* 绝不在`.` 或者 `?.` 左右留空格：`foo.bar().filter { it > 2 }.joinToString()`, `foo?.bar()`。
+* 在 `//` 之后留一个空格：`// 这是一条注释`。
+* 不要在用于指定类型参数的尖括号前后留空格：`class Map<K, V> { …… }`。
+* 不要在 `::` 前后留空格：`Foo::class`、 `String::length`。
+* 不要在用于标记可空类型的 `?` 前留空格：`String?`。
 
 作为一般规则，避免任何类型的水平对齐。将标识符重命名为不同长度的名称<!--
 -->不应该影响声明或者任何用法的格式。
@@ -293,9 +287,9 @@ fun bar() {
 
 在以下场景中的 `:` 之前留一个空格：
 
-* 当它用于分隔类型与超类型时
-* 当委托给一个超类的构造函数或者同一类的另一个构造函数时
-* 在 `object` 关键字之后
+* 当它用于分隔类型与超类型时。
+* 当委托给一个超类的构造函数或者同一类的另一个构造函数时。
+* 在 `object` 关键字之后。
     
 而当分隔声明与其类型时，不要在 `:` 之前留空格。
  
@@ -642,7 +636,7 @@ class Person(
 如需在 IntelliJ IDEA 格式化程序中启用尾部逗号，请转到 **Settings/Preferences | Editor | Code Style | Kotlin**，
 打开 **Other** 选项卡并选择 **Use trailing comma** 选项。
 
-#### 枚举 {initial-collapse-state="collapsed"}
+#### 枚举 {initial-collapse-state="collapsed" collapsible="true"}
 
 ```kotlin
 enum class Direction {
@@ -653,7 +647,7 @@ enum class Direction {
 }
 ```
 
-#### 值实参 {initial-collapse-state="collapsed"}
+#### 值实参 {initial-collapse-state="collapsed" collapsible="true"}
 
 ```kotlin
 fun shift(x: Int, y: Int) { /*……*/ }
@@ -668,7 +662,7 @@ val colors = listOf(
 )
 ```
 
-#### 类属性与形参 {initial-collapse-state="collapsed"}
+#### 类属性与形参 {initial-collapse-state="collapsed" collapsible="true"}
 
 ```kotlin
 class Customer(
@@ -681,7 +675,7 @@ class Customer(
 )
 ```
 
-#### 函数值形参 {initial-collapse-state="collapsed"}
+#### 函数值形参 {initial-collapse-state="collapsed" collapsible="true"}
 
 ```kotlin
 fun powerOf(
@@ -698,7 +692,7 @@ fun print(
 ) {}
 ```
 
-#### 类型可选的形参（包括 setter） {initial-collapse-state="collapsed"}
+#### 类型可选的形参（包括 setter） {initial-collapse-state="collapsed" collapsible="true"}
 
 ```kotlin
 val sum: (Int, Int, Int) -> Int = fun(
@@ -711,7 +705,7 @@ val sum: (Int, Int, Int) -> Int = fun(
 println(sum(8, 8, 8))
 ```
 
-#### 索引后缀 {initial-collapse-state="collapsed"}
+#### 索引后缀 {initial-collapse-state="collapsed" collapsible="true"}
 
 ```kotlin
 class Surface {
@@ -724,7 +718,7 @@ fun getZValue(mySurface: Surface, xValue: Int, yValue: Int) =
     ]
 ```
 
-#### lambda 表达式形参 {initial-collapse-state="collapsed"}
+#### lambda 表达式形参 {initial-collapse-state="collapsed" collapsible="true"}
 
 ```kotlin
 fun main() {
@@ -738,7 +732,7 @@ fun main() {
 }
 ```
 
-#### `when` 条目 {initial-collapse-state="collapsed"}
+#### when 条目 {initial-collapse-state="collapsed" collapsible="true"}
 
 ```kotlin
 fun isReferenceApplicable(myReference: KClass<*>) = when (myReference) {
@@ -750,7 +744,7 @@ fun isReferenceApplicable(myReference: KClass<*>) = when (myReference) {
 }
 ```
 
-#### （注解中的）集合字面值 {initial-collapse-state="collapsed"}
+#### （注解中的）集合字面值 {initial-collapse-state="collapsed" collapsible="true"}
 
 ```kotlin
 annotation class ApplicableFor(val services: Array<String>)
@@ -763,7 +757,7 @@ annotation class ApplicableFor(val services: Array<String>)
 fun run() {}
 ```
 
-#### 类型实参 {initial-collapse-state="collapsed"}
+#### 类型实参 {initial-collapse-state="collapsed" collapsible="true"}
 
 ```kotlin
 fun <T1, T2> foo() {}
@@ -775,7 +769,7 @@ fun main() {
 }
 ```
 
-#### 类型形参 {initial-collapse-state="collapsed"}
+#### 类型形参 {initial-collapse-state="collapsed" collapsible="true"}
 
 ```kotlin
 class MyMap<
@@ -784,7 +778,7 @@ class MyMap<
         > {}
 ```
 
-#### 解构声明 {initial-collapse-state="collapsed"}
+#### 解构声明 {initial-collapse-state="collapsed" collapsible="true"}
 
 ```kotlin
 data class Car(val manufacturer: String, val model: String, val year: Int)
@@ -999,6 +993,24 @@ when (x) {
 
 如果有三个或多个选项时优先使用 `when`。
 
+### Guard conditions in when expression
+
+Use parentheses when combining multiple boolean expressions in `when` expressions or statements with [guard conditions](control-flow.md#guard-conditions-in-when-expressions):
+
+```kotlin
+when (status) {
+    is Status.Ok if (status.info.isEmpty() || status.info.id == null) -> "no information"
+}
+```
+
+Instead of:
+
+```kotlin
+when (status) {
+    is Status.Ok if status.info.isEmpty() || status.info.id == null -> "no information"
+}
+```
+
 ### 在条件中的可空的布尔值
 
 如果需要在条件语句中用到可空的 `Boolean`, 使用 `if (value == true)` 或 `if (value == false)` 检测。
@@ -1062,14 +1074,14 @@ fun main() {
 
 ### 函数还是属性
 
-在某些情况下，不带参数的函数可与只读属性互换。
+在某些场景中，不带参数的函数可与只读属性互换。
 虽然语义相似，但是在某种程度上有一些风格上的约定。
 
 底层算法优先使用属性而不是函数：
 
-* 不会抛异常
-* 计算开销小（或者在首次运行时缓存）
-* 如果对象状态没有改变，那么多次调用都会返回相同结果
+* 不会抛异常。
+* 计算开销小（或者在首次运行时缓存）。
+* 如果对象状态没有改变，那么多次调用都会返回相同结果。
 
 ### 扩展函数
 
@@ -1137,10 +1149,10 @@ Kotlin 提供了一系列用来在给定对象上下文中执行代码块的函�
 
 在编写库时，建议遵循一组额外的规则以确保 API 的稳定性：
 
- * 总是显式指定成员的可见性（以避免将声明意外暴露为公有 API ）
+ * 总是显式指定成员的可见性（以避免将声明意外暴露为公有 API ）。
  * 总是显式指定函数返回类型以及属性类型（以避免当实现改变时<!--
-   -->意外更改返回类型）
+   -->意外更改返回类型）。
  * 为所有公有成员提供 [KDoc](kotlin-doc.md) 注释，不需要任何新文档的覆盖成员除外
-   （以支持为该库生成文档）
+   （以支持为该库生成文档）。
 
-在[库创建者指南](jvm-api-guidelines-introduction.md)中详细了解为库编写 API 时需要考虑的最佳实践与意见。
+在[库作者指南](jvm-api-guidelines-introduction.md)中详细了解为库编写 API 时需要考虑的最佳实践与意见。

@@ -2,7 +2,7 @@
 
 > Kotlin/Wasm is [Alpha](components-stability.md). It may be changed at any time.
 >
-{type="note"}
+{style="note"}
 
 This tutorial demonstrates how to use your browser to debug your [Compose Multiplatform](https://www.jetbrains.com/lp/compose-multiplatform/)
 application built with Kotlin/Wasm.
@@ -16,12 +16,12 @@ Create a project using the Kotlin Multiplatform wizard:
 
    > These are the name and ID of the project directory. You can also leave them as they are.
    >
-   {type="tip"}
+   {style="tip"}
 
 3. Select the **Web** option. Make sure that no other options are selected.
 4. Click the **Download** button and unpack the resulting archive.
 
-![Kotlin Multiplatform wizard](wasm-compose-wizard.png){width=600}
+![Kotlin Multiplatform wizard](wasm-compose-web-wizard.png){width=400}
 
 ## Open the project in IntelliJ IDEA
 
@@ -35,16 +35,16 @@ Create a project using the Kotlin Multiplatform wizard:
 
    > You need at least Java 11 as your Gradle JVM for the tasks to load successfully.
    >
-   {type="note"}
+   {style="note"}
 
-2. In **composeApp** | **Tasks** | **kotlin browser**, select and run the **wasmJsBrowserRun** task.
+2. In **composeApp** | **Tasks** | **kotlin browser**, select and run the **wasmJsBrowserDevelopmentRun** task.
 
-   ![Run the Gradle task](wasm-gradle-task-window.png){width=600}
+   ![Run the Gradle task](wasm-gradle-task-window.png){width=550}
 
    Alternatively, you can run the following command in the terminal from the `WasmDemo` root directory:
 
    ```bash
-   ./gradlew wasmJsBrowserRun
+   ./gradlew wasmJsBrowserDevelopmentRun
    ```
 
 3. Once the application starts, open the following URL in your browser:
@@ -56,23 +56,22 @@ Create a project using the Kotlin Multiplatform wizard:
    > The port number can vary because the 8080 port may be unavailable. You can find the actual port number printed
    > in the Gradle build console.
    >
-   {type="tip"}
+   {style="tip"}
 
    You see a "Click me!" button. Click it:
 
-   ![Click me](wasm-composeapp-browser-clickme.png){width=650}
+   ![Click me](wasm-composeapp-browser-clickme.png){width=550}
 
    Now you see the Compose Multiplatform logo:
 
-   ![Compose app in browser](wasm-composeapp-browser.png){width=650}
+   ![Compose app in browser](wasm-composeapp-browser.png){width=550}
 
 ## Debug in your browser
 
 > Currently, debugging is only available in your browser. In the future, you will be able to debug your code in 
-> [IntelliJ IDEA](https://youtrack.jetbrains.com/issue/KT-64683/Kotlin-Wasm-debugging-in-IntelliJ-IDEA) and 
-> [Fleet](https://youtrack.jetbrains.com/issue/KT-64684). 
+> [IntelliJ IDEA](https://youtrack.jetbrains.com/issue/KT-64683/Kotlin-Wasm-debugging-in-IntelliJ-IDEA). 
 >
-{type="note"}
+{style="note"}
 
 You can debug this Compose Multiplatform application
 in your browser out of the box, without additional configurations. 
@@ -80,7 +79,9 @@ in your browser out of the box, without additional configurations.
 However, for other projects, you may need to configure additional settings in your Gradle 
 build file. For more information about how to configure your browser for debugging, expand the next section.
 
-### Configure your browser for debugging {initial-collapse-state="collapsed"}
+### Configure your browser for debugging {initial-collapse-state="collapsed" collapsible="true"}
+
+#### Enable access to project's sources
 
 By default, browsers can't access some of the project's sources necessary for debugging. To provide access, you can configure the Webpack DevServer
 to serve these sources. In the `ComposeApp` directory, add the following code snippets to your `build.gradle.kts` file.
@@ -97,9 +98,8 @@ Add this code snippet inside the `commonWebpackConfig{}` block, located in the `
 devServer = (devServer ?: KotlinWebpackConfig.DevServer()).apply {
     static = (static ?: mutableListOf()).apply {
         // Serve sources to debug inside browser
+        add(project.rootDir.path)
         add(project.projectDir.path)
-        add(project.projectDir.path + "/commonMain/")
-        add(project.projectDir.path + "/wasmJsMain/")
     }
 }
 ```
@@ -116,10 +116,9 @@ kotlin {
                 outputFileName = "composeApp.js"
                 devServer = (devServer ?: KotlinWebpackConfig.DevServer()).apply {
                     static = (static ?: mutableListOf()).apply { 
-                        // Serve sources to debug inside browser 
+                        // Serve sources to debug inside browser
+                        add(project.rootDir.path)
                         add(project.projectDir.path)
-                        add(project.projectDir.path + "/commonMain/")
-                        add(project.projectDir.path + "/wasmJsMain/")
                     }
                 } 
             }
@@ -127,19 +126,56 @@ kotlin {
     }
 }
 ```
-{initial-collapse-state="collapsed"}
+{initial-collapse-state="collapsed" collapsible="true"}
 
 > Currently, you can't debug library sources.
 > [We will support this in the future](https://youtrack.jetbrains.com/issue/KT-64685).
 >
-{type="note"}
+{style="note"}
+
+#### Use custom formatters
+
+Custom formatters help display and locate variable values in a more user-friendly and comprehensible manner when debugging Kotlin/Wasm code.
+
+Custom formatters are enabled by default in development builds, so you don't need additional Gradle configurations. 
+
+This feature is supported in Firefox and Chromium-based browsers as
+it uses the [custom formatters API](https://firefox-source-docs.mozilla.org/devtools-user/custom_formatters/index.html).
+
+To use this feature, ensure that custom formatters are enabled in your browser's developer tools:
+
+* In Chrome DevTools, find the custom formatters checkbox in **Settings | Preferences | Console**:
+
+  ![Enable custom formatters in Chrome](wasm-custom-formatters-chrome.png){width=400}
+
+* In Firefox DevTools, find the custom formatters checkbox in **Settings | Advanced settings**:
+
+  ![Enable custom formatters in Firefox](wasm-custom-formatters-firefox.png){width=400}
+
+Custom formatters work for Kotlin/Wasm development builds. If you have specific requirements for production builds,
+you need to adjust your Gradle configuration accordingly. Add the following compiler option to the `wasmJs {}` block:
+
+```kotlin
+// build.gradle.kts
+kotlin {
+    wasmJs {
+        // ...
+
+        compilerOptions {
+            freeCompilerArgs.add("-Xwasm-debugger-custom-formatters")
+        }
+    }
+}
+```
+
+After enabling custom formatters, you can continue with the debugging tutorial.
 
 ### Debug your Kotlin/Wasm application
 
 > This tutorial uses the Chrome browser, but you should be able to follow these steps with other browsers. For more information,
 > see [Browser versions](wasm-troubleshooting.md#browser-versions).
 > 
-{type="tip"}
+{style="tip"}
 
 1. In the browser window of the application, right-click and select the **Inspect** action to access developer tools.
    Alternatively, you can use the **F12** shortcut or select **View** | **Developer** | **Developer Tools**.
@@ -149,7 +185,7 @@ kotlin {
 3. Click on the line numbers to set breakpoints on the code that you want to inspect. Only the lines
    with darker numbers can have breakpoints.
 
-![Set breakpoints](wasm-breakpoints.png){width=700}
+   ![Set breakpoints](wasm-breakpoints.png){width=600}
 
 4. Click on the **Click me!** button to interact with the application. This action triggers the execution of the 
    code, and the debugger pauses when the execution reaches a breakpoint.
@@ -159,11 +195,13 @@ kotlin {
    * ![Step over](wasm-step-over.png){width=30}{type="joined"} Step over to execute the current line and pause on the next line.
    * ![Step out](wasm-step-out.png){width=30}{type="joined"} Step out to execute the code until it exits the current function.
 
-![Debug controls](wasm-debug-controls.png){width=700}
+   ![Debug controls](wasm-debug-controls.png){width=600}
 
 6. Check the **Call stack** and **Scope** panes to trace the sequence of function calls and pinpoint the location of any errors.
 
-![Check call stack](wasm-debug-scope.png){width=700}
+   ![Check call stack](wasm-debug-scope.png){width=550}
+
+   For an improved visualization of the variable values, see _Use custom formatters_ within the [Configure your browser for debugging](#configure-your-browser-for-debugging) section.
 
 7. Make changes to your code and [run the application](#run-the-application) again to verify that everything works as expected.
 8. Click on the line numbers with breakpoints to remove the breakpoints.

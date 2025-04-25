@@ -1,7 +1,8 @@
 [//]: # (title: 函数式（SAM）接口)
 
-只有一个抽象方法的接口称为*函数式接口*或 *单一抽象<!--
--->方法（SAM）*接口。函数式接口可以有多个非抽象成员，但只能有一个抽象成员。
+只有一个抽象成员函数的接口称为*函数式接口*或 *单一抽象<!--
+-->方法（SAM）*接口。函数式接口可以有多个非抽象成员函数，但只能有一个抽象<!--
+-->成员函数。
 
 可以用 `fun` 修饰符在 Kotlin 中声明一个函数式接口。
 
@@ -117,7 +118,7 @@ However, 函数式接口和[类型别名](type-aliases.md)用途并不相同。
 类型别名只是现有类型的名称——它们不会创建新的类型，而函数式接口却会创建新类型。
 You can provide extensions that are specific to a particular functional interface to be inapplicable for plain functions or their type aliases.
 
-类型别名只能有一个成员，而函数式接口可以有多个非抽象成员以及一个抽象成员。
+类型别名只能有一个成员，而函数式接口可以有多个非抽象成员函数以及一个抽象成员函数。
 函数式接口还可以实现以及继承其他接口。
 
 函数式接口比类型别名更灵活并且提供了更多的功能, but they can be more costly both syntactically and at runtime because they can require conversions to a specific interface.

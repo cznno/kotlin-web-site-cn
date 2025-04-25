@@ -13,7 +13,7 @@
    > 勾选**创建 Git 仓库**来让你的项目弃启用版本控制。
    > 你也可以在项目创建之后再来创建。
    > 
-   {type="tip"}
+   {style="tip"}
 
    ![Create a console application](jvm-new-gradle-project.png){width=700}
 
@@ -30,13 +30,13 @@
    > You can also enable the **Generate code with onboarding tips** option to add some additional useful comments to your
    > sample code.
    >
-   {type="tip"}
+   {style="tip"}
 
 8. 点击**创建**。
 
 你已经成功创建了一个 Gradle 项目！
 
-#### Specify a Gradle version for your project {initial-collapse-state="collapsed"}
+#### Specify a Gradle version for your project {initial-collapse-state="collapsed" collapsible="true"}
 
 You can explicitly specify a Gradle version for your project under the **Advanced Settings** section, 
 either by using the Gradle Wrapper or a local installation of Gradle:

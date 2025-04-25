@@ -16,7 +16,7 @@ Kotlin/JS 提供了转换 Kotlin 代码、Kotlin 标准库的能力，并且兼�
 
 > 自 Kotlin 1.8.0 版起，旧编译器已弃用。
 >
-{type="note"}
+{style="note"}
 
 通过从 Kotlin 代码生成 TypeScript 声明文件（`d.ts`），IR 编译器使创建混合 TypeScript 与 Kotlin 代码的“混合”
 应用程序变得更加容易，并利用 Kotlin 多平台代码共享功能。
@@ -29,12 +29,29 @@ Kotlin/JS 提供了转换 Kotlin 代码、Kotlin 标准库的能力，并且兼�
 Modern web development benefits significantly from frameworks that simplify building web applications.
 Here are a few examples of popular web frameworks for Kotlin/JS written by different authors:
 
+### Kobweb
+
+_Kobweb_ is an opinionated Kotlin framework for creating websites and web apps. It leverages [Compose HTML](https://github.com/JetBrains/compose-multiplatform?tab=readme-ov-file#compose-html) and
+live-reloading for fast development. Inspired by [Next.js](https://nextjs.org/), Kobweb promotes a standard structure for adding widgets, layouts,
+and pages.
+
+Out of the box, Kobweb provides page routing, light/dark mode, CSS styling, Markdown support, backend APIs, and more features.
+It also includes a UI library called Silk, a set of versatile widgets for modern UIs. 
+
+Kobweb also supports site export, generating page snapshots
+for SEO and automatic search indexing. Additionally, Kobweb makes it easy to create DOM-based UIs that efficiently update in response to state changes.
+
+Visit the [Kobweb](https://kobweb.varabyte.com/) site for documentation and examples.
+
+For updates and discussions about the framework, join the [#kobweb](https://kotlinlang.slack.com/archives/C04RTD72RQ8) and
+[#compose-web](https://kotlinlang.slack.com/archives/C01F2HV7868) channels in the Kotlin Slack.
+
 ### KVision
 
 _KVision_ is an object-oriented web framework that makes it possible to write applications in Kotlin/JS with ready-to-use components
 that can be used as building blocks for your application's user interface. You can use both reactive and imperative programming
 models to build your frontend, use connectors for Ktor, Spring Boot, and other frameworks to integrate it with your server-side
-applications, and share code using [Kotlin Multiplatform](multiplatform.md).
+applications, and share code using [Kotlin Multiplatform](multiplatform-intro.md).
 
 [Visit KVision site](https://kvision.io) for documentation, tutorials, and examples.
 

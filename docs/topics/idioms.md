@@ -53,7 +53,23 @@ println("Name $name")
 
 了解 [Java 与 Kotlin 字符串连接](java-to-kotlin-idioms-strings.md#字符串连接)的区别。
 
-### 类型判断
+## Read standard input safely
+
+```kotlin
+// Reads a string and returns null if the input can't be converted into an integer. For example: Hi there!
+val wrongInt = readln().toIntOrNull()
+println(wrongInt)
+// null
+
+// Reads a string that can be converted into an integer and returns an integer. For example: 13
+val correctInt = readln().toIntOrNull()
+println(correctInt)
+// 13
+```
+
+For more information, see [Read standard input.](read-standard-input.md)
+
+## 类型判断
 
 ```kotlin
 when (x) {
@@ -139,7 +155,7 @@ If you accidentally mix up `EmployeeId` and `CustomerId`, a compilation error is
 
 > The `@JvmInline` annotation is only needed for JVM backends.
 >
-{type="note"}
+{style="note"}
 
 ## 实例化一个抽象类
 

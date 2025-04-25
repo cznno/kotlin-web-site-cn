@@ -21,19 +21,19 @@
    - 指定在 [for 循环](control-flow.md#for-循环)中迭代的对象。
    - 用作中缀操作符以检测一个值属于[一个区间](ranges.md)、
      一个集合或者其他[定义“contains”方法](operator-overloading.md#in-操作符)的实体。
-   - 在 [when 表达式中](control-flow.md#when-表达式)用于上述目的。
+   - 在 [when 表达式中](control-flow.md#when-expressions-and-statements)用于上述目的。
    - 将一个类型参数标记为[逆变](generics.md#声明处型变)。
  * `!in`
    - 用作中缀操作符以检测一个值**不**属于[一个区间](ranges.md)、
      一个集合或者其他[定义“contains”方法](operator-overloading.md#in-操作符)的实体。
-   - 在 [when 表达式中](control-flow.md#when-表达式)用于上述目的。
+   - 在 [when 表达式中](control-flow.md#when-expressions-and-statements)用于上述目的。
  * `interface` 声明一个[接口](interfaces.md)。
  * `is`
    - 检测[一个值具有指定类型](typecasts.md#is-与-is-操作符)。
-   - 在 [when 表达式中](control-flow.md#when-表达式)用于上述目的。
+   - 在 [when 表达式中](control-flow.md#when-expressions-and-statements)用于上述目的。
  * `!is`
    - 检测[一个值**不**具有指定类型](typecasts.md#is-与-is-操作符)。
-   - 在 [when 表达式中](control-flow.md#when-表达式)用于上述目的。
+   - 在 [when 表达式中](control-flow.md#when-expressions-and-statements)用于上述目的。
  * `null` 是表示不指向任何对象的对象引用的常量。
  * `object` 同时声明[一个类及其实例](object-declarations.md)。
  * `package` 指定[当前文件的包](packages.md)。
@@ -51,7 +51,7 @@
  * `typeof` 保留以供未来使用。
  * `val` 声明一个只读[属性](properties.md)或[局部变量](basic-syntax.md#变量)。
  * `var` 声明一个可变[属性](properties.md)或[局部变量](basic-syntax.md#变量)。
- * `when` 开始一个 [when 表达式](control-flow.md#when-表达式)（执行其中一个给定分支）。
+ * `when` 开始一个 [when 表达式](control-flow.md#when-expressions-and-statements)（执行其中一个给定分支）。
  * `while` 开始一个 [while 循环](control-flow.md#while-循环)（前置条件的循环）。
 
 ## 软关键字
@@ -76,7 +76,7 @@
  * `init` 开始一个[初始化块](classes.md#构造函数)。
  * `param` 用作[注解使用处目标](annotations.md#注解使用处目标)。
  * `property` 用作[注解使用处目标](annotations.md#注解使用处目标)。
- * `receiver`用作[注解使用处目标](annotations.md#注解使用处目标)。
+ * `receiver` 用作[注解使用处目标](annotations.md#注解使用处目标)。
  * `set`
    - 声明[属性的 setter](properties.md#getter-与-setter)。
    - 用作[注解使用处目标](annotations.md#注解使用处目标)。
@@ -90,14 +90,14 @@
 -->的标识符：
 
  * `abstract` 将一个类或成员标记为[抽象](classes.md#抽象类)。
- * `actual` 表示[多平台项目](multiplatform.md)中的一个平台相关实现。
+ * `actual` 表示[多平台项目](multiplatform-expect-actual.md)中的一个平台相关实现。
  * `annotation` 声明一个[注解类](annotations.md)。
  * `companion` 声明一个[伴生对象](object-declarations.md#伴生对象)。
  * `const` 将属性标记为[编译期常量](properties.md#编译期常量)。
- * `crossinline` 禁止[传递给内联函数的 lambda 中的非局部返回](inline-functions.md#非局部返回)。
+ * `crossinline` 禁止[传递给内联函数的 lambda 中的非局部返回](inline-functions.md#returns)。
  * `data` 指示编译器[为类生成典型成员](data-classes.md)。
  * `enum` 声明一个[枚举](enum-classes.md)。
- * `expect` 将一个声明标记为[平台相关](multiplatform.md)，并期待在平台模块中实现。
+ * `expect` 将一个声明标记为[平台特有](multiplatform-expect-actual.md)，并期待在平台模块中实现。
  * `external` 将一个声明标记为在 Kotlin 外实现（通过 [JNI](java-interop.md#在-kotlin-中使用-jni) 访问或者在 [JavaScript](js-interop.md#external-修饰符) 中实现）。
  * `final` 禁止[成员覆盖](inheritance.md#覆盖方法)。
  * `infix` 允许用[中缀表示法](functions.md#中缀表示法)调用函数。
@@ -143,8 +143,8 @@ Kotlin 支持以下操作符和特殊符号：
  * `===`、 `!==` —— [引用相等操作符](equality.md#引用相等)。
  * `<`、 `>`、 `<=`、 `>=` —— [比较操作符](operator-overloading.md#比较操作符)（对于非原生类型会翻译为调用 `compareTo()`）。
  * `[`、 `]` —— [索引访问操作符](operator-overloading.md#索引访问操作符)（会翻译为调用 `get` 与 `set`）。
- * `!!` [断言一个表达式非空](null-safety.md#-操作符)。
- * `?.` 执行[安全调用](null-safety.md#安全的调用)（如果接收者非空，就调用一个方法或访问一个属性）。
+ * `!!` [断言一个表达式非空](null-safety.md#非空断言操作符)。
+ * `?.` 执行[安全调用](null-safety.md#safe-call-operator)（如果接收者非空，就调用一个方法或访问一个属性）。
  * `?:` 如果左侧的值为空，就取右侧的值（[elvis 操作符](null-safety.md#elvis-操作符)）。
  * `::` 创建一个[成员引用](reflection.md#函数引用)或者一个[类引用](reflection.md#类引用)。
  * `..`、 `..<` 创建[区间](ranges.md)。
@@ -153,7 +153,7 @@ Kotlin 支持以下操作符和特殊符号：
  * `->`
    - 分隔 [lambda 表达式](lambdas.md#lambda-表达式语法)的参数与主体。
    - 分隔在[函数类型](lambdas.md#函数类型)中的参数类型与返回类型声明。
-   - 分隔 [when 表达式](control-flow.md#when-表达式)分支的条件与代码体。
+   - 分隔 [when 表达式](control-flow.md#when-expressions-and-statements)分支的条件与代码体。
  * `@`
    - 引入一个[注解](annotations.md#用法)。
    - 引入或引用一个[循环标签](returns.md#break-与-continue-标签)。

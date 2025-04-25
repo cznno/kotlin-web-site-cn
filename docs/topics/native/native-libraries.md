@@ -147,7 +147,7 @@ Hello, Kotlin world!
    > Alternatively, you can use the `-Xkonan-data-dir` compiler option to configure your custom path to the directory 
    > via the `cinterop` and `konanc` tools.
    > 
-   {type="note"}
+   {style="note"}
 
 * 安装在 `$installation/klib` 目录中的库。
 
@@ -184,7 +184,7 @@ Kotlin/Native 是包含预定义目录结构的 zip 文件，
 
 > Using relative paths in klibs is available since Kotlin 1.6.20.
 > 
-{type="note"}
+{style="note"}
 
 A serialized IR representation of source files is [a part of](#库格式) a `klib` library. It includes paths of 
 files for generating proper debug information. By default, stored paths are absolute.

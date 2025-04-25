@@ -6,7 +6,7 @@ Kotlin 中的函数和属性是一等公民，而对其自省（即在运行时�
 
 > Kotlin/JS provides limited support for reflection features. [Learn more about reflection in Kotlin/JS](js-reflection.md).
 >
-{type="note"}
+{style="note"}
 
 ## JVM dependency
 
@@ -69,7 +69,7 @@ val c = MyClass::class
 > 对于 JVM 平台：Kotlin 类引用与 Java 类引用不同。要获得 Java 类引用，
 > 请在 `KClass` 实例上使用 `.java` 属性。
 >
-{type="note"}
+{style="note"}
 
 ### 绑定的类引用
 

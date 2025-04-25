@@ -9,7 +9,7 @@ once a module with a sealed interface is compiled, no new implementations can be
 > 
 > Indirect subclasses are classes that inherit from more than one level down from their superclass.
 >
-{type="note"}
+{style="note"}
 
 When you combine sealed classes and interfaces with the `when` expression, you can cover the behavior of all possible 
 subclasses and ensure that no new subclasses are created to affect your code adversely.
@@ -25,7 +25,7 @@ For more detailed practical applications, see [Use case scenarios](#use-case-sce
 > Java 15 introduced [a similar concept](https://docs.oracle.com/en/java/javase/15/language/sealed-classes-and-interfaces.html#GUID-0C709461-CC33-419A-82BF-61461336E65F), 
 > where sealed classes use the `sealed` keyword along with the `permits` clause to define restricted hierarchies.
 >
-{type="tip"}
+{style="tip"}
 
 ## Declare a sealed class or interface
 
@@ -54,6 +54,7 @@ However, with a **sealed** hierarchy of error classes, library authors can be su
 types and that other error types can't appear later.
 
 The hierarchy of the example looks like this:
+
 ![Hierarchy illustration of sealed classes and interfaces](sealed-classes-interfaces.svg){width=700}
 
 ### Constructors
@@ -134,7 +135,7 @@ Subclasses of sealed classes must have a properly qualified name. They can't be 
 >
 > ```
 > 
-{type="note"}
+{style="note"}
 
 These restrictions don't apply to indirect subclasses. If a direct subclass of a sealed class is not marked as sealed,
 it can be extended in any way that its modifiers allow:
@@ -152,7 +153,7 @@ open class CustomError(): Error
 
 ### Inheritance in multiplatform projects
 
-There is one more inheritance restriction in [multiplatform projects](multiplatform-get-started.md): direct subclasses of sealed classes must
+There is one more inheritance restriction in [multiplatform projects](multiplatform-intro.md): direct subclasses of sealed classes must
 reside in the same [source set](multiplatform-discover-project.md#源代码集). It applies to sealed classes without the [expected and actual modifiers](multiplatform-expect-actual.md).
 
 If a sealed class is declared as `expect` in a common source set and have `actual` implementations in platform source sets,
@@ -163,7 +164,7 @@ you can create subclasses in any source set between the `expect` and `actual` de
 
 ## Use sealed classes with when expression
 
-使用密封类的关键好处在于使用 [`when` 表达式](control-flow.md#when-表达式)<!--
+使用密封类的关键好处在于使用 [`when` 表达式](control-flow.md#when-expressions-and-statements)<!--
 -->的时候。
 The `when` expression, used with a sealed class, allows the Kotlin compiler to check exhaustively that all possible cases are covered. 
 In such cases, you don't need to add an `else` clause:
@@ -199,12 +200,15 @@ fun main() {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.5"}
 
+When using sealed classes with `when` expressions, you can also add guard conditions to include additional checks in a single branch.
+For more information, see [Guard conditions in when expressions](control-flow.md#guard-conditions-in-when-expressions).
+
 > In multiplatform projects, if you have a sealed class with a `when` expression as an 
 > [expected declaration](multiplatform-expect-actual.md) in your common code, you still need an `else` branch. 
 > This is because subclasses of `actual` platform implementations may extend sealed classes that 
 > aren't known in the common code.
 >
-{type="note"}
+{style="note"}
 
 ## Use case scenarios
 

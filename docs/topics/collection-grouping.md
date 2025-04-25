@@ -10,14 +10,31 @@ lambda 函数并返回一个 `Map`。
 在带有两个 lambda 的 `groupBy()` 结果 Map 中，由 `keySelector` 函数生成的<!--
 -->键映射到值转换函数的结果，而不是原始元素。
 
-```kotlin
+This example illustrates using the `groupBy()` function to group the strings by their first letter, iterating through
+the groups on the resulting `Map` with the `for` operator, and then transforming the values to uppercase using the `valueTransform` function:
 
+```kotlin
 fun main() {
 //sampleStart
     val numbers = listOf("one", "two", "three", "four", "five")
 
-    println(numbers.groupBy { it.first().uppercase() })
-    println(numbers.groupBy(keySelector = { it.first() }, valueTransform = { it.uppercase() }))
+    // Groups the strings by their first letter using groupBy()
+    val groupedByFirstLetter = numbers.groupBy { it.first().uppercase() }
+    println(groupedByFirstLetter)
+    // {O=[one], T=[two, three], F=[four, five]}
+
+    // Iterates through each group and prints the key and its associated values
+    for ((key, value) in groupedByFirstLetter) {
+        println("Key: $key, Values: $value")
+    }
+    // Key: O, Values: [one]
+    // Key: T, Values: [two, three]
+    // Key: F, Values: [four, five]
+
+    // Groups the strings by their first letter and transforms the values to uppercase
+    val groupedAndTransformed = numbers.groupBy(keySelector = { it.first() }, valueTransform = { it.uppercase() })
+    println(groupedAndTransformed)
+    // {o=[ONE], t=[TWO, THREE], f=[FOUR, FIVE]}
 //sampleEnd
 }
 ```
@@ -38,12 +55,27 @@ fun main() {
    -->每个组中的所有元素并返回结果。
    这是对 `Grouping` 执行任何操作的通用方法。当折叠或缩小不够时，可使用它来实现自定义操作。
 
-```kotlin
+You can use the `for` operator on the resulting `Map` to iterate through the groups created by the `groupingBy()` function.
+This allows you to access each key and the count of elements associated with that key.
 
+The following example demonstrates how to group strings by their first letter using the `groupingBy()` function,
+count the elements in each group, and then iterate through each group to print the key and count of elements:
+
+```kotlin
 fun main() {
 //sampleStart
-  val numbers = listOf("one", "two", "three", "four", "five", "six")
-  println(numbers.groupingBy { it.first() }.eachCount())
+    val numbers = listOf("one", "two", "three", "four", "five")
+
+    // Groups the strings by their first letter using groupingBy() and counts the elements in each group
+    val grouped = numbers.groupingBy { it.first() }.eachCount()
+
+    // Iterates through each group and prints the key and its associated values
+    for ((key, count) in grouped) {
+        println("Key: $key, Count: $count")
+        // Key: o, Count: 1
+        // Key: t, Count: 2
+        // Key: f, Count: 2
+    }
 //sampleEnd
 }
 ```

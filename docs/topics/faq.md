@@ -57,7 +57,9 @@ vert.x 或 JSF。另外还有一些 Kotlin 写的特定框架，例如 [Ktor](ht
 
 ### 我可以用 Kotlin 进行 web 开发吗？
 
-可以。除了用于后端 Web，你还可以使用 Kotlin/Wasm 用于客户端 Web。 Learn how to [get started with Kotlin/Wasm](wasm-get-started.md).
+可以。For backend web development, Kotlin works well with frameworks such as [Ktor](https://ktor.io/) and [Spring](https://spring.io/), enabling you to build
+server-side applications efficiently. 此外，你还可以使用 Kotlin/Wasm 用于客户端 Web 开发。
+Learn how to [get started with Kotlin/Wasm](wasm-get-started.md).
 
 ### 我可以用 Kotlin 进行桌面开发吗？
 
@@ -66,17 +68,17 @@ vert.x 或 JSF。另外还有一些 Kotlin 写的特定框架，例如 [Ktor](ht
 
 ### 我可以用 Kotlin 进行原生开发吗？
 
-可以。Kotlin/Native 是 Kotlin 项目的一部分。它将 Kotlin 编译成无需虚拟机（VM）即可运行的原生代码。
+可以。Kotlin/Native 是 Kotlin 的一部分。它将 Kotlin 编译成无需虚拟机（VM）即可运行的原生代码。
 可以在主流的桌面与移动端平台甚至某些物联网（IoT）设备上试用。
 更多详细信息请查阅 [Kotlin/Native 文档](native-overview.md)。
 
 ### 哪些 IDE 支持 Kotlin？
 
 Kotlin 在 [IntelliJ IDEA](https://www.jetbrains.com/idea/download/)、
-[Android Studio](https://developer.android.com/kotlin/get-started) 与 [JetBrains Fleet](https://www.jetbrains.com/help/fleet/getting-started-with-kotlin-in-fleet.html)
+[Android Studio](https://developer.android.com/kotlin/get-started)
 中都有完整的开箱即用支持（内置 JetBrains 开发的官方 Kotlin 插件）。
 
-其他 IDE 与源代码编辑器（例如 Eclipse、Visual Studio Code 与 Atom）有 Kotlin 社区支持的插件。
+其他 IDE 与代码编辑器只有 Kotlin 社区支持的插件。
 
 还可以尝试使用 [Kotlin Playground](https://play.kotlinlang.org) 在浏览器中编写、运行及共享
 Kotlin 代码。
@@ -102,7 +104,7 @@ JavaScript 的构建工具。
 
 Kotlin 会让你选择用于执行的 JVM 版本。默认情况下，Kotlin/JVM 编译器会生成兼容 Java 8 的字节码。
 如果要利用 Java 新版本中提供的优化功能，可以将目标 Java
-版本显式指定为 9 到 21。 请注意，这种情况下生成的字节码可能无法在较低版本中运行。
+版本显式指定为 9 到 23。 请注意，这种情况下生成的字节码可能无法在较低版本中运行。
 自 [Kotlin 1.5](whatsnew15.md#新的默认-jvm-目标-1-8)起，编译器不支持生成兼容低于 Java 8 版本的字节码。
 
 ### Kotlin 难吗？

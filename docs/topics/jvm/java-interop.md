@@ -54,7 +54,7 @@ fun calendarDemo() {
 > This feature is [Experimental](components-stability.md#stability-levels-explained). It may be dropped or changed at any time.
 > We recommend that you use it only for evaluation purposes.
 >
-{type="warning"}
+{style="warning"}
 
 Starting from Kotlin 1.8.20, you can create references to Java synthetic properties. Consider the following Java code:
 
@@ -90,7 +90,7 @@ val persons = listOf(Person("Jack", 11), Person("Sofie", 12), Person("Peter", 11
         .forEach { person -> println(person.name) }
 ```
 
-### How to enable Java synthetic property references {initial-collapse-state="collapsed"}
+### How to enable Java synthetic property references {initial-collapse-state="collapsed" collapsible="true"}
 
 To enable this feature, set the `-language-version 2.1` compiler option. In a Gradle project, you can do so 
 by adding the following to your `build.gradle(.kts)`:
@@ -127,7 +127,7 @@ tasks
 
 > Prior to Kotlin 1.9.0, to enable this feature you had to set the `-language-version 1.9` compiler option.
 > 
-{type="note"}
+{style="note"}
 
 ## 返回 void 的方法
 
@@ -199,7 +199,7 @@ Kotlin 类型。编译器支持多种可空性注解，包括：
 
   * [JetBrains](https://www.jetbrains.com/idea/help/nullable-and-notnull-annotations.html)
   （`org.jetbrains.annotations` 包中的  `@Nullable` 和 `@NotNull`）
-  * [JSpecify](https://jspecify.dev/) (`org.jspecify.nullness`)
+  * [JSpecify](https://jspecify.dev/) (`org.jspecify.annotations`)
   * Android（`com.android.annotations` 和 `android.support.annotations`)
   * JSR-305（`javax.annotation`，详见下文）
   * FindBugs（`edu.umd.cs.findbugs.annotations`）
@@ -223,7 +223,7 @@ You can annotate the type arguments and type parameters of generic types to prov
 
 > All examples in the section use JetBrains nullability annotations from the `org.jetbrains.annotations` package.
 >
-{type="note"}
+{style="note"}
 
 #### Type arguments
 
@@ -304,15 +304,13 @@ class BaseWithBound<T : Number> {}
 So passing nullable type as a type argument or type parameter produces a warning.
 
 Annotating type arguments and type parameters works with the Java 8 target or higher. The feature requires that the 
-nullability annotations support the `TYPE_USE` target (`org.jetbrains.annotations` supports this in version 15 and above). 
-Pass the `-Xtype-enhancement-improvements-strict-mode` compiler option to report errors in Kotlin code that uses 
-nullability which deviates from the nullability annotations from Java.
+nullability annotations support the `TYPE_USE` target (`org.jetbrains.annotations` supports this in version 15 and above).
 
-> Note: If a nullability annotation supports other targets that are applicable to a type in addition to the `TYPE_USE` target, then
+> If a nullability annotation supports other targets that are applicable to a type in addition to the `TYPE_USE` target,
 > `TYPE_USE` takes priority. For example, if `@Nullable` has both `TYPE_USE` and `METHOD` targets, the Java method
 > signature `@Nullable String[] f()` becomes `fun f(): Array<String?>!` in Kotlin.
 >
-{type="note"}
+{style="note"}
 
 ### JSR-305 支持
 
@@ -407,7 +405,7 @@ interface A {
 > 本例中的类型只在启用了严格模式时出现；否则仍是平台类型。
 > 参见 [`@UnderMigration` 注解](#undermigration-注解)与[编译器配置](#编译器配置)两节。
 >
-{type="note"}
+{style="note"}
 
 也支持包级的默认可空性：
 
@@ -449,7 +447,7 @@ public class Test {}
 > 可空性注解的迁移状态并不会从其类型限定符别称继承，而是适用<!--
 > -->于默认类型限定符的用法。
 >
-{type="note"}
+{style="note"}
 
 如果默认类型限定符使用类型限定符别称，并且它们都标注有 `@UnderMigration`，那么<!--
 -->使用默认类型限定符的状态。
@@ -480,7 +478,7 @@ public class Test {}
 > [`@CheckForNull`](https://www.javadoc.io/doc/com.google.code.findbugs/jsr305/latest/javax/annotation/CheckForNull.html) 总是启用并<!--
 > -->影响所注解的声明在 Kotlin 中呈现，无论如何配置编译器的 `-Xjsr305` 标志。
 >
-{type="note"}
+{style="note"}
 
 例如，将 `-Xjsr305=ignore -Xjsr305=under-migration:ignore -Xjsr305=@org.library.MyNullable:warn` 添加到<!--
 -->编译器参数中，会使编译器对由
@@ -552,15 +550,15 @@ Java 的装箱原始类型映射到可空的 Kotlin 类型：
 
 Java 的数组按[下文](java-interop.md#java-数组)所述映射：
 
-| **Java 类型** | **Kotlin 类型**  |
-|---------------|------------------|
-| `int[]`       | `kotlin.IntArray!` |
-| `String[]`    | `kotlin.Array<(out) String>!` |
+| **Java 类型** | **Kotlin 类型**                |
+|---------------|--------------------------------|
+| `int[]`       | `kotlin.IntArray!`             |
+| `String[]`    | `kotlin.Array<(out) String!>!` |
 
 > 这些 Java 类型的静态成员不能在相应 Kotlin 类型的[伴生对象](object-declarations.md#伴生对象)<!--
 > -->中直接访问。要调用它们，请使用 Java 类型的完整限定名，例如 `java.lang.Integer.toHexString(foo)`。
 >
-{type="note"}
+{style="note"}
 
 ## Kotlin 中的 Java 泛型
 
@@ -799,7 +797,7 @@ executor.execute(Runnable { println("This runs in a thread pool") })
 > SAM 转换只适用于接口，而不适用于抽象类，即使这些抽象类也只有一个<!--
   -->抽象方法。
 >
-{type="note"}
+{style="note"}
 
 ## 在 Kotlin 中使用 JNI
 

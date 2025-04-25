@@ -10,7 +10,7 @@ Java 也将 Kotlin 类视为 Java 类。
 
 ## 内联 JavaScript
 
-你可以使用 [`js()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/js.html) 函数将一些 JavaScript 代码嵌入到 Kotlin 代码中。
+你可以使用 [`js()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/js.html) 函数将 JavaScript 代码嵌入到 Kotlin 代码中。
 例如：
 
 ```kotlin
@@ -26,11 +26,16 @@ fun jsTypeOf(o: Any): String {
 fun jsTypeOf(o: Any): String {
     return js(getTypeof() + " o") // 此处报错
 }
+
 fun getTypeof() = "typeof"
 ```
 
-请注意，调用 `js()` 会返回动态类型的结果，该结果<!--
--->在编译时不提供任何类型安全性。
+> As the JavaScript code is parsed by the Kotlin compiler, not all ECMAScript features might be supported.
+> In this case, you can encounter compilation errors.
+> 
+{style="note"}
+
+请注意，调用 `js()` 会返回动态类型的结果，该结果在编译时不提供任何类型安全性。
 
 ## external 修饰符
 
@@ -247,4 +252,4 @@ fun main() {
 
 > For more information about equality in Kotlin, see the [Equality](equality.md) documentation.
 > 
-{type="tip"}
+{style="tip"}

@@ -111,7 +111,7 @@ Joshua Bloch 在其著作[《Effective Java》第三版](http://www.oracle.com/t
 >
 > 通配符（或其他类型的型变）保证的唯一的事情是*类型安全*。不可变性完全是另一回事。
 >
-{type="note"}
+{style="note"}
 
 ### 声明处型变
 
@@ -183,7 +183,7 @@ fun demo(x: Comparable<Number>) {
 _in_ 和 _out_ 两词看起来是自解释的（因为它们已经在 C# 中成功使用很长时间了），
 因此上面提到的助记符不是真正需要的。可以将其改写为更高级的抽象：
 
-**[存在性（The Existential）](https://zh.wikipedia.org/wiki/%E5%AD%98%E5%9C%A8%E4%B8%BB%E4%B9%89) 变换：消费者 in, 生产者 out\!** :-)
+**[存在性（The Existential）](https://zh.wikipedia.org/wiki/%E5%AD%98%E5%9C%A8%E4%B8%BB%E4%B9%89) 变换：消费者 in, 生产者 out!** :-)
 
 ## 类型投影
 
@@ -239,8 +239,8 @@ fun copy(from: Array<out Any>, to: Array<Any>) { …… }
 fun fill(dest: Array<in String>, value: String) { …… }
 ```
 
-`Array<in String>` 对应于 Java 的 `Array<? super String>`，也就是说，你可以传递一个 `CharSequence` 数组<!--
--->或一个 `Object` 数组给 `fill()` 函数。
+`Array<in String>` 对应于 Java 的 `Array<? super String>`，也就是说，你可以传递一个 `String` 数组、`CharSequence` 数组<!--
+-->或 `Object` 数组给 `fill()` 函数。
 
 ### 星投影
 
@@ -266,7 +266,7 @@ Kotlin 为此提供了所谓的*星投影*语法：
 
 > 星投影非常像 Java 的原始类型，但是安全。
 >
-{type="note"}
+{style="note"}
 
 ## 泛型函数
 
@@ -474,7 +474,7 @@ inline fun <reified T> List<*>.asListOfType(): List<T>? =
 元素类型的可空性与类型实参仍然会被擦除。例如，
 如果 `foo` 是一个保存了任何 `List<*>`（无论可不可空）的数组的话，类型转换 `foo as Array<List<String>?>` 都会成功。
 >
-{type="note"}
+{style="note"}
 
 ## Underscore operator for type arguments
 

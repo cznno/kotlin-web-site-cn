@@ -152,7 +152,7 @@ foo(strings = *arrayOf("a", "b", "c"))
 > 在 JVM 平台中调用 Java 函数时不能使用具名实参语法，因为 Java 字节码并不<!--
 > -->总是保留函数参数的名称。
 >
-{type="note"}
+{style="note"}
 
 ### 返回 Unit 的函数
 
@@ -270,7 +270,7 @@ infix fun Int.shl(x: Int): Int { …… }
 > * `a && b xor c` 等价于 `a && (b xor c)`
 > * `a xor b in c` 等价于 `(a xor b) in c`
 >
-{type="note"}
+{style="note"}
 
 请注意，中缀函数总是要求指定接收者与参数。当<!--
 -->使用中缀表示法在当前接收者上调用方法时，需要显式使用 `this`。这是确保<!--

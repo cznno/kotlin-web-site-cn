@@ -69,7 +69,7 @@ compileKotlinJs.compilerOptions.moduleKind = org.jetbrains.kotlin.gradle.dsl.JsM
 > _webpack 生成的_ 输出（在代码已编译之后）。`compilerOptions.moduleKind` 更改
 > _由 Kotlin 编译器_ 生成的输出。
 >
-{type="note"}  
+{style="note"}  
 
 在 Kotlin Gradle DSL 中，还有一个用于设置 CommonJS 模块种类的快捷方式：
 

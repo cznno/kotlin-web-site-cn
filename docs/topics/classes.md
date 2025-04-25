@@ -169,7 +169,7 @@ class DontCreateMe private constructor() { /*……*/ }
 > class Customer(val customerName: String = "")
 > ```
 >
-{type="note"}
+{style="note"}
 
 ## 创建类的实例
 
@@ -183,7 +183,7 @@ val customer = Customer("Joe Smith")
 
 > Kotlin does not have a `new` keyword.
 >
-{type="note"}
+{style="note"}
 
 创建嵌套类、内部类与匿名内部类的类实例的过程在[嵌套类](nested-classes.md)中有述。
 

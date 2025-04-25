@@ -140,7 +140,7 @@ val <T> List<T>.lastIndex: Int
 > -->[幕后字段](properties.md#幕后字段)是无效的。这就是为什么*扩展属性不能有<!-- 
 > -->初始化器*。他们的行为只能由显式提供的 getter/setter 定义。
 >
-{type="note"}
+{style="note"}
 
 例如:
 

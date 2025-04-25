@@ -28,7 +28,7 @@ kotlin {
 
 > The old compiler backend has been deprecated since Kotlin 1.8.0. Starting with Kotlin 1.9.0, using compiler types `LEGACY` or `BOTH` leads to an error.
 >
-{type="warning"}
+{style="warning"}
 
 还可以使用键值 `kotlin.js.compiler=ir` 在 `gradle.properties` 文件中设置编译器类型。
 但是，`build.gradle(.kts)` 中的任何设置都会覆盖此行为。
@@ -66,53 +66,45 @@ kotlin.incremental.js.ir=false // true by default
 
 > The clean build in the incremental compilation mode is usually slower because of the need to create and populate the caches.
 >
-{type="note"}
+{style="note"}
 
-## Output .js files: one per module or one for the whole project
+## Output mode
 
-As a compilation result, the JS IR compiler outputs separate `.js` files for each module of a project. 
-Alternatively, you can compile the whole project into a single `.js` file by adding the following line to `gradle.properties`:
+You can choose how the JS IR compiler outputs `.js` files in your project:
 
-```none
-kotlin.js.ir.output.granularity=whole-program // 'per-module' is the default
-```
+* **One per module**. By default, the JS compiler outputs separate `.js` files for each module of a project as a
+  compilation result.
+* **One per project**. You can compile the whole project into a single `.js` file by adding the following line to
+  `gradle.properties`:
 
-## 忽略编译错误
+  ```none
+  kotlin.js.ir.output.granularity=whole-program // 'per-module' is the default
+  ```
+  
+* **One per file**. You can set up a more granular output that generates one (or two, if the file contains exported
+  declarations) JavaScript file per each Kotlin file. To enable the per-file compilation mode:
 
-> _Ignore compilation errors_ mode is [Experimental](components-stability.md). It may be dropped or changed at any time.
-> Opt-in is required (see the details below), and you should use it only for evaluation purposes. We would appreciate your feedback on it in [YouTrack](https://youtrack.jetbrains.com/issues/KT).
->
-{type="warning"}
+  1. Add the `useEsModules()` function to your build file to support ECMAScript modules:
 
-Kotlin/JS IR 编译器提供了默认后端中不可用的新编译模式——_忽略编译错误_。
-在这种模式下，即使其代码包含错误，也可以试运行应用程序。
-例如，当执行复杂的重构或在系统的某个部分上进行工作时，
-而该部分与另一部分中的编译错误完全无关。
-
-使用这种新的编译器模式，编译器会忽略所有有毛病的代码。
-因此，可以试运行应用程序并尝试没毛病的部分代码。
-如果试运行到在编译过程中出了毛病的代码，那么会得到运行时异常。
-
-在两个容忍策略之间选择，以忽略代码中的编译错误：
-- `SEMANTIC`：编译器将接受语法上正确但语义上没有意义的代码。
-  例如，为字符串变量赋值一个数字（类型不匹配）。
-- `SYNTAX`：编译器将接受任何代码，即使其中包含语法错误。
-  无论编写什么内容，编译器仍尝试生成可运行的可执行文件。
-
-作为实验特性，忽略编译错误需要选择加入。
-要启用此模式，请添加 `-Xerror-tolerance-policy={SEMANTIC|SYNTAX}` 编译器选项：
-
-```kotlin
-kotlin {
-    js(IR) {
-        compilations.all {
-            compileTaskProvider.configure {
-                compilerOptions.freeCompilerArgs.add("-Xerror-tolerance-policy=SYNTAX")
-            }
-        }
-    }
-}
-```
+     ```kotlin
+     // build.gradle.kts
+     kotlin {
+         js(IR) {
+             useEsModules() // Enables ES2015 modules
+             browser()
+         }
+     }
+     ```
+  
+     Alternatively, you can use the `es2015` [compilation target](js-project-setup.md#support-for-es2015-features)
+     to support ES2015 features in your project.
+  
+  2. Apply the `-Xir-per-file` compiler option or update your `gradle.properties` file with:
+  
+     ```none
+     # gradle.properties
+     kotlin.js.ir.output.granularity=per-file // `per-module` is the default
+     ```
 
 ## Minification of member names in production
 
@@ -137,7 +129,7 @@ kotlin {
 > The generation of TypeScript declaration files (`d.ts`) is [Experimental](components-stability.md). It may be dropped or changed at any time.
 > Opt-in is required (see the details below), and you should use it only for evaluation purposes. We would appreciate your feedback on it in [YouTrack](https://youtrack.jetbrains.com/issues?q=%23%7BKJS:%20d.ts%20generation%7D).
 >
-{type="warning"}
+{style="warning"}
 
 Kotlin/JS IR 编译器能够从 Kotlin 代码生成 TypeScript 定义。在混合应用程序上工作时，
 JavaScript 工具与 IDE 可以使用这些定义来提供自动补全功能、支持静态分析器，

@@ -61,15 +61,15 @@ fun preparePostAsync(callback: (Token) -> Unit) {
 原则上这感觉就像一个更优雅的解决方案，但又有几个问题：
 
 * 回调嵌套的难度。通常被用作回调的函数，经常最终需要自己的回调。这导致了一系列回调嵌套并<!--
--->导致出现难以理解的代码。该模式通常被称为标题圣诞树（大括号代表树的分支）。
-* 错误处理很复杂。嵌套模型使错误处理和传播变得更加复杂。
+-->导致出现难以理解的代码。该模式通常被称为回调地狱，or the [pyramid of doom](https://en.wikipedia.org/wiki/Pyramid_of_doom_(programming)) due to the triangular shape that indentations from these deeply nested callbacks create.
+* 错误处理很复杂。嵌套模型使错误处理和传播变得更加复杂。 
 
 回调在诸如 JavaScript 之类的事件循环体系结构中非常常见，但即使在那里，通常人们已经转而使用其他方法，例如 promises 或反应式扩展。
 
 ## Future、 Promise 及其他
 
-futures 或 promises 背后的想法（这也可能会根据语言/平台而有不同的术语），是当我们发起调用的时候，我们承诺<!--
--->在某些时候它将返回一个名为 Promise 的可被操作的对象。
+futures 或 promises 背后的想法（根据语言或平台的不同可能会使用其他术语），是当我们<!--
+-->发起调用的时候，对我们*承诺*在某些时候该调用会返回一个 `Promise` 对象，然后我们可以对其进行操作。
 
 ```kotlin
 fun postItem(item: Item) {

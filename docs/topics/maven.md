@@ -52,7 +52,7 @@ specify the ID and URL of each repository in the `<repositories>` element:
 > If you declare `mavenLocal()` as a repository in a Gradle project, you may experience problems when switching 
 > between Gradle and Maven projects. For more information, see [Declare repositories](gradle-configure-project.md#declare-repositories).
 >
-{type="note"}
+{style="note"}
 
 ## Set dependencies
 
@@ -73,7 +73,7 @@ To use the standard library in your project, 在 `pom.xml` 文件中配置以下
 > * 1.8, use `kotlin-stdlib-jdk7` or `kotlin-stdlib-jdk8`, respectively.
 > * 1.2, use `kotlin-stdlib-jre7` or `kotlin-stdlib-jre8`, respectively.
 >
-{type="note"}
+{style="note"} 
 
 如果你的项目使用 [Kotlin 反射](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect.full/index.html)
 或者测试设施，那么你还需要添加相应的依赖项。
@@ -129,7 +129,7 @@ If you need to configure an execution, you need to specify its ID. You can find 
 > If several build plugins overwrite the default lifecycle and you have also enabled the `extensions` option, the last plugin in 
 > the `<build>` section has priority in terms of lifecycle settings. All earlier changes to lifecycle settings are ignored.
 > 
-{type="note"}
+{style="note"}
 
 <!-- The following header is used in the Mari link service. If you wish to change it here, change the link there too -->
 
@@ -313,7 +313,7 @@ java -jar target/mymodule-0.0.1-SNAPSHOT-jar-with-dependencies.jar
 ```xml
 <project ……>
     <properties>
-        <kotlin.compiler.languageVersion>1.9</kotlin.compiler.languageVersion>
+        <kotlin.compiler.languageVersion>%languageVersion%</kotlin.compiler.languageVersion>
     </properties>
 </project>
 ```
@@ -325,13 +325,13 @@ java -jar target/mymodule-0.0.1-SNAPSHOT-jar-with-dependencies.jar
 | 名称 | 属性名 | 描述 | 可能的值                                                     | 默认值 |
 |------|---------------|-------------|----------------------------------------------------------|--------------|
 | `nowarn` | | 不生成警告 | true、 false                                              | false |
-| `languageVersion` | `kotlin.compiler.languageVersion` | 提供与指定语言版本源代码兼容性 | "1.3"（已弃用）、 "1.4"（已弃用）、"1.5"、 "1.6"、 "1.7"、 "1.8"、 "1.9"、 2.0（实验性的）、 2.1（实验性的） |
-| `apiVersion` | `kotlin.compiler.apiVersion` | 只允许使用来自捆绑库的指定版本中的声明 | "1.3"（已弃用）、"1.4"（已弃用）、 "1.5"、 "1.6"、 "1.7"、 "1.8"、 "1.9"、 2.0（实验性的）、 2.1（实验性的） |
+| `languageVersion` | `kotlin.compiler.languageVersion` | 提供与指定语言版本源代码兼容性 | "1.8"、 "1.9"、 "2.0"、 "2.1"、 "2.2"（实验性的） |
+| `apiVersion` | `kotlin.compiler.apiVersion` | 只允许使用来自捆绑库的指定版本中的声明 | "1.8"、 "1.9"、 "2.0"、 "2.1"、 "2.2"（实验性的） |
 | `sourceDirs` | | 包含要编译源文件的目录 |                                                          | 该项目源代码根目录
 | `compilerPlugins` | | 启用[编译器插件](compiler-plugins.md)  |                                                          | []
 | `pluginOptions` | | 编译器插件的选项  |                                                          | []
 | `args` | | 额外的编译器参数 |                                                          | []
-| `jvmTarget` | `kotlin.compiler.jvmTarget` | 生成的 JVM 字节码的目标版本 | "1.8"、 "9"、 "10"、……、 "20"、 "21" | "%defaultJvmTargetVersion%" |
+| `jvmTarget` | `kotlin.compiler.jvmTarget` | 生成的 JVM 字节码的目标版本 | "1.8"、 "9"、 "10"、……、 "20"、 "23" | "%defaultJvmTargetVersion%" |
 | `jdkHome` | `kotlin.compiler.jdkHome` | Include a custom JDK from the specified location into the classpath instead of the default JAVA_HOME |                           | &nbsp; |
 
 ## Use BOM

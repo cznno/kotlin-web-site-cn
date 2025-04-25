@@ -348,7 +348,7 @@ fun main() {
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 
 `let` 经常用于执行包含非空值代码块。如需对非空对象执行操作，
-可对其使用[安全调用操作符 `?.`](null-safety.md#安全的调用) 并调用 `let` 在 lambda 表达式中执行操作。
+可对其使用[安全调用操作符 `?.`](null-safety.md#safe-call-operator) 并调用 `let` 在 lambda 表达式中执行操作。
 
 ```kotlin
 fun processNonNullString(str: String) {}
@@ -566,6 +566,8 @@ fun main() {
 
 > 当在 `takeIf` 及 `takeUnless` 之后链式调用其他函数，不要忘记执行空检查或使用安全调用
 > （`?.`），因为他们的返回值是可为空的。
+>
+{style="tip"}
 
 ```kotlin
 fun main() {

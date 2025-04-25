@@ -5,7 +5,7 @@
 
 > On the JVM, booleans stored as the primitive `boolean` type typically use 8 bits.
 >
-{type="note"}
+{style="note"}
 
 布尔值的内置运算有：
 
@@ -40,6 +40,6 @@ The `||` and `&&` operators work lazily, which means:
 * If the first operand is `true`, the `||` operator does not evaluate the second operand.
 * If the first operand is `false`, the `&&` operator does not evaluate the second operand.
 
-> 在 JVM 平台，布尔对象的可空引用是装箱的 Java 类，类似于[数字](numbers.md#jvm-平台的数字表示)。
+> 在 JVM 平台，布尔对象的可空引用是装箱的 Java 类，类似于[数字](numbers.md#boxing-and-caching-numbers-on-the-java-virtual-machine)。
 >
-{type="note"}
+{style="note"}

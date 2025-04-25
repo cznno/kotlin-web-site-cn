@@ -1,23 +1,31 @@
 [//]: # (title: 区间与数列)
 
+Ranges and progressions define sequences of values in Kotlin, supporting range operators, iteration, custom step values, and arithmetic progressions.
+
+## Ranges
+
 Kotlin 可通过调用 `kotlin.ranges` 包中的 [`rangeTo()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.ranges/range-to.html)
 及 [`.rangeUntil()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.ranges/range-until.html) 函数轻松地创建两个值的区间
 。
 
+A range represents an ordered set of values with a defined start and end. By default, it increments by 1 at each step.
+For example, `1..4` represents the numbers 1, 2, 3, and 4.
+
 To create:
-* a closed-ended range, call the `.rangeTo()` function with the `..` operator.
-* an open-ended range, call the `.rangeUntil()` function with the `..<` operator.
+
+* a closed-ended range, call the `.rangeTo()` function with the `..` operator. This includes both the start and end values.
+* an open-ended range, call the `.rangeUntil()` function with the `..<` operator. This includes the start value but excludes the end value.
 
 For example:
 
 ```kotlin
 fun main() {
 //sampleStart
-    // Closed-ended range
+    // Closed-ended range: includes both 1 and 4
     println(4 in 1..4)
     // true
     
-    // Open-ended range
+    // Open-ended range: includes 1, excludes 4
     println(4 in 1..<4)
     // false
 //sampleEnd
@@ -50,11 +58,10 @@ fun main() {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3" id="kotlin-ranges-downto"}
 
-也可以通过任意步长（不一定为 1 ）迭代数字。 这是通过
-[`step`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.ranges/step.html) 函数完成的。
+也可以使用 [`step()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.ranges/step.html)
+函数以自定义步长迭代数字，而不是默认增量 1：
 
 ```kotlin
-
 fun main() {
 //sampleStart
     for (i in 0..8 step 2) print(i)

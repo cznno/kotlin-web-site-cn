@@ -1,6 +1,6 @@
 [//]: # (title: 链接数据库并从中取数据)
 
-Kotlin Notebook offers capabilities for connecting to and retrieving data from various types of SQL databases, such as 
+[Kotlin Notebook](kotlin-notebook-overview.md) offers capabilities for connecting to and retrieving data from various types of SQL databases, such as 
 MariaDB, PostgreSQL, MySQL, and SQLite. 
 Utilizing the [Kotlin DataFrame library](https://kotlin.github.io/dataframe/gettingstarted.html), Kotlin Notebook can establish 
 connections to databases, execute SQL queries, and import the results for further operations.
@@ -14,7 +14,7 @@ For a detailed example, see the [Notebook in the KotlinDataFrame SQL Examples Gi
 
    > Alternatively, access the Kotlin Notebook plugin from **Settings** | **Plugins** | **Marketplace** within IntelliJ IDEA.
    >
-   {type="tip"}
+   {style="tip"}
 
 3. Create a new Kotlin Notebook by selecting **File** | **New** | **Kotlin Notebook**.
 4. Ensure you have access to an SQL database, such as MariaDB or MySQL.
@@ -73,7 +73,7 @@ schema information for each table in the database:
 
    > For more information on connecting to SQL databases, see [Read from SQL databases in the Kotlin DataFrame documentation](https://kotlin.github.io/dataframe/readsqldatabases.html).
    > 
-   {type="tip"}
+   {style="tip"}
 
 ## Retrieve and manipulate data
 
@@ -180,6 +180,6 @@ occurring first names of actors:
 
 ## What's next
 
-* Explore data visualization using the [Kandy library](https://kotlin.github.io/kandy/examples.html).
-* Find additional information about data visualization in [Data visualization in Kotlin Notebook with Kandy](data-analysis-visualization.md).
-* For an extensive overview of tools and resources available for data science and analysis in Kotlin, see [Kotlin and Java libraries for data analysis](data-analysis-libraries.md).
+* Explore data visualization using the [Kandy library](https://kotlin.github.io/kandy/examples.html)
+* Find additional information about data visualization in [Data visualization in Kotlin Notebook with Kandy](data-analysis-visualization.md)
+* For an extensive overview of tools and resources available for data science and analysis in Kotlin, see [Kotlin and Java libraries for data analysis](data-analysis-libraries.md)

@@ -52,9 +52,11 @@ inline fun foo(inlined: () -> Unit, noinline notInlined: () -> Unit) { …… }
 > -->很可能并无益处（如果你确认需要内联，
 > 那么可以用 `@Suppress("NOTHING_TO_INLINE")` 注解关掉该警告）。
 >
-{type="note"}
+{style="note"}
 
-## 非局部返回
+## Non-local jump expressions
+
+### Returns
 
 在 Kotlin 中，只能对具名或匿名函数使用正常的、非限定的 return 来退出。
 要退出一个 lambda 表达式，需要使用一个[标签](returns.md#返回到标签)。
@@ -122,9 +124,30 @@ inline fun f(crossinline body: () -> Unit) {
 }
 ```
 
-> `break` 和 `continue` 在内联的 lambda 表达式中还不可用，但我们也计划支持它们。
+### Break and continue
+
+> This feature is currently [In preview](kotlin-evolution-principles.md#pre-stable-features).
+> We're planning to stabilize it in future releases.
+> To opt in, use the `-Xnon-local-break-continue` compiler option.
+> We would appreciate your feedback on it in [YouTrack](https://youtrack.jetbrains.com/issue/KT-1436).
 >
-{type="note"}
+{style="warning"}
+
+Similar to non-local `return`, you can apply `break` and `continue` [jump expressions](returns.md) in lambdas passed
+as arguments to an inline function that encloses a loop:
+
+```kotlin
+fun processList(elements: List<Int>): Boolean {
+    for (element in elements) {
+        val variable = element.nullableMethod() ?: run {
+            log.warning("Element is null or invalid, continuing...")
+            continue
+        }
+        if (variable == 0) return true
+    }
+    return false
+}
+```
 
 ## 具体化的类型参数
 

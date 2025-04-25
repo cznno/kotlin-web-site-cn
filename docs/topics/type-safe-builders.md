@@ -172,7 +172,7 @@ operator fun String.unaryPlus() {
 所有这些都在上面构建器示例顶部导入的包 `com.example.html` 中定义。
 在最后一节中，你可以阅读这个包的完整定义。
 
-## 作用域控制：`@DslMarker`
+## 作用域控制：@DslMarker
 
 使用 DSL 时，可能会遇到上下文中可以调用太多函数的问题。
 可以调用 lambda 表达式内部每个可用的隐式接收者的方法，因此得到一个不一致的结果，
@@ -242,7 +242,40 @@ html {
 }
 ```
 
-## `com.example.html` 包的完整定义
+You can also apply the `@DslMarker` annotation directly to [function types](lambdas.md#function-types).
+Simply annotate the `@DslMarker` annotation with `@Target(AnnotationTarget.TYPE)`:
+
+```kotlin
+@Target(AnnotationTarget.TYPE)
+@DslMarker
+annotation class HtmlTagMarker
+```
+
+As a result, the `@DslMarker` annotation can be applied to function types, most commonly to lambdas with receivers. For example:
+
+```kotlin
+fun html(init: @HtmlTagMarker HTML.() -> Unit): HTML { ... }
+
+fun HTML.head(init: @HtmlTagMarker Head.() -> Unit): Head { ... }
+
+fun Head.title(init: @HtmlTagMarker Title.() -> Unit): Title { ... }
+```
+
+When you call these functions, the `@DslMarker` annotation restricts access to outer receivers in the body of a lambda marked with it unless you specify them explicitly:
+
+```kotlin
+html {
+    head {
+        title {
+            // Access to title, head or other functions of outer receivers is restricted here.
+        }
+    }
+}
+```
+
+Only the nearest receiver's members and extensions are accessible within a lambda, preventing unintended interactions between nested scopes.
+
+### com.example.html 包的完整定义
 
 这就是 `com.example.html` 包的定义（只有上面例子中使用的元素）。
 它构建一个 HTML 树。代码中大量使用了[扩展函数](extensions.md)和<!--
@@ -345,4 +378,3 @@ fun html(init: HTML.() -> Unit): HTML {
     return html
 }
 ```
-

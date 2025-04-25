@@ -15,7 +15,7 @@ declarations](multiplatform-expect-actual.md).
 If you have business logic that is common for all platforms, you don't need to write the same code for each platform – 
 just share it in the common source set.
 
-![Code shared for all platforms](flat-structure.png)
+![Code shared for all platforms](flat-structure.svg)
 
 Some dependencies for source sets are set by default. You don't need to specify any `dependsOn` relations manually:
 * For all platform-specific source sets that depend on the common source set, such as `jvmMain`, `macosX64Main`, and others. 
@@ -53,7 +53,7 @@ the library which are available to the targets of each source set.
 
 For example, check out the following source set hierarchy from the `kotlinx.coroutines` repository:
 
-![Library hierarchical structure](lib-hierarchical-structure.png)
+![Library hierarchical structure](lib-hierarchical-structure.svg)
 
 The `concurrent` source set declares the function runBlocking and is compiled for the JVM and the native targets. 
 Once the `kotlinx.coroutines` library is updated and published with the hierarchical project structure, you can depend on 
@@ -62,14 +62,15 @@ it and call `runBlocking` from a source set that is shared between the JVM and n
 
 ## Connect platform-specific libraries
 
-To share more native code without being limited by platform-specific dependencies, connect [platform-specific libraries](native-platform-libs.md).
-Libraries shipped with Kotlin/Native (like Foundation, UIKit, and POSIX) are available in shared source sets by default.
+To share more native code without being limited by platform-specific dependencies, use [platform libraries](native-platform-libs.md),
+like Foundation, UIKit, and POSIX. These libraries are shipped with Kotlin/Native and available in shared source sets by default.
 
 In addition, if you use the [Kotlin CocoaPods Gradle](native-cocoapods.md) plugin in your projects,
 you can work with third-party native libraries consumed with the [`cinterop` mechanism](native-c-interop.md).
 
 ## 下一步做什么？
 
-* Check out examples of code sharing using the Kotlin mechanism of [expect and actual declarations](multiplatform-expect-actual.md)
-* Learn more about [hierarchical project structure](multiplatform-hierarchy.md)
-* See our recommendations on [naming source files in multiplatform projects](coding-conventions.md#源文件名称)
+* [Read about the Kotlin's mechanism of expected and actual declarations](multiplatform-expect-actual.md)
+* [Learn more about hierarchical project structure](multiplatform-hierarchy.md)
+* [Set up the publication of your multiplatform library](multiplatform-publish-lib.md)
+* [See our recommendations on naming source files in multiplatform projects](coding-conventions.md#源文件名称)

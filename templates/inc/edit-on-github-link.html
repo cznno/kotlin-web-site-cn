@@ -1,7 +1,9 @@
-<a href="{{ edit_on_github_url }}"
-   class="page-link-to-github"
-   target="_blank"
+{% if edit_on_github_url %}
+    <a href="{{ edit_on_github_url }}"
+        class="page-link-to-github"
+        target="_blank"
    title="在 GitHub 上编辑本页">
-        <i class="github-icon"></i>
+            <i class="github-icon"></i>
         <span class="text">改进翻译</span>
-</a>
+    </a>
+{% endif %}

@@ -102,7 +102,7 @@ fun main() {
 
 请注意
 [readLine()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/read-line.html) 函数调用之后的<!--
--->[空断言操作符](null-safety.md#操作符) `!!` 的使用。
+-->[空断言操作符](null-safety.md#非空断言操作符) `!!` 的使用。
 Kotlin 的 `readLine()` 函数定义为返回<!--
 -->[可空类型](null-safety.md#可空类型与非空类型)
 `String?` 并且在输入结束时返回 `null`，这样显式迫使开发人员处理<!--

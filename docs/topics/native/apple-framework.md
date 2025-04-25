@@ -325,7 +325,7 @@ Kotlin `String` 与 Objective-C `NSString*` 是透明映射的。类似地，Kot
 ## 垃圾回收与引用计数
 
 Swift 与 Objective-C 使用自动引用计数（ARC）。Kotlin/Native 拥有自己的[垃圾回收](native-memory-manager.md#garbage-collector)，
-它也[与 Objective-C/Swift ARC 相集成](native-arc-integration.md)。
+它也[与 Swift/Objective-C ARC 相集成](native-arc-integration.md)。
 
 Unused Kotlin objects are automatically removed. You don't need to take additional steps to control the lifetime of
 Kotlin/Native instances from Swift or Objective-C.

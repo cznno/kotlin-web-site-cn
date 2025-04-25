@@ -191,7 +191,7 @@ val customer = Customer("Joe Smith")
 
 类可以包含：
 
-* [构造函数与初始化块](classes.md#构造函数)
+* [构造函数与初始化块](#构造函数)
 * [函数](functions.md)
 * [属性](properties.md)
 * [嵌套类与内部类](nested-classes.md)

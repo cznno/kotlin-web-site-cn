@@ -95,7 +95,7 @@ of an assignment statement:
 ```kotlin
 // Syntax error: An object expression cannot bind a name.
 val myObject = object MySingleton {
-val name = "Singleton"
+    val name = "Singleton"
 }
 ```
 对象声明不能在局部作用域，这意味着它们不能直接嵌套在函数内部。

@@ -94,7 +94,7 @@ variable and can hold `null` values. Attempting to access properties on nullable
 ```kotlin
 fun main() {
 //sampleStart
-    // Assigns a nullable string to a variable  
+    // Assigns a nullable string to a variable
     var b: String? = "abc"
     // Re-assigns null to the nullable variable
     b = null
@@ -150,16 +150,16 @@ In the example above, the compiler performs a [smart cast](typecasts.md#smart-ca
 ```kotlin
 fun main() {
 //sampleStart
-    // Assigns a nullable string to a variable  
+    // Assigns a nullable string to a variable
     val b: String? = "Kotlin"
 
     // Checks for nullability first and then accesses length
     if (b != null && b.length > 0) {
         print("String of length ${b.length}")
-    // Provides alternative if the condition is not met  
-    } else {
-        print("Empty string")
         // String of length 6
+    } else {
+        // Provides alternative if the condition is not met
+        print("Empty string")
     }
 //sampleEnd
 }
@@ -177,7 +177,7 @@ if the object is `null`, the `?.` operator simply returns `null`:
 ```kotlin
 fun main() {
 //sampleStart
-    // Assigns a nullable string to a variable  
+    // Assigns a nullable string to a variable
     val a: String? = "Kotlin"
     // Assigns null to a nullable variable
     val b: String? = null
@@ -207,13 +207,7 @@ You can use the `?.` operator with both [`var` and `val` variables](basic-syntax
 bob?.department?.head?.name
 ```
 
-如果链中的任何属性（环节）为 `null`，这个链式调用就会返回 `null`。 Here's the equivalent of the same safe call but with the `if` conditional:
-
-```kotlin
-if (person != null && person.department != null) {
-    person.department.head = managersPool.getManager()
-}
-```
+如果链中的任何属性（环节）为 `null`，这个链式调用就会返回 `null`。
 
 也可以将安全调用放在赋值的左侧：
 
@@ -222,7 +216,13 @@ person?.department?.head = managersPool.getManager()
 ```
 
 In the example above, if one of the receivers in the safe call chain is `null`, the assignment is skipped, and the expression on the right is not evaluated at all. For example, if either
-`person` or `person.department` is `null`, the function is not called.
+`person` or `person.department` is `null`, the function is not called. Here's the equivalent of the same safe call but with the `if` conditional:
+
+```kotlin
+if (person != null && person.department != null) {
+    person.department.head = managersPool.getManager()
+}
+```
 
 ## Elvis 操作符
 
@@ -288,7 +288,7 @@ When `b` is not `null` and the `!!` operator makes it return its non-null value 
 ```kotlin
 fun main() {
 //sampleStart
-    // Assigns a nullable string to a variable  
+    // Assigns a nullable string to a variable
     val b: String? = "Kotlin"
     // Treats b as non-null and accesses its length
     val l = b!!.length

@@ -1,4 +1,4 @@
-[//]: # (title: Integration with Swift/Objective-C ARC)
+[//]: # (title: 与 Swift/Objective-C ARC 集成)
 
 Kotlin and Objective-C use different memory management strategies. Kotlin has a tracing garbage collector,
 while Objective-C relies on automatic reference counting (ARC).

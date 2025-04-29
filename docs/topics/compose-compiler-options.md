@@ -1,4 +1,4 @@
-[//]: # (title: Compose compiler options DSL)
+[//]: # (title: Compose 编译器选项 DSL)
 
 The Compose compiler Gradle plugin offers a DSL for various compiler options.
 You can use it to configure the compiler in the `composeCompiler {}` block of the `build.gradle.kts` file for the module

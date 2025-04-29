@@ -1,4 +1,4 @@
-[//]: # (title: Gradle best practices)
+[//]: # (title: Gradle 最佳实践)
 
 [Gradle](https://docs.gradle.org/current/userguide/userguide.html) is a build system used by many Kotlin projects to automate
 and manage the build process.

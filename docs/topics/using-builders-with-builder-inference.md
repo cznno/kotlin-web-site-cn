@@ -1,4 +1,4 @@
-[//]: # (title: Using builders with builder type inference)
+[//]: # (title: 使用带有构建器类型推断的构建器)
 
 Kotlin supports _builder type inference_ (or builder inference), which can come in useful when you are working with 
 generic builders. It helps the compiler infer the type arguments of a builder call based on the type information

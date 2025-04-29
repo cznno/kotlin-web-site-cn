@@ -1,4 +1,4 @@
-[//]: # (title: Get started with Kotlin/Wasm and WASI)
+[//]: # (title: Kotlin/Wasm 与 WASI 入门)
 
 > Kotlin/Wasm is in [Alpha](components-stability.md). It may be changed at any time.
 >

@@ -1,4 +1,4 @@
-[//]: # (title: What's new in Kotlin 1.9.20)
+[//]: # (title: Kotlin 1.9.20 的新特性)
 
 _[Released: November 1, 2023](releases.md#版本发布详情)_
 

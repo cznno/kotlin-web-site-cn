@@ -1,4 +1,4 @@
-[//]: # (title: Code of conduct and guidelines for Kotlin Slack)
+[//]: # (title: Kotlin Slack 的行为准则与指南)
 
 Kotlin Slack aims to be an inclusive space committed to providing a friendly, safe and welcoming environment for all, 
 regardless of gender, sexual orientation, ability, ethnicity, socioeconomic status, and religion (or lack thereof).

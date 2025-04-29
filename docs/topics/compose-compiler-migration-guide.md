@@ -1,4 +1,4 @@
-[//]: # (title: Compose compiler migration guide)
+[//]: # (title: Compose 编译器迁移指南)
 
 The Compose compiler is supplemented by a Gradle plugin, which simplifies setup and offers
 easier access to compiler options.

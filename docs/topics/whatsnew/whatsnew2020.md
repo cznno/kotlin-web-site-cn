@@ -1,4 +1,4 @@
-[//]: # (title: What's new in Kotlin 2.0.20)
+[//]: # (title: Kotlin 2.0.20 的新特性)
 
 _[Released: August 22, 2024](releases.md#release-details)_
 

@@ -1,4 +1,4 @@
-[//]: # (title: Direct integration)
+[//]: # (title: 直接集成)
 
 <tldr>
    This is a local integration method. It can work for you if:<br/>

@@ -1,4 +1,4 @@
-[//]: # (title: Power-assert compiler plugin)
+[//]: # (title: Power-assert 编译器插件)
 
 > The Power-assert compiler plugin is [Experimental](components-stability.md).
 > It may be changed at any time. Use it only for evaluation purposes.

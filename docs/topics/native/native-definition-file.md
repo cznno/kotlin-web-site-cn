@@ -1,4 +1,4 @@
-[//]: # (title: Definition file)
+[//]: # (title: 定义文件)
 
 Kotlin/Native enables you to consume C and Objective-C libraries, allowing you to use their functionality in Kotlin.
 A special tool called cinterop takes a C or an Objective-C library and generates the corresponding Kotlin bindings,

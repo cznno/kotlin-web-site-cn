@@ -1,4 +1,4 @@
-[//]: # (title: Kotlin Metadata JVM library)
+[//]: # (title: Kotlin Metadata JVM 库)
 
 <primary-label ref="advanced"/>
 

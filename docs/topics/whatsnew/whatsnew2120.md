@@ -1,4 +1,4 @@
-[//]: # (title: What's new in Kotlin 2.1.20)
+[//]: # (title: Kotlin 2.1.20 的新特性)
 
 _[Released: March 20, 2025](releases.md#release-details)_
 

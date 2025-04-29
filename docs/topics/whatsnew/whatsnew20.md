@@ -1,4 +1,4 @@
-[//]: # (title: What's new in Kotlin 2.0.0)
+[//]: # (title: Kotlin 2.0.0 的新特性)
 
 _[Released: May 21, 2024](releases.md#release-details)_
 

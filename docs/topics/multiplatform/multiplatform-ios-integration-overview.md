@@ -1,4 +1,4 @@
-[//]: # (title: iOS integration methods)
+[//]: # (title: iOS 集成方法)
 
 You can integrate a Kotlin Multiplatform shared module into your iOS app. For that, you generate an [iOS framework](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html)
 from the shared module and then add it as a dependency to the iOS project:

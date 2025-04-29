@@ -1,4 +1,4 @@
-[//]: # (title: Swift package export setup)
+[//]: # (title: Swift 包导出设置)
 
 <tldr>
    This is a remote integration method. It can work for you if:<br/>

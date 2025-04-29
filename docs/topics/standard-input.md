@@ -1,4 +1,4 @@
-[//]: # (title: Standard input)
+[//]: # (title: 标准输入)
 
 > Java Scanner is a slow tool. Use it only when you need the specific functionalities it offers.
 > Otherwise, it's generally preferable to use Kotlin's `readln()` function to [read standard input](basic-syntax.md#read-from-the-standard-input).

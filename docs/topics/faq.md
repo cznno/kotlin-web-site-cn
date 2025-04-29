@@ -144,7 +144,7 @@ To start with Kotlin, you can install one of the [official IDEs](kotlin-ide.md) 
 可以选择的一些其他课程：
 * [Pluralsight Course: Getting Started with Kotlin](https://www.pluralsight.com/courses/kotlin-getting-started)，作者：Kevin Jones
 * [O'Reilly Course: Introduction to Kotlin Programming](https://www.oreilly.com/library/view/introduction-to-kotlin/9781491964125/)，作者：Hadi Hariri
-* [Udemy Course: 10 Kotlin Tutorials for Beginneres](https://petersommerhoff.com/dev/kotlin/kotlin-beginner-tutorial/)，作者：Peter Sommerhoff
+* [Udemy Course: 10 Kotlin Tutorials for Beginners](https://petersommerhoff.com/dev/kotlin/kotlin-beginner-tutorial/)，作者：Peter Sommerhoff
 
 还可以在我们（官方）的 [YouTube 频道](https://www.youtube.com/c/Kotlin)上查看其他教程与内容。
 

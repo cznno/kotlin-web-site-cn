@@ -7,7 +7,7 @@ guided by pragmatic design.
 > Language feature proposals are listed from Kotlin 1.7.0. 
 > 
 > See the explanation of language feature statuses in the 
-> [Kotlin evolution principles documentation](kotlin-evolution-principles.md#pre-stable-features).
+> [Kotlin evolution principles documentation](kotlin-evolution-principles.md#稳定前特性).
 > 
 {style="note"}
 

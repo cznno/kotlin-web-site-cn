@@ -16,7 +16,7 @@ On this page, you can learn about the following topics:
 Kotlin Gradle 插件支持增量编译，which is enabled by default for Kotlin/JVM and Kotlin/JS projects.
 增量编译会跟踪多次构建之间类路径中文件的变更，以便只编译<!--
 -->这些变更所影响的文件。
-This approach works with [Gradle's build cache](#gradle-build-cache-support) and supports [compilation avoidance](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_compile_avoidance).
+This approach works with [Gradle's build cache](#gradle-构建缓存支持) and supports [compilation avoidance](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_compile_avoidance).
 
 For Kotlin/JVM, incremental compilation relies on classpath snapshots,
 which capture the API structure of modules to determine when recompilation is necessary.
@@ -235,7 +235,7 @@ From Kotlin 2.0.0, the K2 compiler is used by default.
 
 To use the previous compiler from Kotlin 2.0.0 onwards, either:
 
-* In your `build.gradle.kts` file, [set your language version](gradle-compiler-options.md#example-of-setting-languageversion) to `1.9`.
+* In your `build.gradle.kts` file, [set your language version](gradle-compiler-options.md#设置-languageversion-的示例) to `1.9`.
 
   OR
 * Use the following compiler option: `-language-version 1.9`.

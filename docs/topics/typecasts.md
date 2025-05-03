@@ -48,7 +48,7 @@ print(x.length) // x 自动转换为字符串
 ### Control flow
 
 Smart casts work not only for `if` conditional expressions but also for [`when` expressions](control-flow.md#when-expressions-and-statements)
-and [`while` loops](control-flow.md#while-loops):
+and [`while` loops](control-flow.md#while-循环):
 
 ```kotlin
 when (x) {

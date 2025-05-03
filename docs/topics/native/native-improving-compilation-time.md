@@ -83,7 +83,7 @@ For example, you don't need `iosX64` if you don't run this project on iOS simula
 
 ### Don't build unnecessary release binaries
 
-Kotlin/Native supports two build modes, [debug and release](multiplatform-build-native-binaries.md#declare-binaries).
+Kotlin/Native supports two build modes, [debug and release](multiplatform-build-native-binaries.md#声明二进制文件).
 Release is highly optimized, and this takes a lot of time: compilation of release binaries takes an order of magnitude
 more time than debug binaries.
 
@@ -104,13 +104,13 @@ When it's enabled, the same JVM process is used, and there is no need to warm it
 
 ### Don't use transitive export
 
-Using [`transitiveExport = true`](multiplatform-build-native-binaries.md#export-dependencies-to-binaries) disables dead
+Using [`transitiveExport = true`](multiplatform-build-native-binaries.md#将依赖项导出到二进制文件) disables dead
 code elimination in many cases, so the compiler has to process a lot of unused code. It increases the compilation time.
 Instead, use the `export` method explicitly for exporting the required projects and dependencies.
 
 ### Don't export modules too much
 
-Try to avoid unnecessary [module export](multiplatform-build-native-binaries.md#export-dependencies-to-binaries).
+Try to avoid unnecessary [module export](multiplatform-build-native-binaries.md#将依赖项导出到二进制文件).
 Each exported module negatively affects compilation time and binary size.
 
 ### Use Gradle build caching

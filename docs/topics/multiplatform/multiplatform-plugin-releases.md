@@ -49,7 +49,7 @@ Released: 06 December, 2024
 </td>
 <td>
 
-* [Any of Kotlin plugin versions](releases.md#release-details)
+* [Any of Kotlin plugin versions](releases.md#版本发布详情)
 
 </td>
 </tr>
@@ -68,7 +68,7 @@ Released: 23 July, 2024
 </td>
 <td>
 
-* [Any of Kotlin plugin versions](releases.md#release-details)
+* [Any of Kotlin plugin versions](releases.md#版本发布详情)
 
 </td>
 </tr>

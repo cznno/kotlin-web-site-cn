@@ -1,6 +1,6 @@
 [//]: # (title: Kotlin 2.1.20 的新特性)
 
-_[Released: March 20, 2025](releases.md#release-details)_
+_[Released: March 20, 2025](releases.md#版本发布详情)_
 
 The Kotlin 2.1.20 release is here! Here are the main highlights:
 
@@ -19,7 +19,7 @@ The Kotlin plugins that support 2.1.20 are bundled in the latest IntelliJ IDEA a
 You don't need to update the Kotlin plugin in your IDE.
 All you need to do is to change the Kotlin version to 2.1.20 in your build scripts.
 
-See [Update to a new release](releases.md#update-to-a-new-kotlin-version) for details.
+See [Update to a new release](releases.md#更新到新版-kotlin) for details.
 
 ### Download sources for Kotlin artifacts in projects with OSGi support
 
@@ -590,5 +590,5 @@ The Kotlin documentation has received some notable changes:
 Starting from IntelliJ IDEA 2023.3 and Android Studio Iguana (2023.2.1) Canary 15, the Kotlin plugin is distributed as a
 bundled plugin included in your IDE. This means that you can't install the plugin from JetBrains Marketplace anymore.
 
-To update to the new Kotlin version, [change the Kotlin version](releases.md#update-to-a-new-kotlin-version)
+To update to the new Kotlin version, [change the Kotlin version](releases.md#更新到新版-kotlin)
 to 2.1.20 in your build scripts.

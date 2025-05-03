@@ -49,9 +49,9 @@ For more details on these improvements and to learn more about how we analyzed t
 
 ## Language feature improvements
 
-The Kotlin K2 compiler improves language features related to [smart-casting](#smart-casts) and [Kotlin Multiplatform](#kotlin-multiplatform).
+The Kotlin K2 compiler improves language features related to [smart-casting](#智能转换) and [Kotlin Multiplatform](#kotlin-multiplatform).
 
-### Smart casts
+### 智能转换
 
 The Kotlin compiler can automatically cast an object to a type in specific cases,
 saving you the trouble of having to explicitly specify it yourself. This is called [smart-casting](typecasts.md#智能转换).
@@ -1042,7 +1042,7 @@ Due to the separation of common and platform sources during compilation with the
 rules for abstract members in expected classes.
 
 With the previous compiler, it was possible for an expected non-abstract class to inherit an abstract function without 
-[overriding the function](inheritance.md#overriding-rules). Since the compiler could access both common and platform code
+[overriding the function](inheritance.md#覆盖规则). Since the compiler could access both common and platform code
 at the same time, the compiler could see whether the abstract function had a corresponding override and definition in the
 actual class.
 

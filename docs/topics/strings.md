@@ -170,7 +170,7 @@ ${'$'}_9.99
 Multi-dollar string interpolation allows you to specify how many consecutive dollar signs are required to trigger interpolation.
 Interpolation is the process of embedding variables or expressions directly into a string.
 
-While you can [escape literals](#escaped-strings) for single-line strings,
+While you can [escape literals](#转义字符串) for single-line strings,
 multiline strings in Kotlin don't support backslash escaping.
 To include dollar signs (`$`) as literal characters, you must use the `${'$'}` construct to prevent string interpolation.
 This approach can make code harder to read, especially when strings contain multiple dollar signs.

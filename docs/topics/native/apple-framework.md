@@ -18,10 +18,10 @@ Swift/Objective-C 应用程序中使用 Kotlin/Native 代码。
 
 在本教程中会：
 
-* [创建一个 Kotlin 库并将其编译为 framework](#create-a-kotlin-library)
-* [检查生成的 Swift/Objective-C API 代码](#generated-framework-headers)
-* [在 Objective-C 中使用 framework](#use-code-from-objective-c)
-* [在 Swift 中使用 framework](#use-code-from-swift)
+* [创建一个 Kotlin 库并将其编译为 framework](#创建一个-kotlin-库)
+* [检查生成的 Swift/Objective-C API 代码](#生成的-framework-头文件)
+* [在 Objective-C 中使用 framework](#在-objective-c-中使用代码)
+* [在 Swift 中使用 framework](#在-swift-中使用代码)
 
 你可以使用命令行来生成 Kotlin framework，可以直接生成，也可以通过脚本文件（例如 `.sh` 或 `.bat` 文件）生成。
 不过，对于有数百个文件与库的大型项目来说，这种方法的可伸缩性不佳。
@@ -317,7 +317,7 @@ __attribute__((swift_name("LibKt")))
 
 Kotlin `String` 与 Objective-C `NSString*` 是透明映射的。类似地，Kotlin 的 `Unit` 类型会映射到 `void`。
 原生类型直接映射。不可空的原生类型透明地映射。
-可空的原生类型被映射到 `Kotlin<TYPE>*` 类型，如[表中](#kotlin-numbers-and-nsnumber)所示。
+可空的原生类型被映射到 `Kotlin<TYPE>*` 类型，如[表中](#kotlin-数值与-nsnumber)所示。
 包括高阶函数 `acceptFunF` 与 `supplyFun` 都接收 Objective-C 块。
 
 可以在 [Swift/Objective-C 互操作性](native-objc-interop.md#mappings) 中找到关于类型映射的更多信息。

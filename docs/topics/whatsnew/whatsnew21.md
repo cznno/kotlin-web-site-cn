@@ -1,6 +1,6 @@
 [//]: # (title: Kotlin 2.1.0 的新特性)
 
-_[Released: November 27, 2024](releases.md#release-details)_
+_[Released: November 27, 2024](releases.md#版本发布详情)_
 
 The Kotlin 2.1.0 release is here! Here are the main highlights:
 
@@ -21,7 +21,7 @@ The Kotlin plugins that support 2.1.0 are bundled in the latest IntelliJ IDEA an
 You don't need to update the Kotlin plugin in your IDE.
 All you need to do is change the Kotlin version to 2.1.0 in your build scripts.
 
-See [Update to a new Kotlin version](releases.md#update-to-a-new-kotlin-version) for details.
+See [Update to a new Kotlin version](releases.md#更新到新版-kotlin) for details.
 
 ## Language
 
@@ -50,7 +50,7 @@ This release also brings the following language updates:
 
 ### Guard conditions in when with a subject
 
-> This feature is [In preview](kotlin-evolution-principles.md#pre-stable-features),
+> This feature is [In preview](kotlin-evolution-principles.md#稳定前特性),
 > and opt-in is required (see details below).
 > 
 > We would appreciate your feedback in [YouTrack](https://youtrack.jetbrains.com/issue/KT-71140).
@@ -111,7 +111,7 @@ kotlin {
 
 ### Non-local break and continue
 
-> This feature is [In preview](kotlin-evolution-principles.md#pre-stable-features),
+> This feature is [In preview](kotlin-evolution-principles.md#稳定前特性),
 > and opt-in is required (see details below).
 > 
 > We would appreciate your feedback in [YouTrack](https://youtrack.jetbrains.com/issue/KT-1436).
@@ -161,7 +161,7 @@ please report them to our [issue tracker](https://youtrack.jetbrains.com/issue/K
 
 ### Multi-dollar string interpolation
 
-> The feature is [In preview](kotlin-evolution-principles.md#pre-stable-features)
+> The feature is [In preview](kotlin-evolution-principles.md#稳定前特性)
 > and opt-in is required (see details below).
 > 
 > We would appreciate your feedback in [YouTrack](https://youtrack.jetbrains.com/issue/KT-2425).
@@ -552,7 +552,7 @@ To do so, use the `-Xnullability-annotations` compiler option to choose a mode:
 * `warning`: Report warnings for nullability mismatches.
 * `strict`: Report errors for nullability mismatches (default mode).
 
-For more information, see [Nullability annotations](java-interop.md#nullability-annotations).
+For more information, see [Nullability annotations](java-interop.md#可空性注解).
 
 ## Kotlin Multiplatform
 
@@ -1109,7 +1109,7 @@ You can also use Gradle convention plugins to apply the settings to a particular
 
 ### Support for non-identifier characters in properties
 
-Kotlin/JS previously did not allow using [names for test methods](coding-conventions.md#names-for-test-methods) with spaces enclosed in backticks.
+Kotlin/JS previously did not allow using [names for test methods](coding-conventions.md#测试方法的名称) with spaces enclosed in backticks.
 
 Similarly, it was not possible to access JavaScript object properties that contained characters not permitted in Kotlin identifiers,
 such as hyphens or spaces:
@@ -1428,7 +1428,7 @@ The most notable changes include:
   which required freezing objects to share them between threads.
   To learn how to migrate from freezing-related APIs in the new memory model,
   see the [Kotlin/Native migration guide](native-migration-guide.md#update-your-code).
-  For more information, see the [announcement about the deprecation of freezing](whatsnew1720.md#freezing).
+  For more information, see the [announcement about the deprecation of freezing](whatsnew1720.md#冻结).
 
 * **`appendln()` is deprecated in favor of `appendLine()`:**
   The `StringBuilder.appendln()` and `Appendable.appendln()` functions are now deprecated, and using them results in an error.
@@ -1441,7 +1441,7 @@ For a complete list of affected APIs in this release, see the [KT-71628](https:/
 
 ### Stable file tree traversal extensions for java.nio.file.Path
 
-Kotlin 1.7.20 introduced Experimental [extension functions](extensions.md#extension-functions) for the `java.nio.file.Path` class,
+Kotlin 1.7.20 introduced Experimental [extension functions](extensions.md#扩展函数) for the `java.nio.file.Path` class,
 which allows you to walk through a file tree.
 In Kotlin 2.1.0, the following file tree traversal extensions are now [Stable](components-stability.md#stability-levels-explained):
 
@@ -1600,5 +1600,5 @@ Find the detailed list of these changes in the [Compatibility guide for Kotlin 2
 Starting from IntelliJ IDEA 2023.3 and Android Studio Iguana (2023.2.1) Canary 15, the Kotlin plugin is distributed as a
 bundled plugin included in your IDE. This means that you can't install the plugin from JetBrains Marketplace anymore.
 
-To update to the new Kotlin version, [change the Kotlin version](releases.md#update-to-a-new-kotlin-version)
+To update to the new Kotlin version, [change the Kotlin version](releases.md#更新到新版-kotlin)
 to 2.1.0 in your build scripts.

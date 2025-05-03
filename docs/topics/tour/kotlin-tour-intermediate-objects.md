@@ -158,7 +158,7 @@ as the integer.
 In the `main()` function, the `getBongs()` function is called by referring to the class name. The companion object is created
 at this point. The `getBongs()` function is called with parameter `12`.
 
-For more information, see [](object-declarations.md#companion-objects).
+For more information, see [](object-declarations.md#伴生对象).
 
 ## Object declarations practice
 

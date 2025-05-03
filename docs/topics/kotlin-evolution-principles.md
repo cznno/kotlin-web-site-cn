@@ -216,7 +216,7 @@ the three previous language and API versions in addition to the latest stable on
 Actively maintained code bases can benefit from getting bug fixes as soon as possible, without waiting for a full deprecation cycle to complete.
 Currently, such projects can enable the `-progressive` option and get such fixes enabled even in tooling releases.
 
-All options are available in the command line as well as in [Gradle](gradle-compiler-options.md) and in [Maven](maven.md#specify-compiler-options).
+All options are available in the command line as well as in [Gradle](gradle-compiler-options.md) and in [Maven](maven.md#指定编译器选项).
 
 ### Evolving the binary format
 

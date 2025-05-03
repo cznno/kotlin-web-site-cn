@@ -242,7 +242,7 @@ html {
 }
 ```
 
-You can also apply the `@DslMarker` annotation directly to [function types](lambdas.md#function-types).
+You can also apply the `@DslMarker` annotation directly to [function types](lambdas.md#函数类型).
 Simply annotate the `@DslMarker` annotation with `@Target(AnnotationTarget.TYPE)`:
 
 ```kotlin

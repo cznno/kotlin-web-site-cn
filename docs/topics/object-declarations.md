@@ -13,10 +13,10 @@ Object declarations and object expressions are best used for scenarios when:
 * **Using singletons for shared resources:** You need to ensure that only one instance of a class exists throughout the application.
 For example, managing a database connection pool.
 * **Creating factory methods:** You need a convenient way to create instances efficiently.
-[Companion objects](#companion-objects) allow you to define class-level functions and properties tied to a class, simplifying the creation and management of these instances.
+[Companion objects](#伴生对象) allow you to define class-level functions and properties tied to a class, simplifying the creation and management of these instances.
 * **Modifying existing class behavior temporarily:** You want to modify the behavior of an existing class without the need to create a new subclass.
 For example, adding temporary functionality to an object for a specific operation.
-* **Type-safe design is required:** You require one-time implementations of interfaces or [abstract classes](classes.md#abstract-classes) using object expressions.
+* **Type-safe design is required:** You require one-time implementations of interfaces or [abstract classes](classes.md#抽象类) using object expressions.
 This can be useful for scenarios like a button click handler.
 
 ## 对象声明
@@ -440,7 +440,7 @@ fun main() {
 
 ### Use anonymous objects as return and value types
 
-When you return an anonymous object from a local or [`private`](visibility-modifiers.md#packages) function or property,
+When you return an anonymous object from a local or [`private`](visibility-modifiers.md#包) function or property,
 all the members of that anonymous object are accessible through that function or property:
 
 ```kotlin

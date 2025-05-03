@@ -126,7 +126,7 @@ inline fun f(crossinline body: () -> Unit) {
 
 ### Break and continue
 
-> This feature is currently [In preview](kotlin-evolution-principles.md#pre-stable-features).
+> This feature is currently [In preview](kotlin-evolution-principles.md#稳定前特性).
 > We're planning to stabilize it in future releases.
 > To opt in, use the `-Xnon-local-break-continue` compiler option.
 > We would appreciate your feedback on it in [YouTrack](https://youtrack.jetbrains.com/issue/KT-1436).

@@ -47,7 +47,7 @@ plugins {
 
 *目标* 是构建的一部分，负责编译、测试、以及针对某个<!--
 -->已支持平台打包软件。 Kotlin provides targets for each platform, so you can instruct Kotlin to compile code for
-that specific target. Learn more about [setting up targets](multiplatform-discover-project.md#targets).
+that specific target. Learn more about [setting up targets](multiplatform-discover-project.md#目标).
 
 Each target can have one or more [compilations](#编译项). In addition to default compilations for
 test and production purposes, you can [create custom compilations](multiplatform-configure-compilations.md#创建自定义编译项).
@@ -129,12 +129,12 @@ Each target can have one or more [compilations](#编译项).
 
 In any target block, you can use the following declarations:
 
-| **Name**            | **Description**                                                                                                                                                                            | 
-|---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `platformType`      | The Kotlin platform for this target. Available values: `jvm`, `androidJvm`, `js`, `wasm`, `native`, `common`.                                                                              |
-| `artifactsTaskName` | The name of the task that builds the resulting artifacts of this target.                                                                                                                   |
-| `components`        | Components used to set up Gradle publications.                                                                                                                                             |
-| `compilerOptions`   | [Compiler options](#compiler-options) used for the target. This declaration overrides any `compilerOptions {}` configured at [top level](multiplatform-dsl-reference.md#top-level-blocks). |
+| **Name**            | **Description**                                                                                                                                                                  | 
+|---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `platformType`      | The Kotlin platform for this target. Available values: `jvm`, `androidJvm`, `js`, `wasm`, `native`, `common`.                                                                    |
+| `artifactsTaskName` | The name of the task that builds the resulting artifacts of this target.                                                                                                         |
+| `components`        | Components used to set up Gradle publications.                                                                                                                                   |
+| `compilerOptions`   | [Compiler options](#compiler-options) used for the target. This declaration overrides any `compilerOptions {}` configured at [top level](multiplatform-dsl-reference.md#顶层块). |
 
 ### Web targets
 
@@ -162,7 +162,7 @@ kotlin {
 ```
 
 All the web targets, `js`, `wasmJs`, and `wasmWasi`, also support the `binaries.executable()` call. It explicitly
-instructs the Kotlin compiler to emit executable files. For more information, see [Execution environments](js-project-setup.md#execution-environments)
+instructs the Kotlin compiler to emit executable files. For more information, see [Execution environments](js-project-setup.md#执行环境)
 in the Kotlin/JS documentation.
 
 #### Browser
@@ -780,7 +780,7 @@ Configurations made at a lower level override similar settings at higher levels:
 * Task-level compiler options override similar settings at the target or extension level.
 * Target-level compiler options override similar settings at the extension level.
 
-For the list of possible compiler options, see [All compiler options](gradle-compiler-options.md#all-compiler-options).
+For the list of possible compiler options, see [All compiler options](gradle-compiler-options.md#所有编译器选项).
 
 ### Extension level
 

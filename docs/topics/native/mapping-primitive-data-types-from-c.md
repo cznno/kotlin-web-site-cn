@@ -23,7 +23,7 @@ Gradle builds.
 
 在本教程中会：
 
-* [了解 C 语言中的数据类型](#types-in-c-language)
+* [了解 C 语言中的数据类型](#c-语言中的类型)
 * [创建一个使用这些类型进行导出的 C 库](#create-a-c-library)
 * [探查为 C 库生成的 Kotlin API](#inspect-generated-kotlin-apis-for-a-c-library)
 

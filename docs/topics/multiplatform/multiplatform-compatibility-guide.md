@@ -75,7 +75,7 @@ we recommend migrating to the [new Experimental DSL](whatsnew2120.md#kotlin-mult
 Starting with Gradle 8.7, the Application plugin will no longer work with the Kotlin Multiplatform Gradle plugin.
 
 If you want to use both the Kotlin Multiplatform Gradle plugin and other Gradle plugins for
-Java in your multiplatform project, see [Deprecated compatibility with Kotlin Multiplatform Gradle plugin and Java plugins](multiplatform-compatibility-guide.md#deprecated-compatibility-with-kotlin-multiplatform-gradle-plugin-and-gradle-java-plugins).
+Java in your multiplatform project, see [Deprecated compatibility with Kotlin Multiplatform Gradle plugin and Java plugins](multiplatform-compatibility-guide.md#deprecated-compatibility-with-kmp-gradle-plugin-and-gradle-java-plugins).
 
 If you run into any issues, report them in our [issue tracker](https://kotl.in/issue) or ask for help in our [public Slack channel](https://kotlinlang.slack.com/archives/C19FD9681).
 
@@ -346,7 +346,7 @@ removed from the public API of the Kotlin Gradle plugin in future releases. This
 
 **What's the best practice now?**
 
-Use respective [Kotlin targets](multiplatform-dsl-reference.md#targets) instead, for example:
+Use respective [Kotlin targets](multiplatform-dsl-reference.md#目标) instead, for example:
 
 <table>
     <tr>

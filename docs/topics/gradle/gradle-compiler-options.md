@@ -16,7 +16,7 @@ JVM、JavaScript，以及[支持平台](native-overview.md#目标平台)的本�
 Kotlin 编译器有一系列用于控制编译过程的参数。
 
 The Gradle DSL allows comprehensive 
-configuration of compiler options. It is available for [Kotlin Multiplatform](multiplatform-dsl-reference.md) and [JVM/Android](#target-the-jvm) projects.
+configuration of compiler options. It is available for [Kotlin Multiplatform](multiplatform-dsl-reference.md) and [JVM/Android](#面向-jvm) projects.
 
 With the Gradle DSL, you can configure compiler options within the build script at three levels: 
 * **[Extension level](#extension-level)**, in the `kotlin {}` block for all targets and shared source sets.
@@ -138,7 +138,7 @@ tasks.named('compileKotlin', org.jetbrains.kotlin.gradle.tasks.KotlinCompilation
 
 ## 面向 JVM
 
-[As explained before](#how-to-define-options), you can define compiler options for your JVM/Android projects at the extension, target, and compilation unit levels (tasks).
+[As explained before](#配置选项), you can define compiler options for your JVM/Android projects at the extension, target, and compilation unit levels (tasks).
 
 Default JVM 环境下的编译任务，对于<!--
 -->生产代码叫做 `compileKotlin`，而对于测试代码则叫做 `compileTestKotlin`。对于自定义源代码集（source set），这些任务命名遵循 `compile＜Name＞Kotlin` 模式。

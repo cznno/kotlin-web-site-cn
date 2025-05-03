@@ -30,11 +30,11 @@ Kotlin 中 NPE 的可能的原因只可能是：
 
 > Besides NPE, another exception related to null safety is [`UninitializedPropertyAccessException`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-uninitialized-property-access-exception/). Kotlin throws this exception 
 > when you try to access a property that has not been initialized, ensuring that non-nullable properties are not used until they are ready. 
-> This typically happens with [`lateinit` properties](properties.md#late-initialized-properties-and-variables).
+> This typically happens with [`lateinit` properties](properties.md#延迟初始化属性与变量).
 >
 {style="tip"}
 
-## Nullable types and non-nullable types
+## 可空类型与非空类型
 
 在 Kotlin 中，类型系统区分一个类型可以容纳 `null` （可空类型）还是
 不能容纳（非空类型）。例如，String 类型的常规变量不能容纳 `null`：
@@ -112,12 +112,12 @@ performing operations. There are several ways to handle nullables:
 
 * [Check for `null` with the `if` conditional](#check-for-null-with-the-if-conditional)
 * [Safe call operator `?.`](#safe-call-operator)
-* [Elvis operator `?:`](#elvis-operator)
+* [Elvis operator `?:`](#elvis-操作符)
 * [Not-null assertion operator `!!`](#非空断言操作符)
 * [Nullable receiver](#nullable-receiver)
 * [`let` function](#let-function)
-* [Safe casts `as?`](#safe-casts)
-* [Collections of a nullable type](#collections-of-a-nullable-type)
+* [Safe casts `as?`](#安全的类型转换)
+* [Collections of a nullable type](#可空类型的集合)
 
 Read the next sections for details and examples of `null` handling tools and techniques.
 
@@ -142,7 +142,7 @@ fun main() {
 ```
 {kotlin-runnable="true"}
 
-In the example above, the compiler performs a [smart cast](typecasts.md#smart-casts) to change the type from nullable `String?` to non-nullable `String`. 它还会跟踪所执行检测的<!--
+In the example above, the compiler performs a [smart cast](typecasts.md#智能转换) to change the type from nullable `String?` to non-nullable `String`. 它还会跟踪所执行检测的<!--
 -->相关信息，并允许在 `if` 条件内部调用 `length`。
 
 同时，也支持更复杂的条件：
@@ -194,7 +194,7 @@ fun main() {
 
 The `b?.length` expression checks for nullability and 如果 `b` 非空，就返回 `b.length`，否则返回 `null`，这个表达式的类型是 `Int?`。
 
-You can use the `?.` operator with both [`var` and `val` variables](basic-syntax.md#variables) in Kotlin:
+You can use the `?.` operator with both [`var` and `val` variables](basic-syntax.md#变量) in Kotlin:
 
 * A nullable `var` can hold a `null` (for example, `var nullableValue: String? = null`) or a non-null value (for example, `var nullableValue: String? = "Kotlin"`). If it's a non-null value, you can change it to `null` at any point.
 * A nullable `val` can hold a `null` (for example, `val nullableValue: String? = null`) or a non-null value (for example, `val nullableValue: String? = "Kotlin"`). If it's a non-null value, you cannot change it to `null` subsequently.
@@ -321,7 +321,7 @@ In such cases, you can use the `!!` operator to explicitly tell the compiler tha
 
 ## Nullable receiver
 
-You can use extension functions with a [nullable receiver type](extensions.md#nullable-receiver), 
+You can use extension functions with a [nullable receiver type](extensions.md#可空接收者), 
 allowing these functions to be called on variables that might be `null`.
 
 By defining an extension function on a nullable receiver type, you can handle `null` values within the function itself 
@@ -400,7 +400,7 @@ fun main() {
 
 ## 安全的类型转换
 
-The regular Kotlin operator for [type casts](typecasts.md#unsafe-cast-operator) is the `as` operator. However, regular casts can result in an exception
+The regular Kotlin operator for [type casts](typecasts.md#不安全的转换操作符) is the `as` operator. However, regular casts can result in an exception
 if the object is not of the target type. 
 
 You can use the `as?` operator for safe casts. It tries to cast a value to the specified type and returns `null` if the value is not of that type:

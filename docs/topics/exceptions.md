@@ -2,7 +2,7 @@
 
 Exceptions help your code run more predictably, even when runtime errors occur that could disrupt program execution.
 Kotlin treats all exceptions as _unchecked_ by default.
-Unchecked exceptions simplify the exception handling process: you can catch exceptions, but you don't need to explicitly handle or [declare](java-to-kotlin-interop.md#checked-exceptions) them. 
+Unchecked exceptions simplify the exception handling process: you can catch exceptions, but you don't need to explicitly handle or [declare](java-to-kotlin-interop.md#受检异常) them. 
 
 > Learn more about how Kotlin handles exceptions when interacting with Java, Swift, and Objective-C in the
 > [Exception interoperability with Java, Swift, and Objective-C](#exception-interoperability-with-java-swift-and-objective-c) section.
@@ -24,7 +24,7 @@ class`](inheritance.md), you can create [custom exceptions](#create-custom-excep
 
 You can manually throw exceptions with the `throw` keyword.
 Throwing an exception indicates that an unexpected runtime error has occurred in the code.
-Exceptions are [objects](classes.md#creating-instances-of-classes), and throwing one creates an instance of an exception class.
+Exceptions are [objects](classes.md#创建类的实例), and throwing one creates an instance of an exception class.
 
 You can throw an exception without any parameters: 
 
@@ -86,7 +86,7 @@ fun main() {
 ```
 {kotlin-runnable="true"}
 
-> The `require()` function allows the compiler to perform [smart casting](typecasts.md#smart-casts).
+> The `require()` function allows the compiler to perform [smart casting](typecasts.md#智能转换).
 > After a successful check, the variable is automatically cast to a non-nullable type.
 > These functions are often used for nullability checks to ensure that the variable is not null before proceeding. For example:
 >
@@ -134,7 +134,7 @@ fun main() {
 ```
 {kotlin-runnable="true"}
 
-> The `check()` function allows the compiler to perform [smart casting](typecasts.md#smart-casts).
+> The `check()` function allows the compiler to perform [smart casting](typecasts.md#智能转换).
 > After a successful check, the variable is automatically cast to a non-nullable type.
 > These functions are often used for nullability checks to ensure that the variable is not null before proceeding. For example:
 >
@@ -456,7 +456,7 @@ fun main() {
 
 In applications with diverse error scenarios,
 creating a hierarchy of exceptions can help making the code clearer and more specific.
-You can achieve this by using an [abstract class](classes.md#abstract-classes) or a
+You can achieve this by using an [abstract class](classes.md#抽象类) or a
 [sealed class](sealed-classes.md#constructors) as a base for common exception features and creating specific 
 subclasses for detailed exception types.
 Additionally, custom exceptions with optional parameters offer flexibility, allowing initialization with varied messages,
@@ -701,5 +701,5 @@ languages that distinguish between checked and unchecked exceptions.
 To address this disparity in exception handling between Kotlin and languages like Java, Swift, and Objective-C,
 you can use the [`@Throws`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throws/) annotation.
 This annotation alerts callers about possible exceptions.
-For more information, see [Calling Kotlin from Java](java-to-kotlin-interop.md#checked-exceptions) and
+For more information, see [Calling Kotlin from Java](java-to-kotlin-interop.md#受检异常) and
 [Interoperability with Swift/Objective-C](native-objc-interop.md#errors-and-exceptions).

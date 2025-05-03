@@ -271,7 +271,7 @@ sourceSets {
 
 Sometimes, a library author provides an API but wants to require users to explicitly opt in before they can extend it. 
 For example, the library API may be stable for use but not for inheritance, as it might be extended in the future with 
-new abstract functions. Library authors can enforce this by marking [open](inheritance.md) or [abstract classes](classes.md#abstract-classes) and [non-functional interfaces](interfaces.md)
+new abstract functions. Library authors can enforce this by marking [open](inheritance.md) or [abstract classes](classes.md#抽象类) and [non-functional interfaces](interfaces.md)
 with the [`@SubclassOptInRequired`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-subclass-opt-in-required/) annotation.
 
 To opt in to use such an API element and extend it in your code, use the `@SubclassOptInRequired` annotation
@@ -411,7 +411,7 @@ extended. For example, when you have some API that is stable to use but:
 
 In such cases, you can require users to opt in to your API before they can extend it further. Users can extend your API 
 by inheriting from the API or implementing abstract functions. By using the [`@SubclassOptInRequired`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-subclass-opt-in-required/) annotation,
-you can enforce this requirement to opt-in for [open](inheritance.md) or [abstract classes](classes.md#abstract-classes) and [non-functional interfaces](interfaces.md).
+you can enforce this requirement to opt-in for [open](inheritance.md) or [abstract classes](classes.md#抽象类) and [non-functional interfaces](interfaces.md).
 
 To add the opt-in requirement to an API element, use the [`@SubclassOptInRequired`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-subclass-opt-in-required/)
 annotation with a reference to the annotation class:

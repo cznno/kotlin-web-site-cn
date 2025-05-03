@@ -1,6 +1,6 @@
 [//]: # (title: Kotlin 2.0.0 的新特性)
 
-_[Released: May 21, 2024](releases.md#release-details)_
+_[Released: May 21, 2024](releases.md#版本发布详情)_
 
 The Kotlin 2.0.0 release is out and the [new Kotlin K2 compiler](#kotlin-k2-compiler) is Stable! Additionally, here are
 some other highlights:
@@ -26,10 +26,10 @@ keynote, where we announced exciting updates and addressed the recent work on th
 
 The Kotlin plugins that support Kotlin 2.0.0 are bundled in the latest IntelliJ IDEA and Android Studio.
 You don't need to update the Kotlin plugin in your IDE.
-All you need to do is to [change the Kotlin version](releases.md#update-to-a-new-kotlin-version) to Kotlin 2.0.0 in your build scripts.
+All you need to do is to [change the Kotlin version](releases.md#更新到新版-kotlin) to Kotlin 2.0.0 in your build scripts.
 
 * For details about IntelliJ IDEA's support for the Kotlin K2 compiler, see [Support in IDEs](#support-in-ides).
-* For more details about IntelliJ IDEA's support for Kotlin, see [Kotlin releases](releases.md#ide-support).
+* For more details about IntelliJ IDEA's support for Kotlin, see [Kotlin releases](releases.md#ide-支持).
 
 ## Kotlin K2 compiler
 
@@ -89,7 +89,7 @@ If you encounter any of the problems mentioned above, you can take the following
 ### Smart cast improvements
 
 The Kotlin compiler can automatically cast an object to a type in specific cases, saving you the trouble of having to
-explicitly cast it yourself. This is called [smart casting](typecasts.md#smart-casts).
+explicitly cast it yourself. This is called [smart casting](typecasts.md#智能转换).
 The Kotlin K2 compiler now performs smart casts in even more scenarios than before.
 
 In Kotlin 2.0.0, we've made improvements related to smart casts in the following areas:
@@ -678,7 +678,7 @@ This version also brings the following changes:
 Kotlin 2.0.0 introduces a new default method for generating lambda functions using `invokedynamic`. This change reduces
 the binary sizes of applications compared to the traditional anonymous class generation.
 
-Since the first version, Kotlin has generated lambdas as anonymous classes. However, starting from [Kotlin 1.5.0](whatsnew15.md#lambdas-via-invokedynamic),
+Since the first version, Kotlin has generated lambdas as anonymous classes. However, starting from [Kotlin 1.5.0](whatsnew15.md#采用-invokedynamic-的-lambda-表达式),
 the option for `invokedynamic` generation has been available by using the `-Xlambdas=indy` compiler option. In Kotlin
 2.0.0, `invokedynamic` has become the default method for lambda generation. This method produces lighter binaries and
 aligns Kotlin with JVM optimizations, ensuring applications benefit from ongoing and future improvements in JVM performance.
@@ -774,7 +774,7 @@ Previously, the Kotlin/Native compiler resolved standard library and platform de
 inconsistencies in the way the Kotlin Gradle plugin worked across Kotlin targets.
 
 Now, each Kotlin/Native Gradle compilation explicitly includes standard library and platform dependencies in its
-compile-time library path via the `compileDependencyFiles` [compilation parameter](multiplatform-dsl-reference.md#compilation-parameters).
+compile-time library path via the `compileDependencyFiles` [compilation parameter](multiplatform-dsl-reference.md#编译项参数).
 
 ### Tasks error in Gradle configuration cache
 
@@ -941,7 +941,7 @@ kotlin {
 }
 ```
 
-The new target automatically turns on [ES classes and modules](whatsnew19.md#experimental-support-for-es2015-classes-and-modules)
+The new target automatically turns on [ES classes and modules](whatsnew19.md#对-es2015-类与模块的实验性支持)
 and the newly supported [ES generators](#suspend-functions-as-es2015-generators).
 
 ### Suspend functions as ES2015 generators
@@ -1002,7 +1002,7 @@ of a separate `.js` file for each project module. This is still the default opti
 Since module files could also be too large, with Kotlin 2.0.0, we add a more granular output that generates one (or two,
 if the file contains exported declarations) JavaScript file per each Kotlin file. To enable the per-file compilation mode:
 
-1. Add the [`useEsModules()`](whatsnew19.md#experimental-support-for-es2015-classes-and-modules) function to your build
+1. Add the [`useEsModules()`](whatsnew19.md#对-es2015-类与模块的实验性支持) function to your build
    file to support ECMAScript modules:
 
    ```kotlin
@@ -1554,7 +1554,7 @@ Since Kotlin 2.0.0, the following DSLs for specifying compiler options are depre
   and the `KotlinNativeLinkArtifactTask` class. Use the `toolOptions` DSL instead.
 * The `dceOptions` DSL from the `KotlinJsDce` interface. Use the `toolOptions` DSL instead.
 
-For more information on how to specify compiler options in the Kotlin Gradle plugin, see [How to define options](gradle-compiler-options.md#how-to-define-options).
+For more information on how to specify compiler options in the Kotlin Gradle plugin, see [How to define options](gradle-compiler-options.md#配置选项).
 
 ### Bumped minimum supported AGP version
 
@@ -1698,7 +1698,7 @@ In Kotlin 2.0.0, the `enumEntries<T>()` function becomes [Stable](components-sta
 The `enumEntries<T>()` function is a replacement for the generic `enumValues<T>()` function. The new function returns
 a list of all enum entries for the given enum type `T`. The `entries` property for enum classes was previously introduced
 and also stabilized to replace the synthetic `values()` function. For more information about the entries property,
-see [What's new in Kotlin 1.8.20](whatsnew1820.md#a-modern-and-performant-replacement-of-the-enum-class-values-function).
+see [What's new in Kotlin 1.8.20](whatsnew1820.md#枚举类类-values-函数的现代且高性能替代).
 
 > The `enumValues<T>()` function is still supported, but we recommend that you use the `enumEntries<T>()` function
 > instead because it has less of a performance impact. Every time you call `enumValues<T>()`, a new array is created, whereas
@@ -1821,5 +1821,5 @@ fun main() {
 Starting from IntelliJ IDEA 2023.3 and Android Studio Iguana (2023.2.1) Canary 15, the Kotlin plugin is distributed as a
 bundled plugin included in your IDE. This means that you can't install the plugin from JetBrains Marketplace anymore.
 
-To update to the new Kotlin version, [change the Kotlin version](releases.md#update-to-a-new-kotlin-version)
+To update to the new Kotlin version, [change the Kotlin version](releases.md#更新到新版-kotlin)
 to 2.0.0 in your build scripts.

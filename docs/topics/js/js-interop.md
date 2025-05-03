@@ -195,7 +195,7 @@ fun sendQuery() {
 
 ### 强制转换
 
-除了[“unsafe”强制转换运算符](/docs/reference/typecasts.md#unsafe-cast-operator) `as`
+除了[“unsafe”强制转换运算符](typecasts.md#不安全的转换操作符) `as`
 （在无法进行强制转换时抛出 `ClassCastException`）之外， Kotlin/JS 还提供 [`unsafeCast<T>()`](/api/latest/jvm/stdlib/kotlin.js/unsafe-cast.md)。使用 `unsafeCast` 时，
 在运行时 _完全不进行类型检查_。例如，考虑以下两种方法：
 

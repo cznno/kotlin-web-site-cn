@@ -34,7 +34,7 @@ You can publish a multiplatform library to a local Maven repository with the `ma
    ```
 
 When used with `maven-publish`, the Kotlin plugin automatically creates publications for each target that can be built
-on the current host, except for the Android target, which needs an [additional step to configure publishing](#publish-an-android-library).
+on the current host, except for the Android target, which needs an [additional step to configure publishing](#发布-android-库).
 
 ## Structure of publications
 

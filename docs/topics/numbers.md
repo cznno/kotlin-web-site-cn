@@ -139,7 +139,7 @@ such as `Integer` or `Double`.
 The JVM applies a [memory optimization technique](https://docs.oracle.com/javase/specs/jls/se22/html/jls-5.html#jls-5.1.7)
 to `Integer` and other objects that represent numbers between `−128` and `127`.
 All nullable references to such objects refer to the same cached object.
-For example, nullable objects in the following code are [referentially equal](equality.md#referential-equality):
+For example, nullable objects in the following code are [referentially equal](equality.md#引用相等):
 
 ```kotlin
 fun main() {
@@ -154,7 +154,7 @@ fun main() {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 
-For numbers outside this range, the nullable objects are different but [structurally equal](equality.md#structural-equality):
+For numbers outside this range, the nullable objects are different but [structurally equal](equality.md#结构相等):
 
 ```kotlin
 fun main() {

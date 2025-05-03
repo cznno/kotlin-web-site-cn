@@ -124,7 +124,7 @@ For the binary configuration, the following common parameters are available:
 | `kotlinOptions` | Optional compiler options applied to the compilation. See the list of available [compiler options](gradle-compiler-options.md).                        |
 | `addModule`     | In addition to the current module, you can add other modules to the resulting artifact.                                                                |
 | `setModules`    | You can override the list of all modules that will be added to the resulting artifact.                                                                 |
-| `target`        | Declares a particular target of a project. The names of available targets are listed in the [Targets](multiplatform-dsl-reference.md#targets) section. |
+| `target`        | Declares a particular target of a project. The names of available targets are listed in the [Targets](multiplatform-dsl-reference.md#目标) section. |
 
 ### 库与 framework
 

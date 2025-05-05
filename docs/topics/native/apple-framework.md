@@ -377,7 +377,7 @@ Kotlin 源中的全局声明的作用域位于 Objective-C 中的 `DemoLibKt` �
 ## 在 Swift 中使用代码
 
 生成的 framework 拥有辅助 attribute，使其在 Swift 中使用更加容易。Let's convert the [previous
-Objective-C example](#use-code-from-objective-c) into Swift.
+Objective-C example](#在-objective-c-中使用代码) into Swift.
 
 In the framework directory, create the `main.swift` file with the following code:
 

@@ -68,7 +68,7 @@ This option has the same effect as adding the `@ConsistentCopyVisibility` annota
 
 ### Phased replacement of context receivers with context parameters
 
-In Kotlin 1.6.20, we introduced [context receivers](whatsnew1620.md#prototype-of-context-receivers-for-kotlin-jvm) as an
+In Kotlin 1.6.20, we introduced [context receivers](whatsnew1620.md#kotlin-jvm-的上下文接收者原型) as an
 [Experimental](components-stability.md#stability-levels-explained) feature. After listening to community feedback, we've
 decided not to continue with this approach and will take a different direction.
 

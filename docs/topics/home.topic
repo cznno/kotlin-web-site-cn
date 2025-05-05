@@ -17,23 +17,23 @@
         <primary>
             <title>第一步</title>
             <a href="basic-syntax.md" summary="Kotlin 语法的快速简介：关键字、操作符、程序结构">基础语法</a>
-            <a href="kotlin-tour-welcome.md" summary="Take a tour of the fundamentals of the Kotlin programming language">Kotlin tour</a>
+            <a href="kotlin-tour-welcome.md" summary="Kotlin 编程语言的基础知识导览">Kotlin 之旅</a>
         </primary>
         <secondary>
             <title>Kotlin 多平台</title>
-            <a href="multiplatform.topic" summary="Explore the Kotlin Multiplatform technology to share code between your applications">Kotlin Multiplatform overview</a>
-            <a href="https://kmp.jetbrains.com/" summary="Quickly create and download a multiplatform project template">Kotlin Multiplatform Wizard</a>
-            <a href="https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-create-first-app.html" summary="Create a mobile app that works on both Android and iOS">Get started with Kotlin Multiplatform</a>
-            <a href="https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-create-first-app.html" summary="Use Compose Multiplatform to implement one user interface across mobile, desktop, and web">Get started with Compose Multiplatform</a>
+            <a href="multiplatform.topic" summary="探索 Kotlin 多平台技术来在应用程序之间共享代码">Kotlin 多平台概述</a>
+            <a href="https://kmp.jetbrains.com/" summary="快速创建并下载多平台项目模板">Kotlin 多平台向导</a>
+            <a href="https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-create-first-app.html" summary="创建一个在 Android 与 iOS 上都能运行的移动应用">Kotlin 多平台入门</a>
+            <a href="https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-create-first-app.html" summary="使用 Compose 多平台来实现跨移动端、桌面端和 web 端的统一用户界面">Compose 多平台入门</a>
         </secondary>
         <misc>
             <cards narrow="false">
                 <title>精选主题</title>
-                <a href="whatsnew2120.md" summary="New experimental features, performance improvements, and bug fixes">What's new in Kotlin 2.1.20</a>
-                <a href="releases.md" summary="The latest Kotlin releases and instructions on how to update to them">Kotlin releases</a>
+                <a href="whatsnew2120.md" summary="新的实验性特性、性能改进与问题修复">Kotlin 2.1.20 的新特性</a>
+                <a href="releases.md" summary="最新的 Kotlin 版本及其更新说明">Kotlin 版本发布</a>
                 <a href="https://kotlinlang.org/api/latest/jvm/stdlib/" summary="Kotlin 日常工作必备：IO、 文件、 线程、 集合等等">标准库 API 参考</a>
                 <a href="basic-types.md" summary="Kotlin 类型系统：数字、字符串、数组与其他内置类型">基本类型</a>
-                <a href="collections-overview.md" summary="Collections: lists, sets, and maps">Collections</a>
+                <a href="collections-overview.md" summary="集合：list、set 与 map">集合</a>
                 <a href="coroutines-overview.md" summary="并发：协程、流、通道">协程</a>
             </cards>
         </misc>

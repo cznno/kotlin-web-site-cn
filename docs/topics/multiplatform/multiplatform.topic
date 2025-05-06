@@ -40,7 +40,7 @@
                 </group>
                 <group>
                     <title>工具</title>
-                    <a href="https://kmp.jetbrains.com/" summary="：快速创建并下载跨平台项目模板">新建项目向导</a>
+                    <a href="https://kmp.jetbrains.com/" summary="快速创建并下载跨平台项目模板">新建项目向导</a>
                     <a href="https://plugins.jetbrains.com/plugin/14936-kotlin-multiplatform" summary="用于开发 Android 与 iOS 双平台应用程序的 Android Studio 插件">Android Studio 插件</a>
                     <a href="https://www.jetbrains.com/lp/compose-multiplatform/" summary="由 JetBrains 开发的基于 Kotlin 的声明式 UI 框架">Compose 多平台 UI 框架</a>
                     <a href="https://klibs.io/" summary="由 JetBrains 开发的 Kotlin 多平台库实验性搜索平台">库搜索平台</a>

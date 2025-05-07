@@ -7,40 +7,40 @@
 Kotlin 是一门现代但已成熟的编程语言，旨在让开发人员更幸福快乐。
 它简洁、安全、可与 Java 及其他语言互操作，并提供了多种方式在多个平台间复用代码，以实现高效编程。
 
-首先，何不参加 Kotlin 之旅[^1]呢？ 该教程涵盖了 Kotlin 编程语言的基础知识 and can
-be completed entirely within your browser.
+首先，何不参加 Kotlin 之旅[^1]呢？ 该教程涵盖了 Kotlin 编程语言的基础知识并且可以<!--
+-->完全在浏览器中完成。
 
-<a href="kotlin-tour-welcome.md"><img src="start-kotlin-tour.svg" width="700" alt="Start the Kotlin tour" style="block"/></a>
+<a href="kotlin-tour-welcome.md"><img src="start-kotlin-tour.svg" width="700" alt="开始 Kotlin 之旅" style="block"/></a>
 
 ## 安装 Kotlin
 
 Kotlin 已包含在每个 [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) 与 [Android Studio](https://developer.android.com/studio) 版本中了。  
 可下载并安装这两个 IDE 之一来开始使用 Kotlin。
 
-## Choose your Kotlin use case
+## 选择你的 Kotlin 使用场景
  
 <tabs>
 
-<tab id="console" title="Console">
+<tab id="console" title="控制台">
 
-Here you'll learn how to develop a console application and create unit tests with Kotlin.
+在这里可学到如何使用 Kotlin 开发控制台应用程序并创建单元测试。
 
-1. **[Create a basic JVM application with the IntelliJ IDEA project wizard](jvm-get-started.md).**
+1. **[使用 IntelliJ IDEA 项目向导创建一个基本的 JVM 应用程序](jvm-get-started.md).**
 
-2. **[Write your first unit test](jvm-test-using-junit.md).**
+2. **[编写第一个单元测试](jvm-test-using-junit.md).**
 
 </tab>
 
 <tab id="backend" title="后端">
 
-Here you'll learn how to develop a backend application with Kotlin server-side.
+在这里可学到如何使用 Kotlin 服务端开发后端应用程序。
 
 1. **创建第一个后端应用程序：**
 
-     * [Create a RESTful web service with Spring Boot](jvm-get-started-spring-boot.md)
-     * [Create HTTP APIs with Ktor](https://ktor.io/docs/creating-http-apis.html)
+     * [创建使用 Spring Boot 的 RESTful Web 服务](jvm-get-started-spring-boot.md)
+     * [创建使用 Ktor 的 HTTP API](https://ktor.io/docs/creating-http-apis.html)
 
-2. **[Learn how to mix Kotlin and Java code in your application](mixing-java-kotlin-intellij.md).**
+2. **[了解如何在应用程序中混合使用 Kotlin 与 Java 代码](mixing-java-kotlin-intellij.md).**
 
 </tab>
 
@@ -52,13 +52,13 @@ Here you'll learn how to develop a backend application with Kotlin server-side.
 
 2. **创建第一个用于 iOS 与 Android 应用程序：**
 
-   * Create a cross-platform application from scratch and:
-     * [Share business logic while keeping the UI native](https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-create-first-app.html)
-     * [Share business logic and UI](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-create-first-app.html)
-   * [Make your existing Android application work on iOS](https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-integrate-in-existing-app.html)
-   * [Create a cross-platform application using Ktor and SQLdelight](https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-ktor-sqldelight.html)
+   * 从头开始创建跨平台应用程序，并：
+     * [共享业务逻辑，同时保持 UI 原生](https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-create-first-app.html)
+     * [共享业务逻辑与 UI](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-create-first-app.html)
+   * [让现有的 Android 应用程序能在 iOS 上运行](https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-integrate-in-existing-app.html)
+   * [创建使用 Ktor 与 SQLdelight 的跨平台应用程序](https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-ktor-sqldelight.html)
 
-3. **Explore [sample projects](https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-samples.html)**.
+3. **探索[样例项目](https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-samples.html)**.
 
 </tab>
 
@@ -68,7 +68,7 @@ Here you'll learn how to develop a backend application with Kotlin server-side.
 
 </tab>
 
-<tab id="data-analysis" title="Data analysis">
+<tab id="data-analysis" title="数据分析">
 
 From building data pipelines to productionizing machine learning models, Kotlin is a great choice for working with data and getting the most out of it.
 
@@ -87,7 +87,7 @@ From building data pipelines to productionizing machine learning models, Kotlin 
 
 </tabs>
 
-## Join the Kotlin community
+## 加入 Kotlin 社区
 
 Stay in the loop with the latest updates across the Kotlin ecosystem and share your experience.
 

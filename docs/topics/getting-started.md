@@ -70,18 +70,18 @@ Kotlin 已包含在每个 [IntelliJ IDEA](https://www.jetbrains.com/idea/downloa
 
 <tab id="data-analysis" title="数据分析">
 
-From building data pipelines to productionizing machine learning models, Kotlin is a great choice for working with data and getting the most out of it.
+无论是构建数据流水线，还是将机器学习模型投入生产，Kotlin 都是处理数据并充分发挥其价值的绝佳选择。
 
-1. **Create and edit notebooks seamlessly within the IDE:**
+1. **在 IDE 中无缝创建并编辑 notebook：**
 
-   * [Get started with Kotlin Notebook](get-started-with-kotlin-notebooks.md)
+   * [Kotlin Notebook 入门](get-started-with-kotlin-notebooks.md)
 
-2. **Explore and experiment with your data:**
+2. **探索并试验数据：**
 
-   * [DataFrame](https://kotlin.github.io/dataframe/overview.html) – a library for data analysis and manipulation.
-   * [Kandy](https://kotlin.github.io/kandy/welcome.html) – a plotting tool for data visualization.
+   * [DataFrame](https://kotlin.github.io/dataframe/overview.html) – 用于数据分析与处理的库。
+   * [Kandy](https://kotlin.github.io/kandy/welcome.html) – 用于数据可视化的绘图工具。
 
-3. **Follow Kotlin for Data Analysis on Twitter:** [KotlinForData](http://twitter.com/KotlinForData).
+3. **在 Twitter 上关注 Kotlin 用于数据分析：** [KotlinForData](http://twitter.com/KotlinForData).
 
 </tab>
 
@@ -89,15 +89,15 @@ From building data pipelines to productionizing machine learning models, Kotlin 
 
 ## 加入 Kotlin 社区
 
-Stay in the loop with the latest updates across the Kotlin ecosystem and share your experience.
+持续关注 Kotlin 生态系统的最新动态并分享你的经验。
 
-* Join us on:
-  * ![Slack](slack.svg){width=25}{type="joined"} Slack: [get an invite](https://surveys.jetbrains.com/s3/kotlin-slack-sign-up).
-  * ![StackOverflow](stackoverflow.svg){width=25}{type="joined"} StackOverflow: subscribe to the ["kotlin"](https://stackoverflow.com/questions/tagged/kotlin) tag.
-* Follow Kotlin on ![YouTube](youtube.svg){width=25}{type="joined"} [Youtube](https://www.youtube.com/channel/UCP7uiEZIqci43m22KDl0sNw), ![Twitter](twitter.svg){width=18}{type="joined"} [Twitter](https://twitter.com/kotlin), ![Bluesky](bsky.svg){width=18}{type="joined"} [Bluesky](https://bsky.app/profile/kotlinlang.org), and ![Reddit](reddit.svg){width=25}{type="joined"} [Reddit](https://www.reddit.com/r/Kotlin/).
-* Subscribe to [Kotlin news](https://info.jetbrains.com/kotlin-communication-center.html).
+* 加入我们：
+  * ![Slack](slack.svg){width=25}{type="joined"} Slack：[获取邀请](https://surveys.jetbrains.com/s3/kotlin-slack-sign-up).
+  * ![StackOverflow](stackoverflow.svg){width=25}{type="joined"} StackOverflow：订阅 ["kotlin"](https://stackoverflow.com/questions/tagged/kotlin) 标签。
+* 在 ![YouTube](youtube.svg){width=25}{type="joined"} [Youtube](https://www.youtube.com/channel/UCP7uiEZIqci43m22KDl0sNw)、 ![Twitter](twitter.svg){width=18}{type="joined"} [Twitter](https://twitter.com/kotlin)、 ![Bluesky](bsky.svg){width=18}{type="joined"} [Bluesky](https://bsky.app/profile/kotlinlang.org) 与 ![Reddit](reddit.svg){width=25}{type="joined"} [Reddit](https://www.reddit.com/r/Kotlin/) 上关注 Kotlin。
+* 订阅 [Kotlin 资讯](https://info.jetbrains.com/kotlin-communication-center.html)。
 
-If you encounter any difficulties or problems, report an issue in our [issue tracker](https://youtrack.jetbrains.com/issues/KT).
+如果遇到任何困难或问题，请在我们的[问题跟踪器](https://youtrack.jetbrains.com/issues/KT)中报告问题。
 
 ## 还缺少什么？
 

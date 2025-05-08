@@ -4,16 +4,16 @@
 > 
 {type="note"}
 
-Quickly learn the essentials of the Kotlin programming language through our tours, which will take you from beginner to intermediate
-level. 每一章都包含：
+通过这些导览快速掌握 Kotlin 编程语言的精髓，将你从入门提升到中级<!--
+-->水平。 每一章都包含：
 
 * **理论**：通过示例介绍语言的关键概念。
 * **实践**：通过练习来检验对所学内容的理解。
 * **答案**：参考答案。
 
-Start with our beginner tour to grasp the fundamentals:
+从我们的初学者之旅开始掌握基础知识：
 
-<a href="kotlin-tour-hello-world.md"><img src="start-beginner-tour.svg" width="700" alt="Start the beginner's Kotlin tour" style="block"/></a>
+<a href="kotlin-tour-hello-world.md"><img src="start-beginner-tour.svg" width="700" alt="开始初学者的 Kotlin 之旅" style="block"/></a>
 
 <deflist collapsible="true">
     <def title="Beginner tour contents" default-state="collapsed">
@@ -29,22 +29,22 @@ Start with our beginner tour to grasp the fundamentals:
     </def>
 </deflist>
 
-If you're ready to take your understanding of Kotlin to the next level, take our intermediate tour:
+如果已准备将对 Kotlin 的理解提升到更高水平，请参加我们的进阶之旅：
 
-<a href="kotlin-tour-intermediate-extension-functions.md"><img src="start-intermediate-tour.svg" width="700" alt="Start the intermediate Kotlin tour" style="block"/></a>
+<a href="kotlin-tour-intermediate-extension-functions.md"><img src="start-intermediate-tour.svg" width="700" alt="开始中级 Kotlin 之旅" style="block"/></a>
 
 <deflist collapsible="true">
     <def title="Intermediate tour contents" default-state="collapsed">
         <ul>
-            <li><a href="kotlin-tour-intermediate-extension-functions.md">Extension functions</a></li>
-            <li><a href="kotlin-tour-intermediate-scope-functions.md">Scope functions</a></li>
-            <li><a href="kotlin-tour-intermediate-lambdas-receiver.md">Lambda expressions with receiver</a></li>
-            <li><a href="kotlin-tour-intermediate-classes-interfaces.md">Classes and interfaces</a></li>
-            <li><a href="kotlin-tour-intermediate-objects.md">Objects</a></li>
-            <li><a href="kotlin-tour-intermediate-open-special-classes.md">Open and special classes</a></li>
-            <li><a href="kotlin-tour-intermediate-properties.md">Properties</a></li>
-            <li><a href="kotlin-tour-intermediate-null-safety.md">Null safety</a></li>
-            <li><a href="kotlin-tour-intermediate-libraries-and-apis.md">Libraries and APIs</a></li>
+            <li><a href="kotlin-tour-intermediate-extension-functions.md">扩展函数</a></li>
+            <li><a href="kotlin-tour-intermediate-scope-functions.md">作用域函数</a></li>
+            <li><a href="kotlin-tour-intermediate-lambdas-receiver.md">带接收者的 lambda 表达式</a></li>
+            <li><a href="kotlin-tour-intermediate-classes-interfaces.md">类与接口</a></li>
+            <li><a href="kotlin-tour-intermediate-objects.md">对象</a></li>
+            <li><a href="kotlin-tour-intermediate-open-special-classes.md">开放类与特殊类</a></li>
+            <li><a href="kotlin-tour-intermediate-properties.md">属性</a></li>
+            <li><a href="kotlin-tour-intermediate-null-safety.md">空安全</a></li>
+            <li><a href="kotlin-tour-intermediate-libraries-and-apis.md">库与 API</a></li>
         </ul>
     </def>
 </deflist>

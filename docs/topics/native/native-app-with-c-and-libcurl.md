@@ -216,6 +216,6 @@ hide this using `curl_easy_setopt`.
 >
 {style="note"}
 
-## What's next
+## 下一步做什么
 
 Learn more about [Kotlin's interoperability with C](native-c-interop.md).

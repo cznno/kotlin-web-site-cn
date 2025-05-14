@@ -296,7 +296,7 @@ What should the opt-in look like in your code?
 ```
 {initial-collapse-state="collapsed" collapsible="true" collapsed-title="Example solution" id="kotlin-tour-libraries-solution-3"}
 
-## What's next?
+## 下一步做什么？
 
 Congratulations! You've completed the intermediate tour! As a next step, check out our tutorials for popular Kotlin applications:
 

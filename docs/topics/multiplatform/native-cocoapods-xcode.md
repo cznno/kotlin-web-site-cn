@@ -140,7 +140,7 @@ To use a Kotlin project as a Pod dependency in the Xcode project with several ta
 9. Run **Build** | **Reload All Gradle Projects** in IntelliJ IDEA (or **File** | **Sync Project with Gradle Files** in Android Studio)
    to re-import the project.
 
-## What's next
+## 下一步做什么
 
 * [Add dependencies on a Pod library in your Kotlin project](native-cocoapods-libraries.md)
 * [See how to connect the framework to your iOS project](multiplatform-direct-integration.md)

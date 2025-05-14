@@ -425,7 +425,7 @@ To solve this issue:
     ./gradlew --stop
     ```
 
-## What's next
+## 下一步做什么
 
 * [Add dependencies on a Pod library in your Kotlin project](native-cocoapods-libraries.md)
 * [Set up dependencies between a Kotlin project and an Xcode project](native-cocoapods-xcode.md)

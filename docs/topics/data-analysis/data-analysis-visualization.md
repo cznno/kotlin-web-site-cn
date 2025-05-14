@@ -161,7 +161,7 @@ Here's the result:
 
 ![Bar chart](visualization-bar-chart.svg){width=600}
 
-## What's next
+## 下一步做什么
 
 * Explore more chart examples in the [Kandy library documentation](https://kotlin.github.io/kandy/examples.html)
 * Explore more advanced plotting options in the [Lets-Plot library documentation](lets-plot.md)

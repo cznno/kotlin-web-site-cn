@@ -408,7 +408,7 @@ assert(employee.age < 100) { "${employee.name} has an invalid age: ${employee.ag
        Employee(name=Dave, age=150, salary=70000)
 ```
 
-## What's next
+## 下一步做什么
 
 * Look through a [simple project with the plugin enabled](https://github.com/JetBrains/kotlin/tree/master/libraries/tools/kotlin-gradle-plugin-integration-tests/src/test/resources/testProject/powerAssertSourceSets)
    and a more [complex project with multiple source sets](https://github.com/JetBrains/kotlin/tree/master/libraries/tools/kotlin-gradle-plugin-integration-tests/src/test/resources/testProject/powerAssertSimple).

@@ -7,7 +7,7 @@ connections to databases, execute SQL queries, and import the results for furthe
 
 For a detailed example, see the [Notebook in the KotlinDataFrame SQL Examples GitHub repository](https://github.com/zaleslaw/KotlinDataFrame-SQL-Examples/blob/master/notebooks/imdb.ipynb).
 
-## Before you start
+## 开始之前
 
 Kotlin Notebook relies on the [Kotlin Notebook plugin](https://plugins.jetbrains.com/plugin/16340-kotlin-notebook),
 which is bundled and enabled in IntelliJ IDEA by default.
@@ -20,7 +20,7 @@ Create a new Kotlin Notebook:
 1. Select **File** | **New** | **Kotlin Notebook**.
 2. Ensure you have access to an SQL database, such as MariaDB or MySQL.
 
-## Connect to database
+## 连接数据库
 
 You can connect to and interact with an SQL database using specific functions from the [Kotlin DataFrame library](https://kotlin.github.io/dataframe/gettingstarted.html). 
 You can use `DatabaseConfiguration` to establish a connection to your database and `getSchemaForAllSqlTables()` to retrieve 
@@ -75,9 +75,9 @@ schema information for each table in the database:
    > 
    {style="tip"}
 
-## Retrieve and manipulate data
+## 获取并操作数据
 
-After [establishing a connection to an SQL database](#connect-to-database), you can retrieve and manipulate data in Kotlin Notebook, utilizing the Kotlin DataFrame library. 
+After [establishing a connection to an SQL database](#连接数据库), you can retrieve and manipulate data in Kotlin Notebook, utilizing the Kotlin DataFrame library. 
 You can use the `readSqlTable()` function to retrieve data. To manipulate data, you can use methods, such as [`filter`](https://kotlin.github.io/dataframe/filter.html), [`groupBy`](https://kotlin.github.io/dataframe/groupby.html), 
 and [`convert`](https://kotlin.github.io/dataframe/convert.html). 
 
@@ -145,9 +145,9 @@ The resulting output is a DataFrame where missing values in the year column are 
 with the [`convert`](https://kotlin.github.io/dataframe/convert.html) method, and the data is filtered to include only 
 rows from the year 2000 onwards using the [`filter`](https://kotlin.github.io/dataframe/filter.html) method.
 
-## Analyze data in Kotlin Notebook
+## 在 Kotlin Notebook 中分析数据
 
-After [establishing a connection to an SQL database](#connect-to-database), you can use Kotlin Notebook for in-depth data analysis 
+After [establishing a connection to an SQL database](#连接数据库), you can use Kotlin Notebook for in-depth data analysis 
 utilizing the [Kotlin DataFrame library](https://kotlin.github.io/dataframe/gettingstarted.html). This includes functions for 
 grouping, sorting, and aggregating data, helping you to uncover and understand patterns within your data.
 
@@ -178,7 +178,7 @@ occurring first names of actors:
    top20ActorNames
    ```
 
-## What's next
+## 下一步做什么
 
 * Explore data visualization using the [Kandy library](https://kotlin.github.io/kandy/examples.html)
 * Find additional information about data visualization in [Data visualization in Kotlin Notebook with Kandy](data-analysis-visualization.md)

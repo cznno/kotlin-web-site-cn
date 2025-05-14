@@ -182,7 +182,7 @@ table and open it in your default web browser:
    refinedMoviesDf.toStandaloneHTML(DisplayConfiguration(rowsLimit = null)).openInBrowser()
    ```
 
-## What's next
+## 下一步做什么
 
 * Explore data visualization using the [Kandy library](https://kotlin.github.io/kandy/examples.html)
 * Find additional information about data visualization in [Data visualization in Kotlin Notebook with Kandy](data-analysis-visualization.md)

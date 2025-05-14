@@ -87,7 +87,7 @@ Kotlin DataFrame libraries to complete different data-related tasks.
 
 ![Kandy](data-analysis-kandy-example.png){width=700}
 
-## What's next
+## 下一步做什么
 
 * [Get started with Kotlin Notebook](get-started-with-kotlin-notebooks.md)
 * [Retrieve and transform data using the Kotlin DataFrame library](data-analysis-work-with-data-sources.md)

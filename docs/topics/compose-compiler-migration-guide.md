@@ -68,7 +68,7 @@ artifacts in your project:
 * Change `androidx.compose.compiler:compiler` to `org.jetbrains.kotlin:kotlin-compose-compiler-plugin-embeddable`
 * Change `androidx.compose.compiler:compiler-hosted` to `org.jetbrains.kotlin:kotlin-compose-compiler-plugin`
 
-## What's next
+## 下一步做什么
 
 * See [Google's announcement](https://android-developers.googleblog.com/2024/04/jetpack-compose-compiler-moving-to-kotlin-repository.html) about the Compose compiler moving to the Kotlin repository.
 * If you are using Jetpack Compose to build an Android app, check out [our guide on how to make it multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-integrate-in-existing-app.html).

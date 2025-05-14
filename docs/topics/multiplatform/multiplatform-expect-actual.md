@@ -560,6 +560,6 @@ expect annotation class XmlSerializable()
 If an actual declaration is missing on a platform where it's not required, the compiler won't generate an
 error.
 
-## What's next?
+## 下一步做什么？
 
 For general recommendations on different ways to use platform-specific APIs, see [Use platform-specific APIs](https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-connect-to-apis.html).

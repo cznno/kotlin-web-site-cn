@@ -496,7 +496,7 @@ fun test() {
 }
 ```
 
-## What's next
+## 下一步做什么
 
 Learn how types, functions, and constants are mapped between Kotlin and C by completing the following tutorials:
 

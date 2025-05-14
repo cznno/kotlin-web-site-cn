@@ -21,9 +21,9 @@ and anything else directly from Kotlin/Native.
 Kotlin/Native 支持以下平台：
 
 * Linux
-* Windows (through [MinGW](https://www.mingw-w64.org/))
+* Windows（通过 [MinGW](https://www.mingw-w64.org/)）
 * [Android NDK](https://developer.android.com/ndk)
-* Apple targets for macOS, iOS, tvOS, and watchOS
+* Apple 目标平台，面向 macOS、 iOS、 tvOS 与 watchOS
 
   > 如需编译苹果目标，需要安装 [Xcode](https://apps.apple.com/us/app/xcode/id497799835)
   > 及其命令行工具。
@@ -37,7 +37,7 @@ Kotlin/Native 支持以下平台：
 Kotlin/Native 支持与不同操作系统的原生编程语言的双向互操作。
 The compiler can create executables for many platforms, static or dynamic C libraries, and Swift/Objective-C frameworks.
 
-### Interoperability with C
+### 与 C 语言互操作
 
 Kotlin/Native provides [interoperability with C](native-c-interop.md). You can use existing C libraries directly from
 Kotlin code.
@@ -48,7 +48,7 @@ To learn more, complete the following tutorials:
 * [Learn how C types are mapped into Kotlin](mapping-primitive-data-types-from-c.md)
 * [Create a native HTTP client using C interop and libcurl](native-app-with-c-and-libcurl.md) 
 
-### Interoperability with Swift/Objective-C
+### 与 Swift/Objective-C 互操作
 
 Kotlin/Native provides [interoperability with Swift through Objective-C](native-objc-interop.md). You can use
 Kotlin code directly from Swift/Objective-C applications on macOS and iOS.
@@ -65,7 +65,7 @@ Kotlin/Native is a part of the [Kotlin Multiplatform](multiplatform-intro.md) te
 across multiple platforms, including Android, iOS, JVM, web, and native. Multiplatform libraries provide the necessary
 APIs for common Kotlin code and allow writing shared parts of projects in Kotlin all in one place.
 
-## Memory manager
+## 内存管理器
 
 Kotlin/Native uses an automatic [memory manager](native-memory-manager.md) that is similar to the JVM and Go.
 It has its own tracing garbage collector, which is also integrated with Swift/Objective-C's ARC.

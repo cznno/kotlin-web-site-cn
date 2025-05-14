@@ -87,7 +87,7 @@ which facilitates sharing, running, and editing notebooks with advanced features
 
 ![kotlin-notebook-sharing-datalore](kotlin-notebook-sharing-datalore.png){width=700}
 
-## What's next
+## 下一步做什么
 
 * [Learn about the Kotlin Notebook's usage and key features.](https://www.jetbrains.com/help/idea/kotlin-notebook.html)
 * [Try out Kotlin Notebook.](get-started-with-kotlin-notebooks.md)

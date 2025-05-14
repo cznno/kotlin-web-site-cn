@@ -209,7 +209,7 @@ class MessageController(private val service: MessageService) {
 The application is ready to run again.
 By replacing the `JdbcTemplate` with `CrudRepository`, the functionality didn't change hence the application should work the same way as previously.
 
-## What's next
+## 下一步做什么
 
 Get your personal language map to help you navigate Kotlin features and track your progress in studying the language:
 

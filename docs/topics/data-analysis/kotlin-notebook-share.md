@@ -13,7 +13,7 @@ We recommend the following platforms to share Kotlin notebooks:
   For an example, see the [Examples of Kotlin DataFrame GitHub repository](https://github.com/Kotlin/dataframe/blob/master/examples/notebooks/titanic/Titanic.ipynb).
   ![GitHub Notebook example](github-notebook.png){width=700}
 
-## What's next
+## 下一步做什么
 
 * Explore data visualization using the [Kandy library](data-analysis-visualization.md)
 * Learn about retrieving data from files, web sources, or databases in [Working with data sources](data-analysis-work-with-data-sources.md)

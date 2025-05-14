@@ -261,7 +261,7 @@ the bindings need to be regenerated.
   configuration script with the `--cflags` option (maybe without exact paths).
 * The output of a configuration script with `--libs` can be passed to the `linkerOpts` property.
 
-## What's next
+## 下一步做什么
 
 * [Bindings for C-interoperability](native-c-interop.md#bindings)
 * [Interoperability with Swift/Objective-C](native-objc-interop.md)

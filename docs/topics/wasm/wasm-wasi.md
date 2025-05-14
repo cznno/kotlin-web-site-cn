@@ -118,7 +118,7 @@ The terminal displays the test results:
 
 ![Kotlin/Wasm and WASI test](wasm-wasi-tests-results.png){width=600}
 
-## What's next?
+## 下一步做什么？
 
 Join the Kotlin/Wasm community in Kotlin Slack:
 

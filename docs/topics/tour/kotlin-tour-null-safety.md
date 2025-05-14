@@ -204,7 +204,7 @@ fun main() {
 ```
 {initial-collapse-state="collapsed" collapsible="true" collapsed-title="Example solution" id="kotlin-tour-null-safety-solution"}
 
-## What's next?
+## 下一步做什么？
 
 Congratulations! Now that you have completed the beginner tour, take your understanding of Kotlin to the next level with
 our intermediate tour:

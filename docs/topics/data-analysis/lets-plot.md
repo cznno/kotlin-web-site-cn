@@ -192,7 +192,7 @@ Here's the result:
 
 ![2D density plot](2d-density-plot.svg){width=600}
 
-## What's next
+## 下一步做什么
 
 * Explore more plot examples in the [Lets-Plot for Kotlin's documentation](https://lets-plot.org/kotlin/charts.html).
 * Check the Lets-Plot for Kotlin's [API reference](https://lets-plot.org/kotlin/api-reference/). 

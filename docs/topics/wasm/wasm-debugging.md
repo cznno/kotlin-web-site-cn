@@ -213,7 +213,7 @@ We would appreciate any feedback you may have on your debugging experience!
 * ![Slack](slack.svg){width=25}{type="joined"} Slack: [get a Slack invite](https://surveys.jetbrains.com/s3/kotlin-slack-sign-up) and provide your feedback directly to the developers in our [#webassembly](https://kotlinlang.slack.com/archives/CDFP59223) channel.
 * Provide your feedback in [YouTrack](https://youtrack.jetbrains.com/issue/KT-56492).
 
-## What's next?
+## 下一步做什么？
 
 * See Kotlin/Wasm debugging in action in this [YouTube video](https://www.youtube.com/watch?v=t3FUWfJWrjU&t=2703s).
 * Try the Kotlin/Wasm examples from our `kotlin-wasm-examples` repository:

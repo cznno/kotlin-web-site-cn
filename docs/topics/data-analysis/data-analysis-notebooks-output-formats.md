@@ -286,7 +286,7 @@ You can create various charts directly in your Kotlin Notebook to visualize your
    salesPlot.save("sales-chart.svg")
    ```
 
-## What's next
+## 下一步做什么
 
 * [Visualize data using the DataFrame and Kandy libraries](data-analysis-visualization.md)
 * [Learn more about rendering and displaying rich output in Kotlin Notebook](https://www.jetbrains.com/help/idea/kotlin-notebook.html#render-rich-output)

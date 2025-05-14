@@ -416,7 +416,7 @@ and automate the process, choose the method that suits you best:
 
 <a href="multiplatform-ios-integration-overview.md"><img src="choose-ios-integration.svg" width="700" alt="Choose iOS integration method" style="block"/></a>
 
-## What's next
+## 下一步做什么
 
 * [Learn more about interoperability with Objective-C](native-objc-interop.md)
 * [See how interoperability with C is implemented in Kotlin](native-c-interop.md)

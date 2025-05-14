@@ -1,7 +1,7 @@
 [//]: # (title: Kotlin 入门)
 
 <tldr>
-<p>Latest Kotlin release:<b> <a href="%kotlinLatestWhatsnew%">%kotlinVersion%</a></b></p>
+<p>最新 Kotlin 版本：<b> <a href="%kotlinLatestWhatsnew%">%kotlinVersion%</a></b></p>
 </tldr>
 
 Kotlin 是一门现代但已成熟的编程语言，旨在让开发人员更幸福快乐。

@@ -471,7 +471,7 @@ select the necessary components to work with C++, for example, **Desktop develop
 
 这行命令生成了 `main.exe` 文件可供执行。
 
-## What's next
+## 下一步做什么
 
 * [Learn more about interoperability with Swift/Objective-C](native-objc-interop.md)
 * [Check out the Kotlin/Native as an Apple framework tutorial](apple-framework.md)

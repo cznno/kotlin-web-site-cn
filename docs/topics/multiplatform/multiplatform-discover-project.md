@@ -309,7 +309,7 @@ iOS. To run tests for a particular target, use the `<targetName>Test` task.
 Learn how to create and run multiplatform tests in the [Test your multiplatform app
 tutorial](https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-run-tests.html).
 
-## What's next?
+## 下一步做什么？
 
 * [Learn more about declaring and using predefined source sets in Gradle scripts](multiplatform-hierarchy.md)
 * [Explore advanced concepts of the multiplatform project structure](multiplatform-advanced-project-structure.md)

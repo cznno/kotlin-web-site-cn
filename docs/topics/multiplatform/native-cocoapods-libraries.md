@@ -336,7 +336,7 @@ If you haven't configured the correct dependencies between cinterops in this cas
 the code would be invalid because the `WebImage` type would be sourced from different cinterop files and, consequently,
 different packages.
 
-## What's next
+## 下一步做什么
 
 * [Set up dependencies between a Kotlin project and an Xcode project](native-cocoapods-xcode.md)
 * [See the full CocoaPods Gradle plugin DSL reference](native-cocoapods-dsl-reference.md)

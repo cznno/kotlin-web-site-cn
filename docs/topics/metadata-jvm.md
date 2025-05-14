@@ -414,7 +414,7 @@ fun main() {
 > 
 {style="tip"}
 
-## What's next
+## 下一步做什么
 
 * [See the API reference for the Kotlin Metadata JVM library](https://kotlinlang.org/api/kotlinx-metadata-jvm/).
 * [Check out the Kotlin Metadata JVM GitHub repository](https://github.com/JetBrains/kotlin/tree/master/libraries/kotlinx-metadata/jvm).

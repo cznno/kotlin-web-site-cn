@@ -108,7 +108,7 @@ The resulting chart:
 Congratulations on adding and utilizing these libraries in your Kotlin Notebook!
 This is just a glimpse into what you can achieve with Kotlin Notebook and its [supported libraries](data-analysis-libraries.md).
 
-## What's next
+## 下一步做什么
 
 * Learn how to [share your Kotlin Notebook](kotlin-notebook-share.md)
 * See more details about [adding dependencies to your Kotlin Notebook](https://www.jetbrains.com/help/idea/kotlin-notebook.html#add-dependencies)

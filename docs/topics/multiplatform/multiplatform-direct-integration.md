@@ -92,7 +92,7 @@ To connect the Kotlin framework generated from the multiplatform project to your
 >
 {style="note"}
 
-## What's next?
+## 下一步做什么？
 
 You can also take advantage of local integration when working with the Swift package manager. [Learn how to add a
 dependency on a Kotlin framework in a local package](multiplatform-spm-local-integration.md).

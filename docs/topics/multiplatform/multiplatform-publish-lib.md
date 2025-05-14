@@ -195,7 +195,7 @@ It's designed to make it easy to look for Kotlin Multiplatform libraries based o
 
 Libraries that meet the criteria are added automatically. For more information on how to add your library, see [FAQ](https://klibs.io/faq).
 
-## What's next
+## 下一步做什么
 
 * [Learn how to publish your Kotlin Multiplatform library to the Maven Central repository](https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-publish-libraries.html)
 * [See the Library authors' guidelines for best practices and tips on designing a library for Kotlin Multiplatform](api-guidelines-build-for-multiplatform.md)

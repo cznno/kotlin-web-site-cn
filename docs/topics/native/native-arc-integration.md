@@ -290,6 +290,6 @@ kotlin.native.binary.appStateTracking=enabled
 It turns off a timer-based invocation of the garbage collector when the application is in the background, so GC is called
 only when memory consumption becomes too high.
 
-## What's next
+## 下一步做什么
 
 Learn more about [Swift/Objective-C interoperability](native-objc-interop.md).

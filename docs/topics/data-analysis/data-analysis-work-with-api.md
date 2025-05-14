@@ -11,7 +11,7 @@ JSON data from APIs but also assists in reshaping this data for comprehensive an
 > 
 {style="tip"}
 
-## Before you start
+## 开始之前
 
 Kotlin Notebook relies on the [Kotlin Notebook plugin](https://plugins.jetbrains.com/plugin/16340-kotlin-notebook),
 which is bundled and enabled in IntelliJ IDEA by default.
@@ -153,9 +153,9 @@ batches and fetching additional details:
    ```
 
 This example demonstrates how to clean, reorganize, and enhance your dataset using Kotlin DataFrame's various functions. 
-Each step is designed to refine the data, making it more suitable for [in-depth analysis](#analyze-data-in-kotlin-notebook).
+Each step is designed to refine the data, making it more suitable for [in-depth analysis](#在-kotlin-notebook-中分析数据).
 
-## Analyze data in Kotlin Notebook
+## 在 Kotlin Notebook 中分析数据
 
 After you've successfully [fetched](#fetch-data-from-an-api) and [cleaned and refined your data](#clean-and-refine-data) 
 using functions from the [Kotlin DataFrame library](https://kotlin.github.io/dataframe/gettingstarted.html), the next step 
@@ -212,7 +212,7 @@ The results of the analysis:
 
 For more advanced techniques, see the [Kotlin DataFrame documentation](https://kotlin.github.io/dataframe/gettingstarted.html).
 
-## What's next
+## 下一步做什么
 
 * Explore data visualization using the [Kandy library](https://kotlin.github.io/kandy/examples.html)
 * Find additional information about data visualization in [Data visualization in Kotlin Notebook with Kandy](data-analysis-visualization.md)

@@ -140,8 +140,8 @@ reformat("This is a long String!")
 reformat("This is a short String!", upperCaseFirstLetter = false, wordSeparator = '_')
 ```
 
-可以通过具名实参和<!--
--->*展开*操作符来传入[可变参数（`vararg`）](#可变数量的参数varargs)：
+可以通过具名实参与*展开*操作符（数组前加 `*`）<!--
+-->来传入[可变实参（`vararg`）](#可变数量的参数varargs)：
 
 ```kotlin
 fun foo(vararg strings: String) { /*……*/ }
@@ -224,7 +224,7 @@ val list = asList(1, 2, 3)
 -->传一个 lambda。
 
 当调用 `vararg`-函数时，可以逐个传参，例如 `asList(1, 2, 3)`。如果已经有一个数组<!--
--->并希望将其内容传给该函数，那么使用*展开*操作符（在数组前面加 `*`）：
+-->并希望将其内容传给该函数，那么使用展开操作符（在数组前面加 `*`）：
 
 ```kotlin
 val a = arrayOf(1, 2, 3)

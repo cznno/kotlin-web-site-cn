@@ -108,7 +108,7 @@ to avoid the accidental use of features that have not been released as stable.
 | **组件**                                 | **状态** | **状态起始版本** | **备注**                                           |
 |------------------------------------------|----------|------------------|----------------------------------------------------|
 | Kotlin 多平台                            | 已稳定   | 1.9.20           |                                                    |
-| 用于 Android Studio 的 Kotlin 多平台插件 | Beta     | 0.8.0            | [与语言版本独立](multiplatform-plugin-releases.md) |
+| 用于 Android Studio 的 Kotlin 多平台插件 | Beta     | 0.8.0            | [与语言版本独立](https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-plugin-releases.html) |
 
 ### Kotlin/Native
 

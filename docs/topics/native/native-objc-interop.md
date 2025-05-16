@@ -25,7 +25,7 @@ Objective-C frameworks and libraries can be used in Kotlin code if properly impo
 For more details, see:
 
 * [Create and configure a library definition file](native-definition-file.md)
-* [Configure compilation for native libraries](multiplatform-configure-compilations.md#配置与原生语言的互操作)
+* [Configure compilation for native libraries](https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-configure-compilations.html#配置与原生语言的互操作)
 
 A Swift library can be used in Kotlin code if its API is exported to Objective-C with `@objc`.
 Pure Swift modules are not yet supported.
@@ -34,7 +34,7 @@ Pure Swift modules are not yet supported.
 
 Kotlin modules can be used in Swift/Objective-C code if compiled into a framework:
 
-* See [Build final native binaries](multiplatform-build-native-binaries.md#声明二进制文件) to see how to declare binaries.
+* See [Build final native binaries](https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-build-native-binaries.html#声明二进制文件) to see how to declare binaries.
 * Check out the [Kotlin Multiplatform sample project](https://github.com/Kotlin/kmm-basic-sample) for an example.
 
 ### Hide Kotlin declarations from Objective-C and Swift

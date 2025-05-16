@@ -46,7 +46,7 @@ Kotlin 已包含在每个 [IntelliJ IDEA](https://www.jetbrains.com/idea/downloa
 
 <tab id="cross-platform-mobile" title="跨平台">
 
-在此可以了解到如何使用 [Kotlin 多平台](multiplatform-intro.md)开发跨平台应用程序。
+在此可以了解到如何使用 [Kotlin 多平台](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)开发跨平台应用程序。
 
 1. **[搭建用于跨平台开发的环境](https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-setup.html).**
 

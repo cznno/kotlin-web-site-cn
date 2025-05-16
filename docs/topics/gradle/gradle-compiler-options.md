@@ -16,7 +16,7 @@ JVM、JavaScript，以及[支持平台](native-overview.md#目标平台)的本�
 Kotlin 编译器有一系列用于控制编译过程的参数。
 
 The Gradle DSL allows comprehensive 
-configuration of compiler options. It is available for [Kotlin Multiplatform](multiplatform-dsl-reference.md) and [JVM/Android](#面向-jvm) projects.
+configuration of compiler options. It is available for [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-dsl-reference.html) and [JVM/Android](#面向-jvm) projects.
 
 With the Gradle DSL, you can configure compiler options within the build script at three levels: 
 * **[Extension level](#extension-level)**, in the `kotlin {}` block for all targets and shared source sets.
@@ -76,7 +76,7 @@ kotlin {
 ```
 
 In Kotlin Multiplatform projects, you can configure compiler options inside the
-specific target. For example, `jvm { compilerOptions {}}`. For more information, see [Multiplatform Gradle DSL reference](multiplatform-dsl-reference.md).
+specific target. For example, `jvm { compilerOptions {}}`. For more information, see [Multiplatform Gradle DSL reference](https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-dsl-reference.html).
 
 ### Compilation unit level
 
@@ -107,7 +107,7 @@ kotlin {
 }
 ```
 
-If you want to configure a plugin of a target different from JVM/Android and [Kotlin Multiplatform](multiplatform-dsl-reference.md),
+If you want to configure a plugin of a target different from JVM/Android and [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-dsl-reference.html),
 use the `compilerOptions {}` property of the corresponding Kotlin compilation task. The following examples
 show how to set this configuration up in both Kotlin and Groovy DSLs:
 
@@ -392,7 +392,7 @@ tasks
 ## 下一步做什么？
 
 了解更多关于：
-* [Kotlin Multiplatform DSL reference](multiplatform-dsl-reference.md).
+* [Kotlin Multiplatform DSL reference](https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-dsl-reference.html).
 * [增量编译、缓存支持、构建日志以及 Kotlin 守护进程](gradle-compilation-and-caches.md)。
 * [Gradle 的基础知识和特性](https://docs.gradle.org/current/userguide/userguide.html)。
 * [对 Gradle 插件变体的支持](gradle-plugin-variants.md)。

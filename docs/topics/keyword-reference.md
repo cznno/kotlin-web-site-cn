@@ -90,14 +90,14 @@
 -->的标识符：
 
  * `abstract` 将一个类或成员标记为[抽象](classes.md#抽象类)。
- * `actual` 表示[多平台项目](multiplatform-expect-actual.md)中的一个平台相关实现。
+ * `actual` 表示[多平台项目](https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-expect-actual.html)中的一个平台相关实现。
  * `annotation` 声明一个[注解类](annotations.md)。
  * `companion` 声明一个[伴生对象](object-declarations.md#伴生对象)。
  * `const` 将属性标记为[编译期常量](properties.md#编译期常量)。
  * `crossinline` 禁止[传递给内联函数的 lambda 中的非局部返回](inline-functions.md#returns)。
  * `data` 指示编译器[为类生成典型成员](data-classes.md)。
  * `enum` 声明一个[枚举](enum-classes.md)。
- * `expect` 将一个声明标记为[平台特有](multiplatform-expect-actual.md)，并期待在平台模块中实现。
+ * `expect` 将一个声明标记为[平台特有](https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-expect-actual.html)，并期待在平台模块中实现。
  * `external` 将一个声明标记为在 Kotlin 外实现（通过 [JNI](java-interop.md#在-kotlin-中使用-jni) 访问或者在 [JavaScript](js-interop.md#external-修饰符) 中实现）。
  * `final` 禁止[成员覆盖](inheritance.md#覆盖方法)。
  * `infix` 允许用[中缀表示法](functions.md#中缀表示法)调用函数。

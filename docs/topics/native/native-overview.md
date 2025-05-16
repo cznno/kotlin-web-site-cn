@@ -27,7 +27,7 @@ Kotlin/Native 支持以下平台：
 
   > 如需编译苹果目标，需要安装 [Xcode](https://apps.apple.com/us/app/xcode/id497799835)
   > 及其命令行工具。
-  > 
+  >
   {style="note"}
 
 [参见所支持目标的完整列表](native-target-support.md)。
@@ -46,7 +46,7 @@ To learn more, complete the following tutorials:
 
 * [Create a dynamic library with C headers for C/C++ projects](native-dynamic-libraries.md)
 * [Learn how C types are mapped into Kotlin](mapping-primitive-data-types-from-c.md)
-* [Create a native HTTP client using C interop and libcurl](native-app-with-c-and-libcurl.md) 
+* [Create a native HTTP client using C interop and libcurl](native-app-with-c-and-libcurl.md)
 
 ### 与 Swift/Objective-C 互操作
 
@@ -61,7 +61,7 @@ Kotlin/Native includes a set of prebuilt [platform libraries](native-platform-li
 between projects. POSIX, gzip, OpenGL, Metal, Foundation, and many other popular libraries and Apple frameworks
 are pre-imported and included as Kotlin/Native libraries in the compiler package.
 
-Kotlin/Native is a part of the [Kotlin Multiplatform](multiplatform-intro.md) technology that helps share common code
+Kotlin/Native is a part of the [Kotlin Multiplatform](multiplatform.topic) technology that helps share common code
 across multiple platforms, including Android, iOS, JVM, web, and native. Multiplatform libraries provide the necessary
 APIs for common Kotlin code and allow writing shared parts of projects in Kotlin all in one place.
 

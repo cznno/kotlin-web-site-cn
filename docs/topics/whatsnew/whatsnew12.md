@@ -54,7 +54,7 @@ actual fun hello(world: String): String =
 actual typealias URL = java.net.URL
 ```
 
-关于构建多平台项目的详细信息与步骤，请参见[多平台程序设计文档](multiplatform-intro.md)。
+关于构建多平台项目的详细信息与步骤，请参见[多平台程序设计文档](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)。
 
 ## 其他语言特性
 

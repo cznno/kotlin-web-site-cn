@@ -197,7 +197,7 @@ If you want to disable the escape analysis phase, use the `-Xdisable-phases=Esca
 ### 性能提升与错误修复
 
 Kotlin/Native receives performance improvements and bug fixes in various components, including the ones added
-in 1.4.0, for example, the [code sharing mechanism](multiplatform-share-on-platforms.md#对相似平台共享代码). 
+in 1.4.0, for example, the [code sharing mechanism](https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-share-on-platforms.html#对相似平台共享代码). 
 
 ### 选择加入 Objective-C 异常的包装
 
@@ -212,7 +212,7 @@ You can opt in to wrap `NSException`'s into Kotlin exceptions of type `ForeignEx
 original `NSException`'s. This lets you get the information about the root cause and handle it properly.
 
 To enable wrapping of Objective-C exceptions, specify the `-Xforeign-exception-mode objc-wrap` option in the `cinterop`
-call or add `foreignExceptionMode = objc-wrap` property to `.def` file. If you use [CocoaPods integration](native-cocoapods.md),
+call or add `foreignExceptionMode = objc-wrap` property to `.def` file. If you use [CocoaPods integration](https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-cocoapods-overview.html),
 specify the option in the `pod {}` build script block of a dependency like this:
 
 ```kotlin
@@ -238,7 +238,7 @@ existing dependencies are not rebuilt. Adding an extra target also doesn't affec
 
 #### 扩展了 DSL
 
-The DSL of adding [CocoaPods](native-cocoapods.md) dependencies to your Kotlin project receives new capabilites.
+The DSL of adding [CocoaPods](https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-cocoapods-overview.html) dependencies to your Kotlin project receives new capabilites.
 
 In addition to local Pods and Pods from the CocoaPods repository, you can add dependencies on the following types of libraries:
 * A library from a custom spec repository.
@@ -247,7 +247,7 @@ In addition to local Pods and Pods from the CocoaPods repository, you can add de
 * A static library.
 * A library with custom cinterop options.
 
-Learn more about [adding CocoaPods dependencies](native-cocoapods-libraries.md) in Kotlin projects.
+Learn more about [adding CocoaPods dependencies](https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-cocoapods-libraries.html) in Kotlin projects.
 Find examples in the [Kotlin with CocoaPods sample](https://github.com/Kotlin/kmm-with-cocoapods-sample).
 
 #### 更新了与 Xcode 的集成
@@ -260,7 +260,7 @@ To work correctly with Xcode, Kotlin requires some Podfile changes:
 
 Now integration errors have a detailed description in IDEA. So if you have problems with your Podfile, you will immediately know how to fix them.
 
-Learn more about [creating Kotlin pods](native-cocoapods-xcode.md).
+Learn more about [creating Kotlin pods](https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-cocoapods-xcode.html).
 
 ### 对 Xcode 12 库的支持
     
@@ -274,11 +274,11 @@ Starting from Kotlin 1.4.20, there is no longer a separate metadata publication.
 the _root_ publication which stands for the whole library and is automatically resolved to the appropriate platform-specific
 artifacts when added as a dependency to the common source set.
 
-Learn more about [publishing a multiplatform library](multiplatform-publish-lib.md).
+Learn more about [publishing a multiplatform library](https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-publish-lib-setup.html).
 
 #### 与早期版本的兼容性
 
-This change of structure breaks the compatibility between projects with [hierarchical project structure](multiplatform-share-on-platforms.md#对相似平台共享代码).
+This change of structure breaks the compatibility between projects with [hierarchical project structure](https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-share-on-platforms.html#对相似平台共享代码).
 If a multiplatform project and a library it depends on both have the hierarchical project structure, then you need to update
 them to Kotlin 1.4.20 or higher simultaneously. Libraries published with Kotlin 1.4.20 are not available for using from
 project published with earlier versions.

@@ -11,8 +11,8 @@
             简化跨平台项目的开发，并减少为不同平台编写和维护相同代码所花费的时间。
         </description>
         <spotlight>
-            <a href="multiplatform-intro.md" summary="探索 Kotlin 多平台技术背后的技术层面" type="documents">Kotlin 多平台基础知识</a>
-            <a href="https://www.jetbrains.com/help/kotlin-multiplatform-dev" summary="通过实际项目获得 Kotlin 多平台开发的实践经验" type="presentation">Kotlin 多平台实战</a>
+            <a href="https://www.jetbrains.com/help/kotlin-multiplatform-dev" summary="Get hands-on experience of Kotlin Multiplatform with real-life projects" type="cross-platform">Kotlin Multiplatform in action</a>
+            <a href="https://www.jetbrains.com/lp/compose-multiplatform/" summary="Discover Kotlin-based declarative UI framework developed by JetBrains" type="creative">Compose Multiplatform UI framework</a>
         </spotlight>
         <primary>
             <title>热门使用场景</title>
@@ -23,10 +23,10 @@
         </primary>
         <secondary>
             <title>Kotlin 多平台技术</title>
-            <a href="multiplatform-discover-project.md" summary="了解基础知识：公共代码与平台专用代码、目标以及源代码集">项目结构的关键概念</a>
-            <a href="multiplatform-expect-actual.md" summary="使用预期声明与实际声明来访问平台特定 API">预期与实际声明</a>
-            <a href="multiplatform-hierarchy.md" summary="为共享公共代码安排源代码集的分层结构">分层项目结构</a>
-            <a href="multiplatform-dsl-reference.md" summary="为 Kotlin 多平台项目配置 Gradle 构建脚本">Gradle DSL 参考</a>
+            <a href="https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-discover-project.html" summary="了解基础知识：公共代码与平台专用代码、目标以及源代码集">项目结构的关键概念</a>
+            <a href="https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-expect-actual.html" summary="使用预期声明与实际声明来访问平台特定 API">预期与实际声明</a>
+            <a href="https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-hierarchy.html" summary="为共享公共代码安排源代码集的分层结构">分层项目结构</a>
+            <a href="https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-ios-integration-overview.html" summary="Integrate a Kotlin Multiplatform shared module into your iOS app">Set up iOS integration</a>
         </secondary>
         <misc>
             <links narrow="true">
@@ -42,7 +42,7 @@
                     <title>工具</title>
                     <a href="https://kmp.jetbrains.com/" summary="快速创建并下载跨平台项目模板">新建项目向导</a>
                     <a href="https://plugins.jetbrains.com/plugin/14936-kotlin-multiplatform" summary="用于开发 Android 与 iOS 双平台应用程序的 Android Studio 插件">Android Studio 插件</a>
-                    <a href="https://www.jetbrains.com/lp/compose-multiplatform/" summary="由 JetBrains 开发的基于 Kotlin 的声明式 UI 框架">Compose 多平台 UI 框架</a>
+                    <a href="https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-dsl-reference.html" summary="为 Kotlin 多平台项目配置 Gradle 构建脚本">Gradle DSL 参考</a>
                     <a href="https://klibs.io/" summary="由 JetBrains 开发的 Kotlin 多平台库实验性搜索平台">库搜索平台</a>
                     <a href="https://www.jetbrains.com/help/kotlin-multiplatform-dev/amper.html" summary="使用 Amper 配置项目">Amper 配置工具</a>
                 </group>
